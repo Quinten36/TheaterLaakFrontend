@@ -1,6 +1,6 @@
 import './css/App.css';
-import HomeSliderCard from './components/homeSliderCard';
-import HomeArticle from './components/homeArticle';
+import HomeSliderCard from './components/home/homeSliderCard';
+import HomeArticle from './components/home/homeArticle';
 
 function App() {
   return (

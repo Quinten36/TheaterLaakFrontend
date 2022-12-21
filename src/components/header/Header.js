@@ -1,12 +1,12 @@
-import './../css/App.css';
-import './../css/style.css';
+import './../../css/App.css';
+import './../../css/style.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react';
 import {useState} from 'react'
-import './../css/header.scss';
+import './../../css/header.scss';
 import Accordion from 'react-bootstrap/Accordion';
 import NavBarPreviewCard from './NavBarPreviewCard';
 

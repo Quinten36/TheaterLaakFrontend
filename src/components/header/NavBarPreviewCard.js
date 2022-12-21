@@ -1,6 +1,6 @@
-import './../css/App.css';
-import './../css/style.css';
-import './../css/header.scss';
+import './../../css/App.css';
+import './../../css/style.css';
+import './../../css/header.scss';
 
 
 function App(props) {
