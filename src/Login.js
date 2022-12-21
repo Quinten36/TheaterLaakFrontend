@@ -15,7 +15,7 @@ export default function Login() {
             <Button id = "LoginButton" variant="primary">Log in</Button>
             <Button id = "RegistreerButton" variant="success">Registreren</Button>
             <div id="linkWachtwoordvergeten"><a href="url">Wachtwoord vergeten?</a></div>
-            <RememberMeKnop />
+            <RememberMeKnop  />
     </div>
   )
 }

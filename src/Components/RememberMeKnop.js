@@ -1,15 +1,24 @@
-import { Checkbox } from 'react-bootstrap';
-import useState from 'react'
+import { Form } from 'react-bootstrap';
+import {useState} from 'react'
+import '../LoginStyles.css'
 export default function RememberMeKnop() {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleChange = (event) => {
     setIsChecked(event.target.checked);
+    console.log(!isChecked)
   };
 
   return (
-    <Checkbox id="remember-me" checked={isChecked} onChange={handleChange}>
-      Remember Me
-    </Checkbox>
+      
+
+      <div id="RememberMeCheckBox">
+        <label>
+        <input type="checkbox"  checked={isChecked} onChange={handleChange} />
+          Onthoud mijn gegevens
+      
+      </label>
+    </div>
+
   );
 }
