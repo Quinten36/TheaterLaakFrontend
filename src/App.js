@@ -1,9 +1,9 @@
 
-import './App.css';
-import TicketSell from './TicketSell.js'
+
+import Login from './Login.js'
 function App() {
   return (
-    <TicketSell />
+    <Login />
   );
 }
 

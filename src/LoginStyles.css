@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size : 24px;
+    position: absolute;
+    width: 211px;
+    height: 69px;
+    left: 74px;
+    top: 69px;
+}
+
+#GebruikersNaanmInvoer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
+    
+    position: absolute;
+    width: 283px;
+    height: 48px;
+    left: 38px;
+    top: 206px;
+
+}
+
+#PasswordInvoer{
+    box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 8px 16px;
+gap: 8px;
+
+position: absolute;
+width: 283px;
+height: 48px;
+left: 38px;
+top: 297px;
+
+}
