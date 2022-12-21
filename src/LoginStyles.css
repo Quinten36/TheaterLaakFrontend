@@ -4,7 +4,7 @@
 }
 
 h1 {
-    font-size : 24px;
+    font-size: 24px;
     position: absolute;
     width: 211px;
     height: 69px;
@@ -12,13 +12,13 @@ h1 {
     top: 69px;
 }
 
-#GebruikersNaanmInvoer{
+#GebruikersNaanmInvoer {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 8px 16px;
     gap: 8px;
-    
+
     position: absolute;
     width: 283px;
     height: 48px;
@@ -27,21 +27,54 @@ h1 {
 
 }
 
-#PasswordInvoer{
+#PasswordInvoer {
     box-sizing: border-box;
 
-/* Auto layout */
+    /* Auto layout */
 
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 8px 16px;
-gap: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 8px;
 
-position: absolute;
-width: 283px;
-height: 48px;
-left: 38px;
-top: 297px;
+    position: absolute;
+    width: 283px;
+    height: 48px;
+    left: 38px;
+    top: 297px;
 
+}
+
+#LoginButton {
+    position: absolute;
+    width: 283px;
+    height: 44px;
+    left: 38px;
+    top: 439px;
+
+}
+
+#RegistreerButton {
+    position: absolute;
+    width: 283px;
+    height: 44px;
+    left: 38px;
+    top: 502px;
+
+}
+
+#linkWachtwoordvergeten {
+    position: absolute;
+    width: 203px;
+    height: 39px;
+    left: 88px;
+    top: 575px;
+
+    line-height: 130%;
+    
+
+    text-decoration-line: underline;
+
+    color: #143CCB;
 }
