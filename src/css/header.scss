@@ -1,0 +1,96 @@
+.navbar>.container {
+    justify-content: flex-start !important;
+    .navbar-brand {
+        margin-left: 15px;
+    }
+}
+.navbar {
+    .navbar-collapse {
+        height: 100vh !important;
+        position: absolute;
+        // left: -100vw;
+        top: 56px;
+        display: inline-block;
+        width: 100vw;
+        background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity)) !important;
+        transition: left 3s ease-in-out;
+    }
+    .collapse:not(.show) {
+        left: -100vw;
+    }
+    .collapsing {
+        left: 0;
+        transition: left 2s ease-in-out !important;
+    }
+    .nav-bar-preview-image {
+        display: inline-block;
+        margin: 4px 10px 4px 18px;;
+        width: 25vw;
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    }
+    .nav-bar-preview-titel {
+        display: inline-block;
+        color: azure;
+        font-size: calc(1.175rem + .3vw);
+    }
+    .nav-bar-preview-head {
+        color: azure;
+        margin: 3px 20px 4px 10px;
+        display: inline-block;
+        width: 70vw;
+    }
+    .nav-bar-preview-link {
+        font-weight: 600;
+        color: azure;
+        margin: 9px 0 0 17px;
+        padding-top: 5px;
+        svg {
+            width: 17px;
+            color: azure;
+        }
+    }
+    .DivideLine {
+        color: azure;
+        opacity: 1;
+        width: 80vw;
+        height: 1.5px;
+        border-top: 2.1px solid;
+        border-radius: 5px;
+        margin: 5px auto;
+    }
+    .over-ons-list, .nav-bar-links {
+        padding: 0 0 0 15px;
+        margin: 0;
+        .nav-link {
+            color: azure;
+            font-weight: 600;
+            padding: 0.2em 0;
+            font-size: 1.1em;
+        }
+    }
+    .languageSelector {
+        color: grey;
+        margin: 0 0 0 15px;
+        span {
+            padding: 0 9px 0 0;
+            position: relative;
+        }
+        span:nth-child(1):after {
+            content: "";
+            display: inline-block;
+            width: 2px;
+            height: 17px;
+            background-color: azure;
+            margin: 1px 0 0 6px;
+            position: absolute;
+            top: 3px;
+            left: 17px;
+        }
+        .selected {
+            color: azure;
+        }
+    }
+}
