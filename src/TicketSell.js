@@ -3,6 +3,8 @@ import "./TicketSellStyle.css"
 import LegendaTicketSales from './Components/LegendaTicketSales'
 import TicketSellDropDownRijNummer from './Components/TicketSellDropDownRijNummer'
 import TicketSellDropDownStoelNummer from './Components/TicketSellDropDownStoelNummer'
+import Button from 'react-bootstrap/Button';
+
 export default function TicketSell() {
 
  
@@ -18,7 +20,8 @@ export default function TicketSell() {
       <div id="stoelNummerText" > Stoel Nummer </div>
       <TicketSellDropDownRijNummer aantal={10} />
       <TicketSellDropDownStoelNummer aantal={10} />
-      <button id = "VoegToeAanTicketLijst"> + Voeg toe</button>
+      <Button id = "VoegToeAanTicketLijst" type="button" >+ Voeg toe</Button>
+
       <div id ="lijn"></div>
       <div id = "TicketLijstFrame">
       <div id = "ticketLijstStoel">Stoel</div>
@@ -27,7 +30,8 @@ export default function TicketSell() {
       </div>
       <div id = "lijn2"></div>
       <div id = "totaalprijsText">Totaalprijs : <div>€ 107,50</div></div>
-      <button id =  "inWinkelMandKnop"> + In Winkelmand </button>
+    
+      <Button id = "inWinkelMandKnop" type="button" >+ In Winkelmand</Button>
     </div>
   )
 }

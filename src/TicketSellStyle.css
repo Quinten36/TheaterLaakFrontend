@@ -53,6 +53,9 @@ top: 209px;
     height: 42px;
     left: 121px;
     top: 110px;
+    
+    font-size: 16px;
+    text-align: center;
 }
 
 #titleSeatpicker {
@@ -264,8 +267,7 @@ top: 209px;
     left: 114px;
     top: 623px;
 
-    background: #2678F3;
-    border-radius: 8px;
+
 }
 
 #lijn {

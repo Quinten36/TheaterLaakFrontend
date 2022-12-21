@@ -1,9 +1,11 @@
 
 
-import Login from './Login.js'
+import TicketSell from './TicketSell.js'
+import Login from './Login'
+import TweeFaPage from './TweeFaPage.js';
 function App() {
   return (
-    <Login />
+    <TweeFaPage />
   );
 }
 

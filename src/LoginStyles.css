@@ -30,7 +30,6 @@ h1 {
 #PasswordInvoer {
     box-sizing: border-box;
 
-    /* Auto layout */
 
     display: flex;
     flex-direction: row;
@@ -80,9 +79,93 @@ h1 {
 }
 
 #RememberMeCheckBox{
-    position: absolute;
+    
     width: 235px;
     height: 24px;
     left: 62px;
     top: 380px;
+}
+
+
+#FA_collectie{
+    display: flex;
+    width : 270px;
+    gap : 8px;
+
+    position: absolute;
+    left: 34px;
+    top: 230px;
+    
+}
+
+.FA_box{
+width: 46px;
+height: 48px;
+
+}
+
+#SubmitButton2FA{
+    position: absolute;
+width: 283px;
+height: 44px;
+left: 34px;
+top: 334px;
+}
+
+h2{
+    position: absolute;
+    width: 273px;
+    height: 31px;
+    left: 62px;
+    top: 175px;
+
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#text2FaPage{
+    position: absolute;
+width: 246px;
+height: 140px;
+left: 62px;
+top: 423px;
+
+font-weight: 700;
+font-size: 16px;
+line-height: 130%;
+
+}
+#lijn2fa{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0px;
+gap: 8px;
+
+position: absolute;
+width: 329px;
+height: 18px;
+left: 15px;
+top: 602px;
+
+color : black;
+}
+
+#EmailOpnieuwLink{
+    position: absolute;
+    width: 203px;
+    height: 39px;
+    left: 93px;
+    top: 570px;
+    
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
+    
+    text-decoration-line: underline;
+    
+    color: #143CCB;
 }
