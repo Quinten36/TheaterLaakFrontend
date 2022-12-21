@@ -7,6 +7,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react';
 import {useState} from 'react'
 import './../css/header.scss';
+import Accordion from 'react-bootstrap/Accordion';
 
 function App() {
   const [open, setOPen] = useState(true);
@@ -28,49 +29,45 @@ function App() {
       </Container>
       <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <section> 
-              <h2 className='nav-bar-preview-head'>Voorstellingen</h2>
-              {/* test */}
-              <button onClick={toggle}>toggle</button>
-                {open && 
-                <>
-                  <section>
-                    <figure className='nav-bar-preview-image'>
-                        <img src='/Aladdin.jpg' alt='Plaatje'/>
-                    </figure>
-                    <h4 className='nav-bar-preview-titel'>Aladin</h4>
-                  </section>
-                  <section>
-                    <figure className='nav-bar-preview-image'>
-                        <img src='/Aladdin.jpg' alt='Plaatje'/>
-                    </figure>
-                    <h4 className='nav-bar-preview-titel'>Aladin</h4>
-                  </section>
-                  <section>
-                    <figure className='nav-bar-preview-image'>
-                        <img src='/Aladdin.jpg' alt='Plaatje'/>
-                    </figure>
-                    <h4 className='nav-bar-preview-titel'>Aladin</h4>
-                  </section>
-                <a href='/programmering' className='nav-bar-preview-link'>Alle voorstellingen <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">{/*<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->*/}<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
-              </>
-              }
-              <hr className='DivideLine'/>
-            </section>
-            <section>
-                <h2 className='nav-bar-preview-head'>Over ons</h2>
-                <button onClick={toggleOver}>toggle</button>
-                {openOver && 
-                  <>
+            <Accordion defaultActiveKey={['0']} alwaysOpen className='nav-bar-accordion'>
+              <Accordion.Item eventKey="0"> 
+                <Accordion.Header><h2 className='nav-bar-preview-head'>Voorstellingen</h2></Accordion.Header>
+                {/* test */}
+                  <Accordion.Body>
+                    <section>
+                      <figure className='nav-bar-preview-image'>
+                          <img src='/Aladdin.jpg' alt='Plaatje'/>
+                      </figure>
+                      <h4 className='nav-bar-preview-titel'>Aladin</h4>
+                    </section>
+                    <section>
+                      <figure className='nav-bar-preview-image'>
+                          <img src='/Aladdin.jpg' alt='Plaatje'/>
+                      </figure>
+                      <h4 className='nav-bar-preview-titel'>Aladin</h4>
+                    </section>
+                    <section>
+                      <figure className='nav-bar-preview-image'>
+                          <img src='/Aladdin.jpg' alt='Plaatje'/>
+                      </figure>
+                      <h4 className='nav-bar-preview-titel'>Aladin</h4>
+                    </section>
+                  <a href='/programmering' className='nav-bar-preview-link'>Alle voorstellingen <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">{/*<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->*/}<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
+                  </Accordion.Body>
+                <hr className='DivideLine'/>
+              </Accordion.Item>
+              <Accordion.Item eventKey="1">
+                <Accordion.Header><h2 className='nav-bar-preview-head'>Over ons</h2></Accordion.Header>
+                  <Accordion.Body>
                     <ul className='over-ons-list'>
                         <li><Nav.Link href="/contact">Contact</Nav.Link></li>
                         <li><Nav.Link href="/about">Over Theater Laak</Nav.Link></li>
                         <li><Nav.Link href="/">Werken bij</Nav.Link></li>
                     </ul>
-                  </>
-                }
-                <hr className='DivideLine'/>
-            </section>
+                  </Accordion.Body>
+                  <hr className='DivideLine'/>
+              </Accordion.Item>
+            </Accordion>
             {/* tot hier */}
             <section>
                 <ul className='nav-bar-links'>
