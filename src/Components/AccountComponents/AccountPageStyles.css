@@ -1,0 +1,149 @@
+* {
+    font-weight: 900;
+
+    line-height: 130%;
+}
+
+#AccountPageTitle {
+    position: absolute;
+    width: 158px;
+    height: 30px;
+    left: 101px;
+    top: 73px;
+
+    font-size: 20px;
+}
+
+#GebruikersNaanmInvoer {
+    position: absolute;
+    width: 283px;
+    height: 48px;
+    left: 38px;
+    top: 182px;
+
+}
+
+#PasswordInvoer {
+    position: absolute;
+    width: 283px;
+    height: 48px;
+    left: 38px;
+    top: 273px;
+}
+
+#EmailAdresInvoer {
+    position: absolute;
+    width: 283px;
+    height: 48px;
+    left: 38px;
+    top: 364px;
+}
+
+#UpdateButtonAP {
+    position: absolute;
+    width: 283px;
+    height: 44px;
+    left: 38px;
+    top: 439px;
+
+}
+
+
+#IconTextIntresse {
+    position: absolute;
+    width: 91px;
+    height: 17px;
+    left: 23px;
+    top: 610px;
+
+}
+
+#IconTextReserveringen {
+    position: absolute;
+    width: 77px;
+    height: 17px;
+    left: 133px;
+    top: 610px;
+}
+
+#IconTextEI {
+    position: absolute;
+    width: 101px;
+    height: 17px;
+    left: 234px;
+    top: 610px;
+}
+
+div {
+    font-size: 12px;
+}
+
+#extraSettings {
+    display: flex;
+    align-items: center;
+    margin-top: 551px;
+    margin-left: 11px;
+}
+
+#extraSettings img {
+    margin-right: 20px;
+}
+
+#lijn {
+    width: 303px;
+    height: 1px;
+    left: 28px;
+    position: absolute;
+    top: 512px;
+}
+
+
+#backbutton {
+    position: absolute;
+    width: 38px;
+    height: 39px;
+    left: 9px;
+    top: 56px;
+}
+
+.titelExtraAccountPages {
+    position: absolute;
+    width: 128px;
+    height: 33px;
+    left: 113px;
+    top: 174px;
+    font-size: 20px;
+}
+
+#LijnExtraPaginas {
+    width: 303px;
+    height: 1px;
+    left: 28px;
+    top: 243px;
+    position: absolute;
+    background-color: black;
+}
+
+#IntresseToevoegenButton {
+    position: absolute;
+    width: 46px;
+    height: 39px;
+    left: 230px;
+    top: 400px;
+}
+
+#IntresseVerwijderenButton {
+    position: absolute;
+    width: 46px;
+    height: 39px;
+    left: 285px;
+    top: 400px;
+}
+
+#intresseAanpassenVeld {
+    position: absolute;
+    width: 304px;
+    height: 407px;
+    left: 27px;
+    top: 264px;
+}

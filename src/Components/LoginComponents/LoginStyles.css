@@ -71,15 +71,15 @@ h1 {
     top: 575px;
 
     line-height: 130%;
-    
+
 
     text-decoration-line: underline;
 
     color: #143CCB;
 }
 
-#RememberMeCheckBox{
-    
+#RememberMeCheckBox {
+
     width: 235px;
     height: 24px;
     left: 62px;
@@ -87,32 +87,32 @@ h1 {
 }
 
 
-#FA_collectie{
+#FA_collectie {
     display: flex;
-    width : 270px;
-    gap : 8px;
+    width: 270px;
+    gap: 8px;
 
     position: absolute;
     left: 34px;
     top: 230px;
-    
-}
-
-.FA_box{
-width: 46px;
-height: 48px;
 
 }
 
-#SubmitButton2FA{
+.FA_box {
+    width: 46px;
+    height: 48px;
+
+}
+
+#SubmitButton2FA {
     position: absolute;
-width: 283px;
-height: 44px;
-left: 34px;
-top: 334px;
+    width: 283px;
+    height: 44px;
+    left: 34px;
+    top: 334px;
 }
 
-h2{
+h2 {
     position: absolute;
     width: 273px;
     height: 31px;
@@ -123,49 +123,166 @@ h2{
     font-size: 20px;
 }
 
-#text2FaPage{
+#text2FaPage {
     position: absolute;
-width: 246px;
-height: 140px;
-left: 62px;
-top: 423px;
+    width: 246px;
+    height: 140px;
+    left: 62px;
+    top: 423px;
 
-font-weight: 700;
-font-size: 16px;
-line-height: 130%;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 130%;
 
 }
-#lijn2fa{
+
+#lijn2fa {
     display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 8px 0px;
-gap: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0px;
+    gap: 8px;
 
-position: absolute;
-width: 329px;
-height: 18px;
-left: 15px;
-top: 602px;
+    position: absolute;
+    width: 329px;
+    height: 18px;
+    left: 15px;
+    top: 602px;
 
-color : black;
+    color: black;
 }
 
-#EmailOpnieuwLink{
+#EmailOpnieuwLink {
     position: absolute;
     width: 203px;
     height: 39px;
     left: 93px;
     top: 570px;
-    
+
     font-family: 'Nunito';
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
     line-height: 130%;
-    
+
     text-decoration-line: underline;
-    
+
     color: #143CCB;
+}
+
+#GebruikersNaamInputVeldRE {
+    position: absolute;
+    width: 283px;
+    height: 48px;
+    left: 38px;
+    top: 211px;
+}
+
+#PasswordInputVeldRE {
+    position: absolute;
+    width: 283px;
+    height: 48px;
+    left: 38px;
+    top: 296px;
+}
+
+#EmailInputVeldRE {
+    position: absolute;
+    width: 283px;
+    height: 48px;
+    left: 38px;
+    top: 374px;
+}
+
+#AkkoordCheckBox {
+    position: absolute;
+    width: 313px;
+    height: 26px;
+    left: 74px;
+    top: 459px;
+
+}
+
+#RegistratieCompleetButton {
+    position: absolute;
+    width: 283px;
+    height: 44px;
+    left: -25px;
+    top: 175px;
+}
+
+h3 {
+    position: absolute;
+    width: 273px;
+    height: 109px;
+    left: 105px;
+    top: 157px;
+
+
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 130%;
+
+}
+
+
+#privacybeleidTextBox {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 333px;
+    height: 363px;
+    left: 13px;
+    top: 201px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+
+}
+
+#GelezenAkkoord {
+    position: relative;
+    left: 42px;
+    top: 600px;
+}
+
+#GelezenAkkoordButton {
+    width: 283px;
+    height: 44px;
+    background: #26F33A;
+}
+
+#WWopniewInstellenInput{
+    position: absolute;
+width: 283px;
+height: 48px;
+left: 38px;
+top: 230px;
+}
+
+#WWopnieuwTitleText{
+    position: absolute;
+width: 273px;
+height: 48px;
+left: 34px;
+top: 158px;
+    text-align: center;    
+}
+
+#SubmitButtonWW{
+    position: absolute;
+width: 283px;
+height: 44px;
+left: 38px;
+top: 334px;
+}
+
+#WWvergetenText{
+    position: absolute;
+    width: 240px;
+    height: 241px;
+    left: 59px;
+    top: 423px;
+       
 }
