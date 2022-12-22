@@ -1,6 +1,6 @@
 
 import {useState} from 'react'
-import '../LoginStyles.css'
+import './LoginStyles.css';
 export default function RememberMeKnop() {
   const [isChecked, setIsChecked] = useState(false);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../TicketSellStyle.css"
+import "./TicketSellStyle.css"
 
 export default function LegendaTicketSales() {
   return (

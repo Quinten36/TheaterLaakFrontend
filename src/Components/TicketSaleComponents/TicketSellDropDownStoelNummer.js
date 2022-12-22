@@ -1,6 +1,6 @@
 import React from 'react';
-import "../TicketSellStyle.css"
-const TicketSellDropDownRijNummer = (props) => {
+import "./TicketSellStyle.css"
+const  TicketSell_DropDownStoelNummer = (props) => {
   const options = [];
   
   //CHECK de CSS
@@ -10,10 +10,10 @@ const TicketSellDropDownRijNummer = (props) => {
   }
 
   return (
-    <select id = "DropdownRijNummer">
+    <select id = "DropdownStoelNummer">
       {options}
     </select>
   );
 };
 
-export default TicketSellDropDownRijNummer;
+export default  TicketSell_DropDownStoelNummer;

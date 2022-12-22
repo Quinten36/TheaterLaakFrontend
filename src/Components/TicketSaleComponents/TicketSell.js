@@ -1,8 +1,8 @@
 import React from 'react'
 import "./TicketSellStyle.css"
-import LegendaTicketSales from './Components/LegendaTicketSales'
-import TicketSellDropDownRijNummer from './Components/TicketSellDropDownRijNummer'
-import TicketSellDropDownStoelNummer from './Components/TicketSellDropDownStoelNummer'
+import LegendaTicketSales from './LegendaTicketSales'
+import TicketSellDropDownRijNummer from './TicketSellDropDownRijNummer'
+import TicketSellDropDownStoelNummer from './TicketSellDropDownStoelNummer'
 import Button from 'react-bootstrap/Button';
 
 export default function TicketSell() {

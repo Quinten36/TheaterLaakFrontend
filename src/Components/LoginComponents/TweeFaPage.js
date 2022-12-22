@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LoginStyles.css'
-import FaInputhandle from './Components/FaInputhandle'
+import FaInputhandle from './FaInputhandle'
 export default function TweeFaPage() {
   return (
     <div>
