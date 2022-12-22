@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 export default function FaInputhandle() {
     
     //useRef wordt gebruikt om een referentie punt te maken voor elk invoer veld . 
-    //Daarna wordt gekeken met de volgendeBox methode of er een character is ingevuld daarna wordt met focus de muis op het volgende veld gezet
+    //Daarna wordt gekeken met de volgendeBox methode of er een character is ingevuld daarna wordt met focus de cursor op het volgende veld gezet
     //.current wordt gebruikt om de value van de referentie van de invoer velden te gebruiken
 
 

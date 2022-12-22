@@ -8,9 +8,11 @@ import PrivacyBeleid from './Components/LoginComponents/PrivacyBeleid.js';
 import WWvergeten from './Components/LoginComponents/WWvergeten.js';
 import AccountPage from './Components/AccountComponents/AccountPage.js';
 import MijnIntressePage from './Components/AccountComponents/MijnIntressePage.js';
+import MijnReserveringen from './Components/AccountComponents/MijnReserveringen.js';
+import MijnInstellingen from './Components/AccountComponents/MijnInstellingen.js';
 function App() {
   return (
-    <MijnIntressePage />
+    <MijnReserveringen />
   );
 }
 
