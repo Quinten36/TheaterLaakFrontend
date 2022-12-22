@@ -62,4 +62,50 @@
         font-size: 1em;
         margin: 2px 0;
     }
+    .speelData-accordion {
+        --bs-accordion-active-color: transparent; 
+        --bs-accordion-border-color: transparent;
+        --bs-accordion-border-width: 0;
+        --bs-accordion-border-radius: 0;
+        --bs-accordion-inner-border-radius: 0;
+        --bs-accordion-btn-padding-x: 0;
+        --bs-accordion-btn-padding-y: 0;
+        --bs-accordion-btn-color: black;
+        --bs-accordion-btn-bg: transparent;
+        --bs-accordion-bg: transparent;
+        --bs-accordion-active-bg: transparent !important;
+        --bs-accordion-active-color: black !important;
+        --bs-accordion-active-bg: transparent !important;
+        .speelDataHead {
+            margin: 6px 0 0;
+            width: 70vw;
+            opacity: 1;
+        }
+        .speelDataItem {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            align-items: center;
+            .speelDataDate {
+                align-self: center;
+            }
+            .speelDataNietBeschikbaar {
+                word-break: break-word;
+                width: 25vw;
+                text-align: center;
+                font-style: italic;
+                font-size: 0.9em;
+            }
+            .speelDataBestel {
+                height: 32px;
+                display: flex;
+                border-radius: 8px;
+                background-color: #2678F3;
+                border: 0;
+                color: azure;
+                padding: 6px 10px;
+                align-items: center;
+            }
+        }
+    }
 }

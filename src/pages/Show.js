@@ -1,5 +1,6 @@
-import './../css/show.scss';
+
 import Accordion from 'react-bootstrap/Accordion';
+import './../css/show.scss';
 
 function Show() {
   return (
@@ -30,17 +31,44 @@ function Show() {
         <section className='showSpeelBanner'>
           <h3>Speel data</h3>
           <p>Selecteer hier de gewenste datum voor de show</p>
-          <Accordion defaultActiveKey={['0', '1']} alwaysOpen className='nav-bar-accordion'>
+          <Accordion defaultActiveKey={['0', '1']} alwaysOpen className='speelData-accordion'>
             <Accordion.Item eventKey="0"> 
-              <Accordion.Header><h2 className='nav-bar-preview-head'>Voorstellingen</h2></Accordion.Header>
+              <Accordion.Header><h2 className='speelDataHead'>December 2022<hr/></h2></Accordion.Header>
+              
                 {/* test */}
                 <Accordion.Body>
-                  <NavBarPreviewCard titel='Aladin' imgSrc='/Aladdin.jpg' imgAlt='Plaatje'/>
-                  <NavBarPreviewCard titel='Aladin' imgSrc='/Aladdin.jpg' imgAlt='Plaatje'/>
-                  <NavBarPreviewCard titel='Aladin' imgSrc='/Aladdin.jpg' imgAlt='Plaatje'/>
-                  <a href='/programmering' className='nav-bar-preview-link'>Alle voorstellingen <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">{/*<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->*/}<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
+                  <div className='speelDataItem'>
+                    <span className='speelDataDate'>Vr 19 dec 20:20</span>
+                    <span className='speelDataNietBeschikbaar'>Niet beschikbaar</span>
+                  </div>
+                  <div className='speelDataItem'>
+                    <span className='speelDataDate'>Za 20 dec 19:35</span>
+                    <button className='speelDataBestel'>Bestel</button>
+                  </div>
+                  <div className='speelDataItem'>
+                    <span className='speelDataDate'>Zo 21 dec 23:11</span>
+                    <button className='speelDataBestel'>Bestel</button>
+                  </div>
                 </Accordion.Body>
-                <hr className='DivideLine'/>
+              </Accordion.Item>
+              <Accordion.Item eventKey="1"> 
+              <Accordion.Header><h2 className='speelDataHead'>Januari 2023<hr/></h2></Accordion.Header>
+              
+                {/* test */}
+                <Accordion.Body>
+                  <div className='speelDataItem'>
+                    <span className='speelDataDate'>Vr 05 jan 20:20</span>
+                    <button className='speelDataBestel'>Bestel</button>
+                  </div>
+                  <div className='speelDataItem'>
+                    <span className='speelDataDate'>Za 11 jan 19:35</span>
+                    <span className='speelDataNietBeschikbaar'>Niet beschikbaar</span>
+                  </div>
+                  <div className='speelDataItem'>
+                    <span className='speelDataDate'>Zo 19 dec 23:11</span>
+                    <button className='speelDataBestel'>Bestel</button>
+                  </div>
+                </Accordion.Body>
               </Accordion.Item>
           </Accordion>
         </section>
