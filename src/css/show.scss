@@ -1,0 +1,25 @@
+.showBanner {
+    margin: 8px;
+    .showBannerImage {
+        width: 100%;
+    }
+}
+
+.showDetails {
+    width: 80vw;
+    margin: 15px auto 0;
+    .showDetailsDivider {
+        color: black;
+        border: 0;
+        border-top: 1px solid;
+        opacity: 1;
+        width: 80vw;
+        margin: 8px auto;
+    }
+}
+
+.showDescriptionArticle {
+    font-size: 0.9em;
+    padding: 7px 23px;
+    text-align: center;
+}

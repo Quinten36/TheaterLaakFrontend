@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './css/index.css';
 import App from './App';
+import Show from './pages/Show';
 import Header from './components/header/Header';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
@@ -16,7 +17,7 @@ root.render(
         <Route exact path='/' element={< App />}></Route>
         <Route exact path='/account' element={{/*link to account us*/}}></Route>
         <Route exact path='/programmering' element={{/*link to programmering us*/}}></Route>
-        <Route exact path='/show/:showId' element={{/*link to show us*/}}></Route>
+        <Route exact path='/show/:showId' element={<Show/>}></Route>
         <Route exact path='/ticket' element={{/*link to ticket us*/}}></Route>
         <Route exact path='/begunstigers' element={{/*link to begunstigers us*/}}></Route>
         <Route exact path='/admin' element={{/*link to admin us*/}}></Route>
