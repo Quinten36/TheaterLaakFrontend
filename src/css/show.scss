@@ -5,9 +5,36 @@
     }
 }
 
+.showGenre {
+    color: grey;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.6em;
+}
+
+.showTitel {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.9em;
+}
+
+.showArtistHolder {
+    background-color: #000000;
+    color: azure;
+    width: 70vw;
+    margin: 10px auto 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
 .showDetails {
     width: 80vw;
     margin: 15px auto 0;
+    font-weight: 500;
     .showDetailsDivider {
         color: black;
         border: 0;
@@ -22,4 +49,17 @@
     font-size: 0.9em;
     padding: 7px 23px;
     text-align: center;
+}
+
+.showSpeelBanner {
+    padding: 10px 25px;
+    font-size: 1.2em;
+    h3 {
+        margin: 5px 0 2px 0;
+        font-weight: 700;
+    }
+    p {
+        font-size: 1em;
+        margin: 2px 0;
+    }
 }
