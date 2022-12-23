@@ -72,11 +72,23 @@ function Show() {
               </Accordion.Item>
           </Accordion>
         </section>
-        <section>
-        
+        <section className='showPriceBanner'>
+          <h3>Prijzen</h3>
+          <p>De volgende prijzen zijn de minimale prijs voor deze show. De dag kan invloed hebben op de prijs.</p>
+          <section className='showPriceHolder'>
+            <div className='priceItem'>
+              <span className='priceRang'>1e rang</span><span className='price'>€45.00</span>
+            </div>
+            <div className='priceItem'>
+              <span className='priceRang'>2e rang</span><span className='price'>€38.00</span>
+            </div>
+            <div className='priceItem'>
+              <span className='priceRang'>3e rang</span><span className='price'>€30.00</span>
+            </div>
+          </section>
         </section>
-        <section>
-        
+        <section className='showRecommodetionsBanner'>
+          <button className='showAllShowBtn'>Alle voorstellingen</button>
         </section>
       </div>
     </main>

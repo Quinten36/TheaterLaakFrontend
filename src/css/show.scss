@@ -109,3 +109,31 @@
         }
     }
 }
+
+.showPriceBanner {
+    padding: 10px 25px;
+    .showPriceHolder{
+        .priceItem {
+            width: 50vw;
+            display: flex;
+            justify-content: space-between;
+            .priceRang {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.showRecommodetionsBanner {
+    padding: 0 0 1px;
+    .showAllShowBtn {
+        padding: 5px 25px;
+        margin: 5px auto 20px;
+        width: 70vw;
+        display: block;
+        background-color: #2678F3;
+        border: 0;
+        border-radius: 9px;
+        color: azure;
+    }
+}
