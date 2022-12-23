@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import ShoppingCartPage from './ShoppingCart/ShoppingCartPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route exact path='/ticket' element={{/*link to ticket us*/}}></Route>
         <Route exact path='/begunstigers' element={{/*link to begunstigers us*/}}></Route>
         <Route exact path='/admin' element={{/*link to admin us*/}}></Route>
+        <Route exact path='/winkelwagen' element={<ShoppingCartPage/>}></Route>
       </Routes>
       {/* footer */}
     </Router>
