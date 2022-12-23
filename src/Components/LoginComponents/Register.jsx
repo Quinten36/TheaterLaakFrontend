@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import {useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './LoginStyles.css'
+
 
 export default function () {
     const [isChecked, setIsChecked] = useState(false);
@@ -14,20 +14,19 @@ export default function () {
   };
 
   return (
-    <div>
+    <div className ="RegisterContainer">
         <h1>Theater Laak</h1>
-        <div id="WWopnieuwTitleText">Registratie</div>
-        <Form.Control id="GebruikersNaamInputVeldRE" type="email" placeholder="Gebruikersnaam" />
-        <Form.Control id="PasswordInputVeldRE" type="password" placeholder="Password" />
-        <Form.Control id="EmailInputVeldRE" type="email" placeholder="Email adres" />
-        <div id="AkkoordCheckBox">
+        <h2>Registratie</h2>
+        <Form.Control className="InputRegistratie" type="email" placeholder="Gebruikersnaam" />
+        <Form.Control className="InputRegistratie" type="password" placeholder="Password" />
+        <Form.Control className="InputRegistratie" type="email" placeholder="Email adres" />
+        <div className="AkkoordCheckBox">
         <label >
         <input type="checkbox" checked={isChecked} onChange={handleChange} />
         Ik ga akkoord met de <div><a href="#">privacy voorwaarden</a></div>
         </label>
-        <Button id = "RegistratieCompleetButton" variant="success">Registreren</Button>
-        
-    </div>
+        </div>
+        <Button className = "RegistratieCompleetButton" variant="success">Registreren</Button>
     </div>
   )
 }

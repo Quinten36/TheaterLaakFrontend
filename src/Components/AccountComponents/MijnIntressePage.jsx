@@ -14,7 +14,6 @@ export default function MijnIntressePage() {
     <div>
         <TopPartExtraInstellingen  titel = {titel} imgURL = {imgURL} />
         <IntresseAanpassen intresses={IntressesGebruiker} />
-        
     </div>
   )
 }

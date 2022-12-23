@@ -21,7 +21,7 @@ export default function FaInputhandle() {
   };
 
   return (
-    <Form id="FA_collectie">
+    <Form className="FA_collectie">
       <Form.Control
         className="FA_box"
         id="2FA_invoer_1"

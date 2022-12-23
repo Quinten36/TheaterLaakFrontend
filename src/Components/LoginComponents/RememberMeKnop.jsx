@@ -1,6 +1,6 @@
 
 import {useState} from 'react'
-import './LoginStyles.css';
+import './LoginPageStyles.css';
 export default function RememberMeKnop() {
   const [isChecked, setIsChecked] = useState(false);
 
@@ -12,11 +12,10 @@ export default function RememberMeKnop() {
   return (
       
 
-      <div id="RememberMeCheckBox">
+      <div className = "RememberMeKnop">
         <label>
         <input type="checkbox"  checked={isChecked} onChange={handleChange} />
-          Onthoud mijn gegevens
-      
+          Mijn inloggegevens onthouden
       </label>
     </div>
 
