@@ -1,5 +1,6 @@
 import ShowRow from "./ShowRow";
 import TicketRow from "./TicketRow";
+import TotalsRow from "./TotalsRow";
 
 export default function Table({tickets}) {
     const rows = [];
@@ -21,6 +22,11 @@ export default function Table({tickets}) {
         lastShow = ticket.show.name;
     });
 
+    rows.push(
+        <TotalsRow
+            tickets={tickets}
+            key={"total"}/>
+    );
     return (
         <table>
             <thead>
