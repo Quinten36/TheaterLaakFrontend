@@ -1,5 +1,6 @@
 
 import Accordion from 'react-bootstrap/Accordion';
+import ShowSpeelItem from './../components/show/showSpeelItem';
 import './../css/show.scss';
 
 function Show() {
@@ -37,37 +38,17 @@ function Show() {
               
                 {/* test */}
                 <Accordion.Body>
-                  <div className='speelDataItem'>
-                    <span className='speelDataDate'>Vr 19 dec 20:20</span>
-                    <span className='speelDataNietBeschikbaar'>Niet beschikbaar</span>
-                  </div>
-                  <div className='speelDataItem'>
-                    <span className='speelDataDate'>Za 20 dec 19:35</span>
-                    <button className='speelDataBestel'>Bestel</button>
-                  </div>
-                  <div className='speelDataItem'>
-                    <span className='speelDataDate'>Zo 21 dec 23:11</span>
-                    <button className='speelDataBestel'>Bestel</button>
-                  </div>
+                  <ShowSpeelItem speelDatum='Vr 19 dec 20:20' beschikbaar={false}/>
+                  <ShowSpeelItem speelDatum='Za 20 dec 19:35' beschikbaar={true}/>
+                  <ShowSpeelItem speelDatum='Zo 21 dec 23:11' beschikbaar={true}/>
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="1"> 
               <Accordion.Header><h2 className='speelDataHead'>Januari 2023<hr/></h2></Accordion.Header>
-              
-                {/* test */}
                 <Accordion.Body>
-                  <div className='speelDataItem'>
-                    <span className='speelDataDate'>Vr 05 jan 20:20</span>
-                    <button className='speelDataBestel'>Bestel</button>
-                  </div>
-                  <div className='speelDataItem'>
-                    <span className='speelDataDate'>Za 11 jan 19:35</span>
-                    <span className='speelDataNietBeschikbaar'>Niet beschikbaar</span>
-                  </div>
-                  <div className='speelDataItem'>
-                    <span className='speelDataDate'>Zo 19 dec 23:11</span>
-                    <button className='speelDataBestel'>Bestel</button>
-                  </div>
+                  <ShowSpeelItem speelDatum='Vr 05 jan 20:20' beschikbaar={true}/>
+                  <ShowSpeelItem speelDatum='Za 11 jan 19:35' beschikbaar={false}/>
+                  <ShowSpeelItem speelDatum='Zo 19 dec 23:11' beschikbaar={true}/>
                 </Accordion.Body>
               </Accordion.Item>
           </Accordion>
