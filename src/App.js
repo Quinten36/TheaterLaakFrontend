@@ -12,7 +12,7 @@ import MijnReserveringen from './Components/AccountComponents/MijnReserveringen.
 import MijnInstellingen from './Components/AccountComponents/MijnInstellingen.js';
 function App() {
   return (
-    <MijnReserveringen />
+    <MijnInstellingen/>
   );
 }
 

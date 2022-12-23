@@ -149,3 +149,98 @@ div {
     left: 27px;
     top: 264px;
 }
+
+#LineMijnReserveringen{
+    position: absolute;
+    left: 28px;
+    top: 672px;
+    
+    width: 303px;
+    height: 1px;
+
+    background-color: black;
+
+}
+
+#downloadTicketPDFIcon{
+    position: absolute;
+    width: 48px;
+height: 32px;
+left: 59px;
+top: 699px;
+}
+
+#downloadTicketPDFText{
+    position: absolute;
+width: 89px;
+height: 62px;
+left: 45px;
+top: 740px;
+}
+
+#doorsturenTicketIcon{
+    position: absolute;
+    width: 42px;
+    height: 32px;
+    left: 256px;
+    top: 702px; 
+}
+
+#doorsturenTicketText{
+    position: absolute;
+width: 89px;
+height: 62px;
+left: 250px;
+top: 747px;
+
+}
+
+#NieuwsbriefOpzeggenText{
+    position: absolute;
+width: 163px;
+height: 143px;
+left: 153px;
+top: 395px;
+
+font-size: 15px;
+text-align: center;
+}
+
+#AccountverwijderenText{
+    position: absolute;
+    width: 163px;
+    height: 82px;
+    left: 153px;
+    top: 647px;  
+    font-size: 15px;
+    text-align: center;
+
+}
+
+#AccVerwijderenKop{
+    position: absolute;
+width: 216px;
+height: 38px;
+left: 145px;
+top: 615px;
+font-size: 20px;
+color : red;
+}
+
+#AccOpzeggenButton{
+    position: absolute;
+    width: 100px;
+    height: 67px;
+    left: 28px;
+    top: 621px;
+       
+}
+
+#NieuwsBriefOpzeggenButton{
+position: absolute;
+width: 100px;
+height: 67px;
+left: 28px;
+top: 400px;
+
+}
