@@ -1,337 +1,187 @@
-* {
-    font-family: 'Roboto';
-    font-style: normal;
-
-    margin: 0;
-    padding: 0;
-}
-
-#naamShow {
-    position: absolute;
-    width: 135px;
-    height: 31px;
-    left: 115px;
-    top: 79px;
-
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 130%;
-}
-#plattegrond{
+.TicketSellContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-width: 278px;
-height: 138px;
-left: 44px;
-top: 209px;
-
-
-
-}
-#podium {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    outline-color: black;
-    outline-style: auto;
-
-    position: absolute;
-    width: 278px;
-    height: 75.5px;
-    left: 44px;
-    top: 314.5px;
+    flex-direction: column;
 }
 
+.TicketSellContainer h2 {
+    align-self: center;
+    margin-top: 3rem;
+}
 
+.TicketSellContainer h4 {
+    align-self: center;
+    margin-top: .25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 75%;
+}
 
-#datum {
-    position: absolute;
-    width: 118px;
-    height: 42px;
-    left: 121px;
-    top: 110px;
-    
-    font-size: 16px;
+.titleSeatpicker {
+    margin-left: 12.5%;
+}
+
+.plattegrond {
+    width: 75%;
+    min-height: 10rem;
+    margin: auto;
+
+    margin-bottom: .5rem;
+    border: 1px solid #000000;
     text-align: center;
 }
 
-#titleSeatpicker {
-    position: absolute;
-    width: 134px;
-    height: 21px;
-    left: 43px;
-    top: 167px;
-
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 130%;
+.podium {
+    width: 75%;
+    margin: auto;
+    border: 1px solid #000000;
+    text-align: center;
 }
 
-#BeschikbaarIcon {
-    box-sizing: border-box;
+.LegendaContainer { 
+    display:flex;
+    width: 75%;
+    font-size: 0.938rem;
+    margin:auto;
+    margin-bottom: 2rem;
+   
+}
+.LegendaitemsRechts{
+    display:flex;
+    gap:.5rem;
+    justify-content: right;
+}
 
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 43px;
-    top: 453px;
+.LegendaitemsLinks{
+    display:flex;
+    gap:.5rem;
+    justify-content: left;
+}
 
+.left{
+    margin-right: auto;
+}
+
+.eerste {
     background: #D9D9D9;
-    border: 3px solid #000000;
-    border-radius: 6px;
-}
-
-#BeschikbaarText {
-    position: absolute;
-    width: 82px;
-    height: 19px;
-    left: 68px;
-    top: 453px;
-}
-
-#bezetIcon {
+    min-width: 1.125rem;
+    height: 1.125rem;
     box-sizing: border-box;
-
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 43px;
-    top: 475px;
-
-    background: #FF0000;
-    border: 3px solid #000000;
-    border-radius: 6px;
-}
-
-#bezetText {
-    position: absolute;
-    width: 39px;
-    height: 19px;
-    left: 68px;
-    top: 475px;
-}
-
-#GeselecteerdIcon {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 43px;
-    top: 497px;
-
-    background: #21DC21;
-    border: 3px solid #000000;
-    border-radius: 6px;
-
-}
-
-#GeselecteerdText {
-    position: absolute;
-    width: 89px;
-    height: 19px;
-    left: 68px;
-    top: 497px;
-}
-
-#Rang1Icon {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 304px;
-    top: 453px;
-
-    background: #D9D9D9;
     border: 3px solid #FDDF41;
     border-radius: 6px;
-}
+  }
 
-#Rang2Icon {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 304px;
-    top: 475px;
-
+  .tweede {
     background: #D9D9D9;
+    min-width: 1.125rem;
+    height: 1.125rem;
+    box-sizing: border-box;
     border: 3px solid #2878EF;
     border-radius: 6px;
-}
+  }
+  
 
-#Rang3Icon {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 304px;
-    top: 497px;
-
+  .derde {
     background: #D9D9D9;
+    min-width: 1.125rem;
+    height: 1.125rem;
+    box-sizing: border-box;
     border: 3px solid #000000;
-    border-radius: 6px
-}
+    border-radius: 6px;
+  }
 
-#Rang1Text {
-    position: absolute;
-    width: 52px;
-    height: 19px;
-    left: 248px;
-    top: 453px;
-}
+  .BeschikbaarIcon{
+    min-width: 1.125rem;
+    height: 1.125rem;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 6px;
+    background-color: #D9D9D9;
+  }
+  
+  .bezetIcon{
+    min-width: 1.125rem;
+    height: 1.125rem;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 6px;
+    background-color: #FF0000;
+  }
+  .GeselecteerdIcon{
+    min-width: 1.125rem;
+    height: 1.125rem;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 6px;
+    background-color: #21DC21;
+  }
+  
 
+  .rijStoelButtonContainer{
+    width: 75%;
+    display:flex;
+    margin:auto;
+    margin-bottom: 1rem;
+  }
 
-#Rang2Text {
-    position: absolute;
-    width: 52px;
-    height: 19px;
-    left: 248px;
-    top: 475px;
-}
+  .rijNummer{
+    margin-right: auto;
+  }
 
+  .DropdownRijNummer{
+    text-align: center;
+    width: 5.875rem;
+    border: 2px solid blue;
+    border-radius: 4px;
+  }
 
-#Rang3Text {
-    position: absolute;
-    width: 52px;
-    height: 19px;
-    left: 248px;
-    top: 497px;
-}
+  .DropdownStoelNummer{
+    text-align: center;
+    width: 5.875rem;
+    border: 2px solid blue;
+    border-radius: 4px;
+  }
 
+  .VoegToeAanTicketLijst{
+    width: 75%;
+    margin: auto;
+    margin-bottom: 2rem;
+  }
 
-#rijNummerText {
-    position: absolute;
-    width: 86px;
-    height: 21px;
-    left: 42px;
-    top: 542px;
-}
-
-#stoelNummerText {
-    position: absolute;
-    width: 105px;
-    height: 21px;
-    left: 199px;
-    top: 542px;
-
-}
-
-#DropdownRijNummer {
-
-
-    position: absolute;
-    width: 123px;
-    height: 44px;
-    left: 38px;
-    top: 563px;
-}
-
-.dropdownrij {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-#DropdownStoelNummer {
-
-
-
-
-    position: absolute;
-    width: 123px;
-    height: 44px;
-    left: 193px;
-    top: 563px;
-
-}
-
-#VoegToeAanTicketLijst {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    gap: 8px;
-
-    position: absolute;
-    width: 138px;
-    height: 44px;
-    left: 114px;
-    top: 623px;
-
-
-}
-
-#lijn {
-    position: absolute;
-    width: 276px;
-    height: 0px;
-    left: 40px;
-    top: 690px;
-
+  .lijnSeatPicker1{
     border: 1px solid #000000;
+    width: 75%;
+    margin: auto;
+  }
 
-}
-
-#TicketLijstFrame {
+  .TicketLijstFrame{
+    width: 75%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-
-    gap: 80px;
-    position: absolute;
-    width: 244px;
-    height: 18px;
-    left: 58px;
-    top: 694px;
+    margin: auto;
+    justify-content: space-around
 }
 
-
-#lijn2 {
-    position: absolute;
-    width: 101.5px;
-    height: 0px;
-    left: 221.5px;
-    top: 800px;
-
+.lijnSeatPicker2{
     border: 1px solid #000000;
+    width: 15%;
+    margin-left: 68%;
 }
 
-#totaalprijsText {
-    position: absolute;
-    width: 103px;
-    height: 18px;
-    left: 220px;
-    top: 804px;
+.totaalprijsText{
+    width: 15%;
+    margin-left: 69%; 
+    margin-bottom: 2rem;
 }
 
-#inWinkelMandKnop {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    gap: 8px;
-
-    position: absolute;
-    width: 186px;
-    height: 44px;
-    left: 90px;
-    top: 855px;
-
-    background: #2678F3;
-    border-radius: 8px;
+.inWinkelMandKnop{
+    width: 75%;
+    margin: auto;
 }
 
-
-
+.stoelenlijst{
+    height: 50%;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 2rem;
+    border: 2px solid black;
+}

@@ -1,0 +1,148 @@
+.AccountPageContainer h2 {
+    margin-top: 3.25rem;
+    margin-bottom: 3.438rem;
+    padding: 20px 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.AccountPageContainer Form {
+    background-color: black;
+}
+
+.AccountPageInput {
+    width: 75%;
+    margin-left: 12.5%;
+    font-size: 17px;
+    margin-bottom: 2rem;
+    border: 1px solid #000000;
+}
+
+.ButtonUpdate {
+    width: 75%;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-left: 12.5%;
+}
+
+.lijn {
+
+    width: 80%;
+    height: 1px;
+    margin: auto;
+    background-color: lightgray;
+    margin-bottom: 2rem;
+}
+
+.extraSettings {
+    margin: auto;
+    display: flex;
+
+    width: 75%;
+    gap: 3.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.IconTextAccountPage {
+    margin: auto;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+
+    width: 75%;
+    gap: 1.8rem;
+}
+
+.TopPartExtraInstellingenContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.bannerIconExtraInstellingen {
+    width: 50%;
+    height: 10rem;
+
+    margin-left: 25%;
+}
+
+
+.TopPartExtraInstellingenContainer h1 {
+    margin: auto;
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.LijnExtraPaginas {
+    border-radius: 1px;
+    height: 2px;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 2rem;
+    background-color: lightgray;
+}
+
+.intresseAanpassenVeld {
+    margin-left: 12.5%;
+    width: 75%;
+}
+
+.SelecteerIntresses {
+    margin-bottom: 12.5rem;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.ButtonIntressesContainer {
+    display: flex;
+    gap: 1.5rem;
+    margin-left: 58%;
+}
+
+.ReserveringenContainer{
+    margin-left: 12.5%;
+    width: 75%;
+    height: 25.188rem;
+}
+
+.LineMijnReserveringen{
+    width: 80%;
+    height: 2px;
+    margin: auto;
+    background-color: lightgray;
+    margin-bottom: 2rem;
+}
+
+.buttonContainer{
+    margin-left: 25%;
+    font-size: 12px;
+    
+}
+
+
+.ExtraInstellingenContainer{
+    
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+.ExtraInstellingenContainer div{
+    width: 75%;
+    margin-bottom: 2rem;
+}
+
+.ExtraInstellingenContainer Button{
+    margin-bottom: 2rem;
+    width: 75%;
+}
+
+.AccVerwijderenKop{
+    color:red;
+    font-size: 1.25rem;
+}
+
+.NieuwsbriefUitschrijvenKop{
+    color : blue;
+}

@@ -1,6 +1,6 @@
 
 
-import TicketSell from './Components/TicketSaleComponents/TicketSell.js'
+import TicketSell from './Components/TicketSaleComponents/TicketSell.jsx'
 import Login from './Components/LoginComponents/Login'
 import TweeFaPage from './Components/LoginComponents/TweeFaPage.jsx';
 import Register from './Components/LoginComponents/Register.jsx';
@@ -12,7 +12,7 @@ import MijnReserveringen from './Components/AccountComponents/MijnReserveringen.
 import MijnInstellingen from './Components/AccountComponents/MijnInstellingen.jsx';
 function App() {
   return (
-    <AccountPage/>
+    <TicketSell/>
   );
 }
 

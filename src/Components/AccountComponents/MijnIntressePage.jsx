@@ -7,13 +7,13 @@ export default function MijnIntressePage() {
     const IntressesGebruiker = ["Cabaret", "Dans", "Klassiek", "Musical"];
     
     const titel = "Mijn Intresses"
-    const imgURL = " "
+    const imgURL = "./images/IntresseIcon.svg"
 
 
   return (
     <div>
         <TopPartExtraInstellingen  titel = {titel} imgURL = {imgURL} />
-        <IntresseAanpassen intresses={IntressesGebruiker} />
+        <IntresseAanpassen  intresses ={IntressesGebruiker}/>
     </div>
   )
 }

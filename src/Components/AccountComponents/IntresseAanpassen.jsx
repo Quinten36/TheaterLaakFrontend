@@ -22,17 +22,22 @@ export default function IntresseAanpassen(props) {
         
 
   return (
-    <div id = "intresseAanpassenVeld">
-        <Button id = "IntresseToevoegenButton"type="button" class="btn btn-success">+</Button>
-      <Button id = "IntresseVerwijderenButton"type="button" variant="danger" onClick={handleVerwijderenIntresses}>-</Button>
+    <div className = "intresseAanpassenVeld">
+    <div className = "SelecteerIntresses">
+       
       {intresses.map((intresse) => (
-        <Button
+        <Button className ="IntresseKeuzes"
           key={intresse}
           onClick={() => handleSelectIntresse(intresse)}
           variant={selectedIntresses.includes(intresse) ? "danger" : "primary"}
         >{intresse}
         </Button>
       ))}
+    </div>
+    <div className="ButtonIntressesContainer">
+    <Button className = "IntresseButton"type="button" class="btn btn-success">+</Button>
+    <Button className = "IntresseButton"type="button" variant="danger" onClick={handleVerwijderenIntresses}>-</Button>
+    </div>
     </div>
   );
 }
