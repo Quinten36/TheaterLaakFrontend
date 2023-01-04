@@ -14,15 +14,10 @@ export default function AccountPage() {
             <Button className="ButtonUpdate" variant="primary">Update</Button>
             <div className="lijn"></div>
             <div className="extraSettings">
-                <img className="IconAP" src=".\images\IntresseIcon.svg" alt="Knop voor mijn intresses aan te passen" />
-                <img className="IconAP" src=".\images\ticket 1.svg" alt="Knop voor tickets te bekijken of door te sturen of downloaden" />
-                <img className="IconAP" src=".\images\Settings Icon.svg" alt="Knop om de extra settings te bekijken" />
-            </div>
-            <div className="IconTextAccountPage">
-            <div >Mijn intresses</div>
-            <div >Mijn Reserveringen</div>
-            <div >Extra instellingen</div>
-            </div>
+                <div > <img className="IconAP" src=".\images\IntresseIcon.svg" alt="Knop voor mijn intresses aan te passen" /> Mijn intresses</div>
+                <div > <img className="IconAP" src=".\images\ticket 1.svg" alt="Knop voor tickets te bekijken of door te sturen of downloaden" /> Mijn Reserveringen</div>
+                <div > <img className="IconAP" src=".\images\Settings Icon.svg" alt="Knop om de extra settings te bekijken" /> Extra instellingen</div>
+            </div>                
         </div>
     )
 }

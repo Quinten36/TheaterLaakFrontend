@@ -43,15 +43,7 @@
     margin-bottom: 0.5rem;
 }
 
-.IconTextAccountPage {
-    margin: auto;
-    font-size: 12px;
-    text-align: center;
-    display: flex;
 
-    width: 75%;
-    gap: 1.8rem;
-}
 
 .TopPartExtraInstellingenContainer {
     display: flex;
