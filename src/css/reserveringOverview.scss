@@ -1,0 +1,57 @@
+.ROSelectionBanner {
+    margin: 10px 0 0 0;
+    .ROSelectionMenu {
+        text-align: center;
+        color: black;
+        font-size: 1.05em;
+        .ROSelectDate {
+            width: 42vw;
+        }
+        .ROSelectionUpdateBtn {
+            padding: 5px 25px;
+            margin: 5px auto 20px;
+            width: 181px;
+            display: block;
+            background-color: #2678F3;
+            border: 0;
+            border-radius: 9px;
+            color: azure;
+        }
+    }
+    .ROLegenda {
+        display: flex;
+        width: 87vw;
+        justify-content: space-between;
+        margin: 0 auto 15px auto;
+    }
+    
+}
+.ROFlexHolder {
+    display: flex;
+    justify-items: center;
+    align-content: space-evenly;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    .ROReserveringItem{
+        background-color: rgb(129 223 235 / 70%);
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 85vw;
+        border-radius: 15px 5px;
+        border: 1.5px solid black;
+        .ROHallNumberHolder {
+            padding: 0px 15px 0 0;
+            .ROHallNumber {
+                font-size: 1.3em;
+            }
+        }
+        .ROPaid {
+            text-align: center;
+            svg {
+                width: 25px;
+            }
+        }
+    }
+}
