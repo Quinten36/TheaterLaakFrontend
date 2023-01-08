@@ -22,16 +22,24 @@ function Show(props) {
     startDate = document.getElementById('ROStart').value;
     endDate = document.getElementById('ROEnd').value;
 
-    //format the date to format the api accept
-    var formatDate = startDate.split('-');
-    var reformatStart = formatDate[1] +'-'+ formatDate[2] +'-'+formatDate[0];
-    formatDate = endDate.split('-');
-    var reformatEnd = formatDate[1] +'-'+ formatDate[2] +'-'+formatDate[0];
+    //check if the end date is before start date
+    if (endDate >= startDate) {
+      //format the date to format the api accept
+      var formatDate = startDate.split('-');
+      var reformatStart = formatDate[1] +'-'+ formatDate[2] +'-'+formatDate[0];
+      formatDate = endDate.split('-');
+      var reformatEnd = formatDate[1] +'-'+ formatDate[2] +'-'+formatDate[0];
 
-    //do api request
-    fetch('http://127.0.0.1:5086/api/reservation/filtered?start='+reformatStart+'&end='+reformatEnd)
-      .then(resp => resp.json())
-      .then((data) => {setReservationOverview(data); })
+      //do api request
+      fetch('http://127.0.0.1:5086/api/reservation/filtered?start='+reformatStart+'&end='+reformatEnd)
+        .then(resp => resp.json())
+        .then((data) => {setReservationOverview(data); })
+    } else {
+      alert('End date can\'t be before start date')
+    }
+      
+
+    
   }
 
   //do the standard search
