@@ -31,7 +31,12 @@
     justify-items: center;
     align-content: space-evenly;
     justify-content: space-around;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    .RONoResult {
+      color: black;
+      font-size: 1.1em;
+      text-align: center;
+    }
     .ROReserveringItem{
         background-color: rgb(129 223 235 / 70%);
         padding: 12px 20px;
@@ -41,6 +46,12 @@
         width: 85vw;
         border-radius: 15px 5px;
         border: 1.5px solid black;
+        flex-wrap: wrap;
+        margin: 8px 0 0 0;
+        .RODateHolder {
+          text-align: center;
+          width: 57vw;
+        }
         .ROHallNumberHolder {
             padding: 0px 15px 0 0;
             .ROHallNumber {
@@ -52,6 +63,12 @@
             svg {
                 width: 25px;
             }
+        }
+        .RONotPaid{
+          font-size: 0.95em;
+          svg {
+            width: 22px;
+          }
         }
     }
 }
