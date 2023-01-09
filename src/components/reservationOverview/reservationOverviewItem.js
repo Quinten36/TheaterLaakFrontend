@@ -1,9 +1,10 @@
 import './../../css/show.scss';
 import React, { useState, useEffect } from 'react';
+import gegevens from './../../package.json';
 
 function Show(props) {
   let [person, setPerson] = useState(null);
-  fetch('http://127.0.0.1:5086/api/account/name/'+props.gereserveerdDoor)
+  fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/account/name/`+props.gereserveerdDoor)
       .then(resp => resp.json())
       .then((data) => {console.log(data); setPerson(data.username)})
   // console.log(respons)

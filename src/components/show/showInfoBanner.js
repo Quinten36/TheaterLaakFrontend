@@ -1,6 +1,7 @@
 
 import './../../css/show.scss';
 import React, { useState, useEffect } from 'react';
+import gegevens from './../../package.json';
 
 function Show(props) {
   const [programId, setProgramId] = useState([])
@@ -14,7 +15,7 @@ function Show(props) {
   //retrieve the artists of the band
   useEffect(() => {
     if (programId != undefined) {
-      fetch('http://127.0.0.1:5086/api/artist/byBand/'+props.groupId)
+      fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/artist/byBand/`+props.groupId)
       .then(resp => resp.json())
       .then((data) => setGroup(data) )
     } 
