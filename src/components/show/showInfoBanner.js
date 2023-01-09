@@ -1,7 +1,7 @@
 
 import './../../css/show.scss';
 import React, { useState, useEffect } from 'react';
-import gegevens from './../../package.json';
+import gegevens from './../../../package.json';
 
 function Show(props) {
   const [programId, setProgramId] = useState([])
