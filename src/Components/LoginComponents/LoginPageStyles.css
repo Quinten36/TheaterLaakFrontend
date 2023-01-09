@@ -136,14 +136,13 @@
 }
 
 .RegistratieCompleetButton {
-    min-width: 75%;
-    max-width: 75%;
-    margin-left: 4.5rem;
-    text-align: center;
-    background: #26F33A;
+    min-width: 50%;
+    margin-left: 25%;
     border: 2px solid #050505;
     border-radius: 8px;
+    margin-bottom: 3rem;
 }
+
 
 .PrivacyBeleidContainer h1 {
     margin-top: 6.25rem;
