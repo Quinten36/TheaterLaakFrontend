@@ -2,6 +2,7 @@ import './../css/reserveringOverview.scss';
 import React, { useState, useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import ReservationOverviewItem from './../components/reservationOverview/reservationOverviewItem';
+import gegevens from './../../package.json';
 
 function Show(props) {
   // do state stuff
@@ -31,7 +32,7 @@ function Show(props) {
       var reformatEnd = formatDate[1] +'-'+ formatDate[2] +'-'+formatDate[0];
 
       //do api request
-      fetch('http://127.0.0.1:5086/api/reservation/filtered?start='+reformatStart+'&end='+reformatEnd)
+      fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/reservation/filtered?start=`+reformatStart+'&end='+reformatEnd)
         .then(resp => resp.json())
         .then((data) => {setReservationOverview(data); })
     } else {
