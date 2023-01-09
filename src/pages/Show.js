@@ -6,6 +6,7 @@ import { useLocation } from 'react-router';
 import React, { useState, useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import ShowInfoBanner from './../components/show/showInfoBanner';
+import gegevens from './../../package.json';
 
 function Show(props) {
   const [data, setData] = useState(null);
@@ -20,11 +21,11 @@ function Show(props) {
   
   //do api call to fetch the show information
   useEffect(() => {
-    fetch(`http://127.0.0.1:5086/api/show/`+parameter)
+    fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/show/`+parameter)
       .then(response => response.json())
       .then((usefulData) => {
         //do another fetch to retrieve the program information of the show
-        fetch('http://127.0.0.1:5086/api/program/'+usefulData.programId)
+        fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/program/`+usefulData.programId)
           .then(resp => resp.json())
           .then((data) => {setProgram(data)} )
         // setLoading(false);
