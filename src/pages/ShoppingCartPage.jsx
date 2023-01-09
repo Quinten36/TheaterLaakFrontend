@@ -1,4 +1,4 @@
-import ShoppingCart from "./ShoppingCart.jsx";
+import ShoppingCart from "../components/shopping_cart/ShoppingCart.jsx";
 
 export default function ShoppingCartPage() {
     return (

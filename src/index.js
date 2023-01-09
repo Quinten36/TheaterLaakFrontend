@@ -6,7 +6,7 @@ import Show from './pages/Show';
 import Header from './components/header/Header';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import ShoppingCartPage from './ShoppingCart/ShoppingCartPage';
+import ShoppingCartPage from './pages/ShoppingCartPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
