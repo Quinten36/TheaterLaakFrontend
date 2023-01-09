@@ -10,9 +10,16 @@ const initialState = {
   checkBoxInput: false,
 };
 
+const FouteInvoerVeldenERRORS = {
+  gebruikerInputFOUT : false,
+  passwordInputFOUT : false,
+  emailebruikerInputFOUT : false,
+  checkBoxInputFOUT : false
+};
+
 function validatePassword(state, password) {
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/
-
+ 
   if (passwordRegex.test(password) && state.gebruikerInput !== password) {
     return false;
   }
@@ -21,8 +28,10 @@ function validatePassword(state, password) {
 }
 
 export default function Register() {
+
+
   const [state, setState] = useState(initialState);
-  const [validated, setValidated] = useState(false);
+  const [fouteInvoer , setFouteInvoer] = useState()
 
   function handleChangeGebruikerInput(event) {
     setState({ ...state, gebruikerInput: event.target.value });
@@ -41,14 +50,7 @@ export default function Register() {
   }
 
   async function handleSubmitForm() {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-     preventDefault();
-      stopPropagation();
-    }
-
-    setValidated(true);
-  
+     
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -62,6 +64,7 @@ export default function Register() {
     try {
       const response = await fetch('https://localhost:7098/api/Registratie', requestOptions);
       if (response.status === 409) {
+          setFouteInvoer({...FouteInvoerVeldenERRORS , gebruikerInputFOUT: true})
         return;
       }
       if (!response.ok) {
@@ -72,15 +75,16 @@ export default function Register() {
     }
   }
 
+
   return (
     <div className="RegisterContainer">
       <h1>Theater Laak</h1>
       <h2>Registratie</h2>
-      <Form noValidate validated ={validated} >
-      <Form.Control  className="InputRegistratie" onChange={handleChangeGebruikerInput} type="email" placeholder="Gebruikersnaam" maxLength={32} />
-      <Form.Control className="InputRegistratie" onChange={handleChangePasswordInput} type="password" placeholder="Password" maxLength={32} />
-      <Form.Control className="InputRegistratie" onChange={handleChangeEmailInput} type="email" placeholder="Email adres" maxLength={32} />
-      </Form>
+      
+      <Form.Control className="InputRegistratie" onChange={handleChangeGebruikerInput} type="email" placeholder="Gebruikersnaam" maxLength={32} isInvalid={fouteInvoer.gebruikerInputFOUT} />
+      <Form.Control className="InputRegistratie" onChange={handleChangePasswordInput} type="password" placeholder="Password" maxLength={32} isInvalid={fouteInvoer.passwordInputFOUT}/>
+      <Form.Control className="InputRegistratie" onChange={handleChangeEmailInput} type="email" placeholder="Email adres" maxLength={32} isInvalid={fouteInvoer.emailInputFOUT}/>
+    
       <div className="AkkoordCheckBox">
         <label>
           <input type="checkbox" onChange={handleChangeCheckBoxInput} />Ik ga akkoord met de <div><a href="#">privacy voorwaarden</a></div>
