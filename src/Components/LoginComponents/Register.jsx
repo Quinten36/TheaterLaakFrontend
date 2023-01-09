@@ -7,8 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function () {
     const [isChecked, setIsChecked] = useState(false);
+    const [registratieGegevens , setregistratieGegevens] = useState([]);
 
-  const handleChange = (event) => {
+    const handleChange = (event) => {
     setIsChecked(event.target.checked);
     console.log(!isChecked)
   };

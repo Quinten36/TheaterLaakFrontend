@@ -15,7 +15,7 @@ import MijnInstellingen from './Components/AccountComponents/MijnInstellingen.js
 import AccountPagina from "./AccountPagina.js"
 function App() {
   return (
-    <AccountPagina/>
+    <Register/>
   );
 }
 
