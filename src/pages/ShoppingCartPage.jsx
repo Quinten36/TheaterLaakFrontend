@@ -1,15 +1,16 @@
 import ShoppingCart from "../components/shopping_cart/ShoppingCart.jsx";
+import "./../css/shoppingCart.css"
+import Button from 'react-bootstrap/Button';
 
 export default function ShoppingCartPage() {
     return (
         <body>
-            <header>
-                <nav>
-                    Hier komt nav
-                </nav>
-            </header>
             <main>
-                <ShoppingCart tickets={tickets}/>
+                <ShoppingCart className="shoppingCart" tickets={tickets}/>
+                <div className="bestelButtons">
+                    <Button variant="outline-primary">Verder Winkelen</Button>
+                    <Button variant="primary">Bestellen</Button>
+                </div>
             </main>
         </body>
     );
