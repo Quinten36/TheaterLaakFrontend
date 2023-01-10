@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,32 +7,31 @@ import Captcha from './Captcha.jsx'
 const initialState = {
   gebruikerInput: {
     value: '',
-    error: ''
+    error: '',
+    gebruikerInputFOUT: false,
   },
   passwordInput: {
     value: '',
-    error: ''
+    error: '',
+    passwordInputFOUT: false,
   },
   emailInput: {
     value: '',
-    error: ''
+    error: '',
+    emailInputFOUT: false,
   },
-  checkBoxInput: false,
-};
-
-
-const FouteInvoerVeldenERRORS = {
-  gebruikerInputFOUT: false,
-  passwordInputFOUT: false,
-  emailInputFOUT: false,
-  checkBoxInputFOUT: false
+  checkBoxInput: {
+    value: false,
+    error: '',
+    checkBoxInputFOUT: false
+  }
 };
 
 //functie om te kijken of wachtwoord voldoet aan eisen min 1 hoofdlettter min 1 kleine letter 1 speciaal tegen minimaal 7 karakters max 32
 function validatePassword(state, password) {
   const passwordRegex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{7,32}$/
   // && gebrukersnaam == wachtwoord
-  if (passwordRegex.test(password) && state.gebruikerInput !== password) {
+  if (passwordRegex.test(password) && state.gebruikerInput.value !== password) {
     return false;
   }
   return true;
@@ -40,24 +39,69 @@ function validatePassword(state, password) {
 
 export default function Register() {
   const [state, setState] = useState(initialState);
-  const [fouteInvoer, setFouteInvoer] = useState(FouteInvoerVeldenERRORS);
-
-
+  // prevState wordt gebruikt om de state direect aan te passen in plaats van te wachten tot de volgende update hierdoor voorkom je dat de werkelijke text gelijk blijft met de ingevoerde waarde.
   function handleChangeGebruikerInput(event) {
-    setState({ ...state, gebruikerInput: event.target.value });
-  }
-  function handleChangePasswordInput(event) {
-    if (validatePassword(state, event.target.value)) {
-      setFouteInvoer({ ...fouteInvoer, passwordInputFOUT: true })
-    } else {
-      setFouteInvoer({ ...fouteInvoer, passwordInputFOUT: false })
-      setState({ ...state, passwordInput: event.target.value });
+    if(event.target.value.length < state.gebruikerInput.value.length){
+       setState(prevState => {
+          return { 
+              ...prevState,
+              gebruikerInput : {...prevState.gebruikerInput, error:"", gebruikerInputFOUT: false, value: event.target.value } 
+          }});
+    }else{
+       setState(prevState => {
+          return { 
+              ...prevState,
+              gebruikerInput : {...prevState.gebruikerInput, value: event.target.value } 
+          }});
     }
+  }
 
-  }
+
+  function handleChangePasswordInput(event) {
+    if(event.target.value.length < state.passwordInput.value.length){
+      setState(prevState => {
+         return { 
+             ...prevState,
+             passwordInput : {...prevState.passwordInput, error:"", passwordInputFOUT: false, value: event.target.value } 
+         }});
+   }else{
+    if(validatePassword(state , event.target.value)){
+      setState(prevState => {
+        return { 
+            ...prevState,
+            passwordInput : {...prevState.passwordInput, error:"Uw wachtwoord moet minimaal 7 karakters zijn minimaal 1 speciaalteken 1 cijfer en 1 hoofdletter bevatten", value: event.target.value , passwordInputFOUT : true } 
+        }});
+    }
+      setState(prevState => {
+         return { 
+             ...prevState,
+             passwordInput : {...prevState.passwordInput, value: event.target.value } 
+         }});
+   }
+ }
+
   function handleChangeEmailInput(event) {
-    setState({ ...state, emailInput: event.target.value });
-  }
+    if(event.target.value.length < state.emailInput.value.length){
+      setState(prevState => {
+         return { 
+             ...prevState,
+             emailInput : {...prevState.emailInputa, error:"", emailInputFOUT: false, value: event.target.value } 
+         }});
+   }else{
+    if(!state.emailInput.value.includes("@")){
+      setState(prevState => {
+        return { 
+            ...prevState,
+            emailInput : {...prevState.passwordInput, error:"Uw emailadres moet een @ bevatten", value: event.target.value , emailInputFOUT : true } 
+        }});
+    }
+      setState(prevState => {
+         return { 
+             ...prevState,
+             emailInput : {...prevState.emailInput, value: event.target.value } 
+         }});
+   }
+ }
 
   function handleChangeCheckBoxInput(event) {
     setState({ ...state, checkBoxInput: event.target.checked });
@@ -67,36 +111,52 @@ export default function Register() {
 
   //Doet een request aan de server om te kijken of de ingevoerde gegevens voldoen aan bepaalde eisen. statuscode 409 als het niet klopt.
   async function sendGebruikerDetailsToBackend() {
+
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        username: state.gebruikerInput,
-        password: state.passwordInput,
-        email: state.emailInput,
+        username: state.gebruikerInput.value,
+        password: state.passwordInput.value,
+        email: state.emailInput.value,
       })
     };
     const response = await fetch('https://localhost:7098/api/Registratie', requestOptions);
     if (!response.ok) {
       const error = JSON.parse(await response.text());
-      console.log(error);
 
+      setErrorMessageOnScreen(error.message)
     }
   }
 
+  function setErrorMessageOnScreen(error){
+    console.log(error);
+    if(error === "Account bestaad al."){
+     setState(prevState => ({
+         ...prevState,
+         gebruikerInput: {...prevState.gebruikerInput, error: error , gebruikerInputFOUT : true}
+     }));
+    }
 
+    if(error === "Het wachtwoord komt te vaak voor verander uw wachtwoord en gebruik geen bestaande woorden." || error === "Het wachtwoord heeft een herhalend patroon verander dit naar een veiliger wachtwoord" || error === "Het wachtwoord heeft een herhalend patroon verander dit naar een veiliger wachtwoord"){
+      setState(prevState => ({
+          ...prevState,
+          passwordInput: {...prevState.passwordInput, error: error , passwordInputFOUT : true}
+      }));
+     }
+
+   
+   }
+ 
 
   //functie die kijkt of er geen errors zijn in de input van de gebruiker client-side
   function InputCheck() {
-    return !fouteInvoer.gebruikerInputFOUT && !fouteInvoer.passwordInputFOUT && !fouteInvoer.emailInputFOUT
+    return !state.gebruikerInput.gebruikerInputFOUT && !state.passwordInput.passwordInputFOUT && !state.emailInput.emailInputFOUT
   }
 
 
   function handleSubmitForm() {
-    if (!state.checkBoxInput) {
-      setFouteInvoer({ ...fouteInvoer, checkBoxInputFOUT: true });
-      return;
-    }
+   
     if (InputCheck()) {
       sendGebruikerDetailsToBackend();
     }
@@ -104,36 +164,35 @@ export default function Register() {
 
   return (
     <div className="RegisterContainer">
+      
       <h1>Theater Laak</h1>
       <h2>Registratie</h2>
-      <Form.Control className="InputRegistratie" onChange={handleChangeGebruikerInput} type="email" placeholder="Gebruikersnaam" maxLength={32} isInvalid={fouteInvoer.gebruikerInputFOUT} />
-
-      <Form.Control className="InputRegistratie" onChange={handleChangePasswordInput} type="password" placeholder="Password" maxLength={32} isInvalid={fouteInvoer.passwordInputFOUT} />
-      <Form.Control className="InputRegistratie" onChange={handleChangeEmailInput} type="email" placeholder="Email adres" maxLength={32} isInvalid={fouteInvoer.emailInputFOUT} />
-
+      <Form.Group>
+      <Form.Control className="InputRegistratie" onChange={handleChangeGebruikerInput} type="email" placeholder="Gebruikersnaam" maxLength={32} isInvalid={state.gebruikerInput.gebruikerInputFOUT} />
+      <Form.Control.Feedback  className="FeedbackOpInput" type="invalid">{state.gebruikerInput.error}</Form.Control.Feedback>
+      <Form.Control className="InputRegistratie" onChange={handleChangePasswordInput} type="password" placeholder="Password" maxLength={32} isInvalid={state.passwordInput.passwordInputFOUT} />
+      <Form.Control.Feedback  className="FeedbackOpInput" type="invalid">{state.passwordInput.error}</Form.Control.Feedback>
+      <Form.Control className="InputRegistratie" onChange={handleChangeEmailInput} type="email" placeholder="Email adres" maxLength={32} isInvalid={state.emailInput.emailInputFOUT} />
+      <Form.Control.Feedback  className="FeedbackOpInput" type="invalid">{state.emailInput.error}</Form.Control.Feedback>
+      </Form.Group>
       <div className="AkkoordCheckBox">
         <label>
           <input type="checkbox" onChange={handleChangeCheckBoxInput} />Ik ga akkoord met de <div><a href="#">privacy voorwaarden</a></div>
         </label>
       </div>
       <Button onClick={handleSubmitForm} className="RegistratieCompleetButton" variant="success" >Registreren</Button>
-      <Captcha />
     </div>
   )
 }
 
+
+// TODO
+
 /* Registratie
-- Het mag niet mogelijk zijn om een te eenvoudig wachtwoord in te stellen.
-o Minimaal 1 hoofdletter -
-o Minimaal 1 kleine letter -
-o Minimaal 1 speciaal karakter -
-o Minimaal 7 karakters -
-o Geen woorden (gebruik een woordenboek, je kunt dat gewoon downloaden) - 
-o Geen herhalende patronen -
-o Niet in de top-10 lijst van veel voorkomende wachtwoorden (zoals
-qwerty123!) 
 o Niet in de lijst an gekraakte wachtwoorden
 (https://haveibeenpwned.com/Passwords, je kunt deze database gewoon
 downloaden)
 
+verificatie email + verifieren 
+tests 
 */
