@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {forEach} from "react-bootstrap/ElementChildren";
-export default function ProgrammingCard(props) {
+export default function ProgramCard(props) {
     return (
         <Card style={{ width: '18rem', alignItems:'Center', margin:'10px' }}>
             <Card.Img variant="top" src={ props.image } />
