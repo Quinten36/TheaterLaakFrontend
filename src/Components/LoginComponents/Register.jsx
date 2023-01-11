@@ -38,9 +38,9 @@ function validatePassword(state, password) {
 export default function Register() {
   const [state, setState] = useState(initialState);
   // prevState wordt gebruikt om de state direect aan te passen in plaats van te wachten tot de volgende update hierdoor voorkom je dat de werkelijke text gelijk blijft met de ingevoerde waarde.
-  
-  
-  
+
+
+
   function handleChangeGebruikerInput(event) {
     if (event.target.value.length < state.gebruikerInput.value.length) {
       setState(prevState => {
@@ -111,10 +111,10 @@ export default function Register() {
   function handleChangeCheckBoxInput(event) {
     setState(prevState => {
       return {
-          ...prevState,
-          checkBoxInput: {...prevState.checkBoxInput, checked: event.target.checked }
+        ...prevState,
+        checkBoxInput: { ...prevState.checkBoxInput, checked: event.target.checked }
       }
-  });
+    });
   }
 
 
@@ -144,12 +144,12 @@ export default function Register() {
       setState(prevState => {
         return {
           ...prevState,
-          gebruikerInput: { ...prevState.gebruikerInput, error : error, gebruikerInputFOUT: true }
+          gebruikerInput: { ...prevState.gebruikerInput, error: error, gebruikerInputFOUT: true }
         };
       });
     }
 
-    if (error === "Het wachtwoord komt te vaak voor verander uw wachtwoord en gebruik geen bestaande woorden." || error === "Het wachtwoord heeft een herhalend patroon verander dit naar een veiliger wachtwoord" || error === "Het wachtwoord heeft een herhalend patroon verander dit naar een veiliger wachtwoord" ) {
+    if (error === "Het wachtwoord komt te vaak voor verander uw wachtwoord en gebruik geen bestaande woorden." || error === "Het wachtwoord heeft een herhalend patroon verander dit naar een veiliger wachtwoord" || error === "Het wachtwoord heeft een herhalend patroon verander dit naar een veiliger wachtwoord") {
 
       setState(prevState => ({
         ...prevState,
@@ -157,14 +157,14 @@ export default function Register() {
       }));
     }
 
-    if (error === "Dit email adres bestaat al verandere deze naar een nieuwe." ) {
-     
+    if (error === "Dit email adres bestaat al verandere deze naar een nieuwe." || error === "Dit is geen geldig email adres.") {
       setState(prevState => ({
         ...prevState,
         emailInput: { ...prevState.emailInput, error: error, emailInputFOUT: true }
       }));
     }
   }
+
 
 
   //functie die kijkt of er geen errors zijn in de input van de gebruiker client-side
@@ -174,7 +174,7 @@ export default function Register() {
 
 
   function handleSubmitForm() {
-    if(!state.checkBoxInput.checked){
+    if (!state.checkBoxInput.checked) {
 
       setState(prevState => ({
         ...prevState,
@@ -204,17 +204,17 @@ export default function Register() {
       <Form.Group>
         <Form.Control className="InputRegistratie" onChange={handleChangePasswordInput} type="password" placeholder="Password" maxLength={32} isInvalid={state.passwordInput.passwordInputFOUT} />
         <Form.Control.Feedback className="FeedbackOpInput" type="invalid">{state.passwordInput.error}</Form.Control.Feedback>
-      </Form.Group> 
+      </Form.Group>
       <Form.Group>
         <Form.Control className="InputRegistratie" onChange={handleChangeEmailInput} type="email" placeholder="Email adres" maxLength={32} isInvalid={state.emailInput.emailInputFOUT} />
         <Form.Control.Feedback className="FeedbackOpInput" type="invalid">{state.emailInput.error}</Form.Control.Feedback>
-      </Form.Group>  
+      </Form.Group>
       <div className="AkkoordCheckBox">
         <label>
           <input type="checkbox" onChange={handleChangeCheckBoxInput} />Ik ga akkoord met de <div><a href="#">privacy voorwaarden</a></div>
         </label>
       </div>
-      
+
       <Button onClick={handleSubmitForm} className="RegistratieCompleetButton" variant="success">Registreren</Button>
     </div>
   )
