@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Captcha from './Captcha.jsx'
+import {  useNavigate } from "react-router-dom";
 
 const initialState = {
   gebruikerInput: {
@@ -37,10 +38,8 @@ function validatePassword(state, password) {
 
 export default function Register() {
   const [state, setState] = useState(initialState);
-  // prevState wordt gebruikt om de state direect aan te passen in plaats van te wachten tot de volgende update hierdoor voorkom je dat de werkelijke text gelijk blijft met de ingevoerde waarde.
-
-
-
+  const navigate = useNavigate();
+ 
   function handleChangeGebruikerInput(event) {
     if (event.target.value.length < state.gebruikerInput.value.length) {
       setState(prevState => {
@@ -117,21 +116,22 @@ export default function Register() {
     });
   }
 
-
-
-  //Doet een request aan de server om te kijken of de ingevoerde gegevens voldoen aan bepaalde eisen. statuscode 409 als het niet klopt.
   async function sendGebruikerDetailsToBackend() {
-
     const requestOptions = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'http://localhost:3000' },
       body: JSON.stringify({
         username: state.gebruikerInput.value,
         password: state.passwordInput.value,
         email: state.emailInput.value,
       })
-    };
+    };    
     const response = await fetch('https://localhost:7098/api/Registratie', requestOptions);
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      navigate('/Validate' ,  { Id: jsonResponse.id });
+    }
+    
     if (!response.ok) {
       const error = JSON.parse(await response.text());
       setErrorMessageOnScreen(error.message)
@@ -188,6 +188,7 @@ export default function Register() {
       console.log(state.checkBoxInput.checkBoxInputFOUT)
       return;
     }
+    
     if (InputCheck()) {
       sendGebruikerDetailsToBackend();
     }
@@ -219,22 +220,3 @@ export default function Register() {
     </div>
   )
 }
-
-
-// TODO
-/* Registratie
-o Niet in de lijst an gekraakte wachtwoorden
-(https://haveibeenpwned.com/Passwords, je kunt deze database gewoon
-downloaden)
-Gebruikers email check voor domains
-
-
-
-verificatie email + verifieren 
-tests 
-
-password hashen
-
-
-FIX CHECKBOX ERROR D:
-*/

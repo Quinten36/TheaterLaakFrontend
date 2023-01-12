@@ -10,13 +10,11 @@ import AccountPage from './Components/AccountComponents/AccountPage.jsx';
 import MijnIntressePage from './Components/AccountComponents/MijnIntressePage.jsx';
 import MijnReserveringen from './Components/AccountComponents/MijnReserveringen.jsx';
 import MijnInstellingen from './Components/AccountComponents/MijnInstellingen.jsx';
-
-
 import AccountPagina from "./AccountPagina.js"
+
+
 function App() {
-  return (
-    <Register/>
-  );
+
 }
 
 export default App;

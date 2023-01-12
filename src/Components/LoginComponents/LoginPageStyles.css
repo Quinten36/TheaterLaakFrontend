@@ -71,27 +71,34 @@
 
 .FA_collectie {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    padding: 8px 16px;
-    gap: 8px;
-    margin: auto;
-    flex-wrap: wrap;
-    margin-bottom: 3.5rem;
-}
-
-.FA_box {
-    min-width: 2.5rem;
-    max-width: 2.5rem;
-    border: 2px solid #050505;
-    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    justify-content:center;
+    flex-wrap:wrap;
+    text-align:center;
 }
 
 .SubmitButton2FA {
-    margin: auto;
-    width: 75%;
+    margin-top:1rem;
+    width: 50%;
     margin-bottom: 2.813rem;
+    margin-left:24%
 }
+
+
+.FA_box {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid #050505;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-right:1rem;
+}
+
+
+
+
 
 .text2FaPage {
     max-width: 75%;

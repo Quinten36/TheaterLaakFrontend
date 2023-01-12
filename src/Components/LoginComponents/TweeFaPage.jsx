@@ -1,15 +1,18 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './LoginPageStyles.css'
 import FaInputhandle from './FaInputhandle'
+
+import {useParams } from 'react-router-dom';
 export default function TweeFaPage() {
+  const { id } = useParams();
+  console.log(id);
   return (
     <div className = "FAContainer">
-      <h1>Theather Laak</h1>
+      <h1>Theather Laak </h1>
       <h2>2 Factor Authentication</h2>
-      <FaInputhandle />
-      <Button className="SubmitButton2FA" variant="primary">Submit</Button>
+      <FaInputhandle  />
       <div className="text2FaPage">Voer de automatisch gegenereerde code in. Deze is  naar uw Email adres is verzonden.</div>
       <div className="lijn2fa"></div>
       <div className="EmailOpnieuwLink">
