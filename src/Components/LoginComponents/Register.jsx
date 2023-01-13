@@ -127,28 +127,34 @@ export default function Register() {
 }
 
   async function sendGebruikerDetailsToBackend() {
-    const requestOptions = {
-      method: 'POST',
-      Headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'http://localhost:3000' },
-      body: JSON.stringify({
-        username: state.gebruikerInput.value,
-        password: state.passwordInput.value,
-        email: state.emailInput.value,
-      })
-    };    
-    const response = await fetch('https://localhost:7098/api/Registratie', requestOptions);
-    if (response.ok) {
-      const jsonResponse = await response.json();
-      localStorage.setItem("id", jsonResponse.id);
-      navigate('/Validate');
-    }
-    
-    if (!response.ok) {
-      console.log(response);
-      const error = JSON.parse(await response.text());
-      
-      setErrorMessageOnScreen(error.message)
-    }
+
+    console.log(JSON.stringify({
+      username: state.gebruikerInput.value,
+      password: state.passwordInput.value,
+      email: state.emailInput.value,
+    }))
+    const data = {
+      username: state.gebruikerInput.value,
+      password: state.passwordInput.value,
+      email: state.emailInput.value,
+    };
+const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  };    
+  const response = await fetch('https://localhost:7098/api/Registratie', requestOptions);
+  if (response.ok) {
+    const jsonResponse = await response.json();
+    localStorage.setItem("id", jsonResponse.id);
+    navigate('/Validate');
+  }
+  else {
+    console.log(response);
+    const error = await response.json();
+    setErrorMessageOnScreen(error.message)
+  }
+
   }
 
   function setErrorMessageOnScreen(error) {
