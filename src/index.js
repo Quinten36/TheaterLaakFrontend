@@ -8,9 +8,9 @@ import Header from './components/header/Header';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Programming from "./Pages/Programming";
-import Register from './Components/LoginComponents/Register.jsx'
-import TweeFaPage from './Components/LoginComponents/TweeFaPage';
+import Programming from "./pages/Programming";
+import Register from './components/LoginComponents/Register.jsx'
+import TweeFaPage from './components/LoginComponents/TweeFaPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

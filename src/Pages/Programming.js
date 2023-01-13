@@ -1,7 +1,7 @@
-import SearchBar from "../Components/SearchBar";
-import SearchDropDown from "../Components/SearchDropDown";
+import SearchBar from "../components/SearchBar";
+import SearchDropDown from "../components/SearchDropDown";
 import {useEffect, useState} from "react";
-import ProgramCard from "../Components/ProgramCard";
+import ProgramCard from "../components/ProgramCard";
 import * as ProgramApi from '../Api/Program';
 
 export default function Programming(props) {
