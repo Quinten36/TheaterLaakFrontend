@@ -1,7 +1,7 @@
-import ProgramSearchBar from "../Components/ProgramSearchBar";
-import SearchDropDown from "../Components/SearchDropDown";
+import ProgramSearchBar from "../Components/Programming/ProgramSearchBar";
+import SearchDropDown from "../Components/Programming/SearchDropDown";
 import {useEffect, useMemo, useState} from "react";
-import ProgramCard from "../Components/ProgramCard";
+import ProgramCard from "../Components/Programming/ProgramCard";
 import * as ProgramApi from '../Api/Program';
 import debounce from "../Util/debounce";
 

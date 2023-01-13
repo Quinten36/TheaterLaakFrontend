@@ -10,6 +10,16 @@ export async function get(query) {
             console.log(e);
         })
 }
+
+export async function getSingle(query, id) {
+    return fetch(`${url}${query}/${id}`)
+        .then(response => response.json())
+        .then(data => data)
+        .catch(e => {
+            console.log(e);
+        })
+}
+
 async function post(query, data) {
     return fetch(`${url}${query}`, {
         Headers: {

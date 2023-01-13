@@ -1,4 +1,4 @@
-import { destroy as des } from "./Api";
+import {destroy as des, getSingle} from "./Api";
 import env from "../../package.json";
 
 const route = "Program";
@@ -12,4 +12,6 @@ export const all = (search) => {
         .then(response => response.json())
         .catch(e => console.log(e))
 }
+
+export const getProgram = (id) => getSingle(route, id)
 export const destroy = (id) => des(route, id);
