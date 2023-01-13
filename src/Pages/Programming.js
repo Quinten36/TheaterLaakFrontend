@@ -21,11 +21,11 @@ export default function Programming(props) {
             <SearchBar name="Datum" type="date" />
             <SearchBar name="Voorstelling of artiest"/>
             <SearchDropDown />
-            {programs.map(program =>
-                <ProgramCard image={program.image} title={program.title} genre={program.genres} startDatum="22-8-2000" eindDatum="22-8-2001"></ProgramCard>
-            )}
-            <ProgramCard image="alladin.png" title="Sinterklaas" genre="kinderen" startDatum="22-8-2000" eindDatum="22-8-2001" artiesten={array}  />
-            <ProgramCard image="alladin.png" title="Sinterklaas" genre="kinderen" startDatum="22-8-2000" eindDatum="22-8-2001" artiesten={array}  />
+            {programs.map((program, index) => (
+                <ProgramCard key={index} image={program.image} title={program.title} genre={program.genres} startDatum="22-8-2000" eindDatum="22-8-2001" artiesten={array}  />
+            ))}
+            {/* <ProgramCard image="alladin.png" title="Sinterklaas" genre="kinderen" startDatum="22-8-2000" eindDatum="22-8-2001" artiesten={array}  />
+            <ProgramCard image="alladin.png" title="Sinterklaas" genre="kinderen" startDatum="22-8-2000" eindDatum="22-8-2001" artiesten={array}  /> */}
         </div>
     )
 }
