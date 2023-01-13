@@ -1,6 +1,10 @@
 import './css/App.css';
 import HomeSliderCard from './components/home/homeSliderCard';
 import HomeArticle from './components/home/homeArticle';
+import logo from './logo.svg';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
