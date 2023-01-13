@@ -108,6 +108,15 @@ export default function Register() {
   }
 
   function handleChangeCheckBoxInput(event) {
+   if (event.target.checked){
+      setState(prevState => {
+        return {
+          ...prevState,
+          checkBoxInput: { ...prevState.checkBoxInput, checked: event.target.checked , checkBoxInputFOUT : false }
+        }
+      });
+    }
+    else {
     setState(prevState => {
       return {
         ...prevState,
@@ -115,6 +124,7 @@ export default function Register() {
       }
     });
   }
+}
 
   async function sendGebruikerDetailsToBackend() {
     const requestOptions = {
@@ -129,11 +139,14 @@ export default function Register() {
     const response = await fetch('https://localhost:7098/api/Registratie', requestOptions);
     if (response.ok) {
       const jsonResponse = await response.json();
-      navigate('/Validate' ,  { Id: jsonResponse.id });
+      localStorage.setItem("id", jsonResponse.id);
+      navigate('/Validate');
     }
     
     if (!response.ok) {
+      console.log(response);
       const error = JSON.parse(await response.text());
+      
       setErrorMessageOnScreen(error.message)
     }
   }
@@ -165,8 +178,6 @@ export default function Register() {
     }
   }
 
-
-
   //functie die kijkt of er geen errors zijn in de input van de gebruiker client-side
   function InputCheck() {
     return !state.gebruikerInput.gebruikerInputFOUT && !state.passwordInput.passwordInputFOUT && !state.emailInput.emailInputFOUT
@@ -174,8 +185,8 @@ export default function Register() {
 
 
   function handleSubmitForm() {
+    console.log(state.checkBoxInput.checkBoxInputFOUT);
     if (!state.checkBoxInput.checked) {
-
       setState(prevState => ({
         ...prevState,
         checkBoxInput: {
@@ -183,9 +194,8 @@ export default function Register() {
           checkBoxInputFOUT: true
         }
       }));
-      console.log(state.checkBoxInput.checked)
-      console.log(state.checkBoxInput.error)
-      console.log(state.checkBoxInput.checkBoxInputFOUT)
+
+
       return;
     }
     
@@ -213,9 +223,9 @@ export default function Register() {
       <div className="AkkoordCheckBox">
         <label>
           <input type="checkbox" onChange={handleChangeCheckBoxInput} />Ik ga akkoord met de <div><a href="#">privacy voorwaarden</a></div>
+          <div hidden={!state.checkBoxInput.checkBoxInputFOUT} className='ErrorInputCheck'>U moet eerst akkoord gaan met de privacy voorwaarden voordat u een account aan kan maken.</div> 
         </label>
       </div>
-
       <Button onClick={handleSubmitForm} className="RegistratieCompleetButton" variant="success">Registreren</Button>
     </div>
   )
