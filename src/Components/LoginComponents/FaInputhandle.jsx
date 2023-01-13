@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { Navigate } from 'react-router-dom';
 export default function FaInputhandle() {
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
@@ -8,11 +9,29 @@ export default function FaInputhandle() {
   const [input4, setInput4] = useState('');
   const [input5, setInput5] = useState('');
 
+  const gebruikerID = localStorage.getItem("id")
+  
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    const inputs = [input1, input2, input3, input4, input5];
+    const inputToString = input1.toString() + input2.toString() + input3.toString() + input4.toString() + input5.toString();
+    SendVerificatieCodeToBackEnd(inputToString);
+    
+  }
 
-      
+  async function SendVerificatieCodeToBackEnd(inputToString){
+    console.log(gebruikerID +" " + inputToString)
+    const response = await fetch(`https://localhost:7098/api/Registratie/api/validate/${gebruikerID}/${inputToString}`,{
+      method: 'Put',
+     })
+     
+     if(response.ok){
+      console.log("succes")
+     }
+     if (!response.ok) {
+      const error = JSON.parse(await response.text());
+      console.log(error);
+     }  
   }
   
   return (

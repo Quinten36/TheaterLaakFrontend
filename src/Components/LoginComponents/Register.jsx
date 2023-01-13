@@ -194,8 +194,6 @@ export default function Register() {
           checkBoxInputFOUT: true
         }
       }));
-
-
       return;
     }
     
