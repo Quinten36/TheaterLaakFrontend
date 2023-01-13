@@ -4,10 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';//./Components/LoginComponents/
 import './LoginPageStyles.css';
 import FaInputhandle from './FaInputhandle'
 
-import {useParams } from 'react-router-dom';
+
 export default function TweeFaPage() {
-  const { id } = useParams();
-  console.log(id);
+
   return (
     <div className = "FAContainer">
       <h1>Theather Laak </h1>
