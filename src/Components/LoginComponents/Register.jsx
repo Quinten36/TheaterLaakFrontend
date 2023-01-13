@@ -119,7 +119,7 @@ export default function Register() {
   async function sendGebruikerDetailsToBackend() {
     const requestOptions = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'http://localhost:3000' },
+      Headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': 'http://localhost:3000' },
       body: JSON.stringify({
         username: state.gebruikerInput.value,
         password: state.passwordInput.value,

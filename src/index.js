@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/index.css';
+import './Css/index.css';
 import App from './App';
-import Show from './pages/Show';
-import ReserveringOverview from './pages/ReserveringOverview';
-import Header from './components/header/Header';
+import Show from './Pages/Show';
+import ReserveringOverview from './Pages/ReserveringOverview';
+import Header from './Components/Header/Header';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-import ShoppingCartPage from './pages/ShoppingCartPage';
+import ShoppingCartPage from './Pages/ShoppingCartPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Programming from "./pages/Programming";
-import Register from './components/LoginComponents/Register.jsx'
-import TweeFaPage from './components/LoginComponents/TweeFaPage';
+import Programming from "./Pages/Programming";
+import Register from './Components/LoginComponents/Register.jsx'
+import TweeFaPage from './Components/LoginComponents/TweeFaPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

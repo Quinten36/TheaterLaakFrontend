@@ -1,4 +1,4 @@
-import './../../css/App.scss';
+import './../../Css/App.scss';
 
 function homeSliderCard() {
   return (

@@ -1,5 +1,5 @@
 
-import './../../css/show.scss';
+import './../../Css/show.scss';
 
 function Show(props) {
   return (

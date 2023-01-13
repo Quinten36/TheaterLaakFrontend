@@ -1,11 +1,11 @@
-import './css/App.scss';
-import HomeSliderCard from './components/home/homeSliderCard';
-import HomeArticle from './components/home/homeArticle';
+import './Css/App.scss';
+import HomeSliderCard from './Components/Home/homeSliderCard';
+import HomeArticle from './Components/Home/homeArticle';
 import Image from 'react-bootstrap/Image'
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import HomeCard from './components/home/homeCard';
+import HomeCard from './Components/Home/homeCard';
 import React, { useState, useEffect } from 'react';
 import gegevens from './../package.json';
 

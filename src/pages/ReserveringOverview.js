@@ -1,7 +1,7 @@
-import './../css/reserveringOverview.scss';
+import './../Css/reserveringOverview.scss';
 import React, { useState, useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
-import ReservationOverviewItem from './../components/reservationOverview/reservationOverviewItem';
+import ReservationOverviewItem from './../Components/ReservationOverview/reservationOverviewItem';
 import gegevens from './../../package.json';
 
 function Show(props) {

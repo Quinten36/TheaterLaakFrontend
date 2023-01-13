@@ -1,5 +1,5 @@
 import Table from "./Table.jsx"
-import "./../../css/shoppingCart.css"
+import "./../../Css/shoppingCart.css"
 export default function ShoppingCart({ tickets }){
     return (
         <div className="shoppingCart">

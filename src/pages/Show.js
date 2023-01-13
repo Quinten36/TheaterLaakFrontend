@@ -1,11 +1,11 @@
 import Accordion from 'react-bootstrap/Accordion';
-import ShowBanner from './../components/show/showBanner';
-import ShowSpeelItem from './../components/show/showSpeelItem';
-import './../css/show.scss';
+import ShowBanner from './../Components/Show/showBanner';
+import ShowSpeelItem from './../Components/Show/showSpeelItem';
+import './../Css/show.scss';
 import { useLocation } from 'react-router';
 import React, { useState, useEffect } from 'react';
 import Nav from 'react-bootstrap/Nav';
-import ShowInfoBanner from './../components/show/showInfoBanner';
+import ShowInfoBanner from './../Components/Show/showInfoBanner';
 import gegevens from './../../package.json';
 
 function Show(props) {

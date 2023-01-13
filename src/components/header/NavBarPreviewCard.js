@@ -1,5 +1,5 @@
-import './../../css/style.css';
-import './../../css/header.scss';
+import './../../Css/style.css';
+import './../../Css/Header.scss';
 
 
 function App(props) {

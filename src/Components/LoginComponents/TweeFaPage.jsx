@@ -1,7 +1,7 @@
 import React from 'react'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './LoginPageStyles.css'
+import 'bootstrap/dist/css/bootstrap.min.css';//./Components/LoginComponents/
+import './LoginPageStyles.css';
 import FaInputhandle from './FaInputhandle'
 
 import {useParams } from 'react-router-dom';

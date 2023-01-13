@@ -1,5 +1,5 @@
-import ShoppingCart from "../components/shopping_cart/ShoppingCart.jsx";
-import "./../css/shoppingCart.css"
+import ShoppingCart from "../Components/Shopping_cart/ShoppingCart.jsx";
+import "./../Css/shoppingCart.css"
 import Button from 'react-bootstrap/Button';
 
 export default function ShoppingCartPage() {

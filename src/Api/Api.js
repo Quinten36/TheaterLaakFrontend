@@ -12,7 +12,7 @@ export async function get(query) {
 }
 async function post(query, data) {
     return fetch(`${url}${query}`, {
-        headers: {
+        Headers: {
             'X-CSRF-TOKEN': 'meta[name="csrf-token"]',
             'Content-Type': 'application/json'
         },
@@ -22,7 +22,7 @@ async function post(query, data) {
 }
 async function put(query, id, data) {
     return fetch(`${url}${query}/${id}`, {
-        headers: {
+        Headers: {
             'X-CSRF-TOKEN': 'meta[name="csrf-token"]',
             'Content-Type': 'application/json',
             'Accept' : 'application/json'
@@ -33,7 +33,7 @@ async function put(query, id, data) {
 }
 export async function destroy(query, id) {
     return fetch(`${url}${query}/${id}`, {
-        headers: {
+        Headers: {
             'X-CSRF-TOKEN': 'meta[name="csrf-token"]',
         },
         method: "DELETE",

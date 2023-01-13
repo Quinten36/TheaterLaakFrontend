@@ -1,5 +1,5 @@
 
-import './../../css/show.scss';
+import './../../Css/show.scss';
 import React, { useState, useEffect } from 'react';
 import gegevens from './../../../package.json';
 

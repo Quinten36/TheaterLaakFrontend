@@ -1,4 +1,4 @@
-import "./../../css/shoppingCart.css"
+import "./../../Css/shoppingCart.css"
 
 export default function TicketRow({ticket}) {
     return (
