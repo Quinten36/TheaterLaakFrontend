@@ -9,14 +9,14 @@ function Show(props) {
   var listItems;
 
   //check if there has been a new program request
-  if (props.programId != programId) {
+  if (props.programId !== programId) {
     // console.log(props.programId)
     setProgramId(props.programId)
   }
 
   //retrieve the artists of the band
   useEffect(() => {
-    if (programId != undefined) {
+    if (programId !== undefined) {
       console.log(programId)
       fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/artist/byBand/`+props.groupId)
       .then(resp => resp.json())
@@ -26,10 +26,10 @@ function Show(props) {
 
     //add the artist to a list to add to the DOM
     
-    if (group != undefined || group != []) {
+    if (group !== undefined || group !== []) {
       console.log(group)
       listItems = group.map((artist, index) =>
-        <span key={artist.id}>{artist.name}{index != group.length-1 ? ', ' : ''}</span> 
+        <span key={artist.id}>{artist.name}{index !== group.length-1 ? ', ' : ''}</span> 
       )
     }
     
@@ -41,7 +41,7 @@ function Show(props) {
       <h2 className='showTitel'>{props.title}</h2>
       <div className='showArtistHolder'>
         {/* add list of artists to DOM */}
-        {listItems != null && listItems}
+        {listItems !== null && listItems}
       </div>
     </section>
   );
