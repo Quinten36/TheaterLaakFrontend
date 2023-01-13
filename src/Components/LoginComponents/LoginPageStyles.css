@@ -1,0 +1,228 @@
+* {
+    font-family: 'Nunito';
+    font-style: normal;
+}
+
+.LoginContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.LoginPageInputField {
+    margin-bottom: 2.6875rem;
+    max-width: 75%;
+    margin-left: 2.375rem;
+    border: 2px solid #050505;
+    border-radius: 8px;
+}
+
+.LoginContainer h1 {
+    margin-top: 6.25rem;
+    margin-bottom: 5rem;
+    padding: 20px 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.ButtonLoginPage {
+
+    min-width: 50%;
+    max-width: 75%;
+    margin-left: 2.375rem;
+    margin-bottom: 1.188rem;
+    border-radius: 8px;
+
+}
+
+.RememberMeKnop {
+    margin-left: 2.6rem;
+    margin-bottom: 2.438rem;
+    font-size: 14px;
+
+}
+
+
+.linkWachtwoordvergeten {
+    margin-left: 5.125rem;
+}
+
+.Registreren {
+    background: #26F33A;
+}
+
+.FAContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.FAContainer h1 {
+    margin-top: 6.25rem;
+    margin-bottom: 3.438rem;
+    padding: 20px 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.FAContainer h2 {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.FA_collectie {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    justify-content:center;
+    flex-wrap:wrap;
+    text-align:center;
+}
+
+.SubmitButton2FA {
+    margin-top:1rem;
+    width: 50%;
+    margin-bottom: 2.813rem;
+    margin-left:24%
+}
+
+
+.FA_box {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 2px solid #050505;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    margin-right:1rem;
+}
+
+
+
+
+
+.text2FaPage {
+    max-width: 75%;
+    min-width: 15.375rem;
+    margin: auto;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.EmailOpnieuwLink {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.RegisterContainer h1 {
+    margin-top: 4.25rem;
+    margin-bottom: 2rem;
+    padding: 20px 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.RegisterContainer h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 1.75rem;
+}
+
+.InputRegistratie {
+    margin: auto;
+    min-width: 75%;
+    max-width: 75%;
+    margin-bottom: 2.313rem;
+    border: 2px solid #050505;
+    border-radius: 8px;
+}
+
+.FeedbackOpInput {
+    font-size: 1rem;
+    margin: 0 auto; 
+    text-align: center; 
+    margin-bottom: 2rem;
+    
+  }
+  
+
+
+.AkkoordCheckBox {
+    margin: auto;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.RegistratieCompleetButton {
+    min-width: 50%;
+    margin-left: 25%;
+    border: 2px solid #050505;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+
+.PrivacyBeleidContainer h1 {
+    margin-top: 6.25rem;
+    margin-bottom: 3.438rem;
+    padding: 20px 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.PrivacyBeleidContainer h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.privacybeleidTextBox{
+    width: 75%;
+    margin-left: 12.5%;
+    font-size:17px;
+    margin-bottom: 4rem;
+    border: 1px solid #000000;
+}
+
+.GelezenAkkoordButton{
+
+    width: 75%;
+    margin-left: 12.5%;
+}
+
+
+
+.WWvergetenContainer h1 {
+    margin-top: 6.25rem;
+    margin-bottom: 3.438rem;
+    padding: 20px 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.WWvergetenContainer h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-left:9%
+}
+
+.WWopniewInstellenInput{
+    width: 75%;
+    margin: auto;
+    margin-bottom: 3rem;
+    border: 1px solid #000000;
+}
+
+.SubmitButtonWW{
+    width: 75%;
+    margin: auto;
+    margin-bottom: 2rem;
+    margin-left:12.5%;
+    
+}
+
+.WWvergetenText{
+    width:75%;
+    margin-left:12.5%;
+   
+}
