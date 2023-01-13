@@ -1,0 +1,45 @@
+.shoppingCart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;   
+}
+
+.center {
+    text-align: center;
+}
+.showRow {
+    background-color: rgba(217, 217, 217, 0.25);
+    border-top: 1px solid #898989;
+    border-bottom: 1px solid #898989;
+}
+
+.wijzigShow {
+    color: #143CCB;
+    size: 126px;
+}
+
+.showInfo p {
+    color: rgba(0, 0, 0, 0.80);
+}
+
+.ticketRow {
+    border-top: 1px solid #898989;
+    border-bottom: 1px solid #898989;
+}
+
+.bestelButtons {
+    display: flex;
+    margin-top: 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+.verwijderTicket {
+    color: rgba(20, 60, 203, 0.60);
+}
+
+.ticketPrice {
+    width: 80px;
+}
