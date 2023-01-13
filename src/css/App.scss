@@ -1,0 +1,72 @@
+@import "~bootstrap/scss/bootstrap";
+
+.homeShowBanner {
+  position: relative;
+  .homeBannerCaption {
+    position: absolute;
+    bottom: 12%;
+    font-size: 1.2em;
+    color: azure;
+    margin: 0 0 0 15px;
+    .callToActionHome {
+      margin: 10px 0 0 0;
+    }
+  }
+}
+.card {
+  margin: 0 auto;
+}
+.carousel-control-prev {
+  background: linear-gradient(to left, #0000009c, white) !important;
+}
+.carousel-control-next {
+  background: linear-gradient(to left, #0000009c, white) !important;
+}
+
+.homeSlider {
+  .carousel-indicators {
+    bottom: -40px;
+    background-color: rgba(0,0,0,.3);
+  }
+}
+
+.homeArticleBanner {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 9px;
+  gap: 7px;
+  .homeArticle {
+    display: flex;
+    .homeArticleFigure {
+      width: 32vw;
+      display: inline-block;
+      margin: 0;
+      .homeArticleImg {
+        width: 100%;
+      }
+    }
+    .homeArticleInfo {
+      display: inline-block;;
+      font-size: 0.9em;
+      overflow-wrap: break-word;
+      width: 66%;
+      .homeArticleTitle {
+        margin: 0 0 0 5px;
+      }
+      .homeArticleDescription {
+        display: inline-block;;
+        width: 50vw;
+        color: black;
+        margin: 0 0 0 5px;
+      }
+    }
+  }
+}
+.card-text {
+  color: rgb(41, 38, 38);
+}
+.homeCardBold {
+  font-weight: 600;;
+  color: black;
+}

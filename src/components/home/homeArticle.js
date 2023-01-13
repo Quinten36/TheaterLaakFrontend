@@ -1,15 +1,17 @@
-import './../../css/App.css';
+import './../../css/App.scss';
 
-function homeArticle() {
+function homeArticle(props) {
   return (
-    <article>
-        <figure>
-        <img src='img/img.jpg' alt='Plaatje'/>
+    <article className='homeArticle'>
+        <figure className='homeArticleFigure'>
+          <img src={props.img} alt='Plaatje' className='homeArticleImg'/>
         </figure>
-        <h4> Artikel bla2</h4>
-        <p>
-        bla bla bla bla bla
-        </p>
+        <div className='homeArticleInfo'>
+          <h4 className='homeArticleTitle'>{props.title}</h4>
+          <p className='homeArticleDescription'>
+            {props.description}
+          </p>
+        </div>
     </article>
   );
 }

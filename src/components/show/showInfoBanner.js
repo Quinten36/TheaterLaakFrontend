@@ -9,22 +9,27 @@ function Show(props) {
   var listItems;
 
   //check if there has been a new program request
-  if (props.programId != programId) 
+  if (props.programId != programId) {
+    // console.log(props.programId)
     setProgramId(props.programId)
+  }
 
   //retrieve the artists of the band
   useEffect(() => {
     if (programId != undefined) {
+      console.log(programId)
       fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/artist/byBand/`+props.groupId)
       .then(resp => resp.json())
-      .then((data) => setGroup(data) )
+      .then((data) => {console.log(data);setGroup(data) })
     } 
   }, [programId])
 
     //add the artist to a list to add to the DOM
-    if (group.artists != undefined) {
-      listItems = group.artists.map((artist, index) =>
-        <span key={artist.id}>{artist.name}{index != group.artists.length-1 ? ', ' : ''}</span> 
+    
+    if (group != undefined || group != []) {
+      console.log(group)
+      listItems = group.map((artist, index) =>
+        <span key={artist.id}>{artist.name}{index != group.length-1 ? ', ' : ''}</span> 
       )
     }
     
