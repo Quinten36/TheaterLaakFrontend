@@ -39,3 +39,7 @@
 .verwijderTicket {
     color: rgba(20, 60, 203, 0.60);
 }
+
+.ticketPrice {
+    width: 80px;
+}

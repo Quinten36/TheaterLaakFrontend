@@ -7,7 +7,7 @@ export default function TotalsRow({tickets}) {
         <tr>
             <td colSpan="1"></td>
             <td>Totaal: </td>
-            <td>€ {total.toFixed(2)}</td>
+            <td colSpan="2">€ {total.toFixed(2)}</td>
         </tr>
     )
 }
