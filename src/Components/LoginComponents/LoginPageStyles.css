@@ -152,6 +152,12 @@
     margin-bottom: 5rem;
 }
 
+.ErrorInputCheck{
+
+    font-size: 1rem;
+    color : red;
+}
+
 .RegistratieCompleetButton {
     min-width: 50%;
     margin-left: 25%;
