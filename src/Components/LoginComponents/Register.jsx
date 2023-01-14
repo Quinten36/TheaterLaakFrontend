@@ -226,7 +226,7 @@ const requestOptions = {
       </Form.Group>
       <div className="AkkoordCheckBox">
         <label>
-          <input type="checkbox" onChange={handleChangeCheckBoxInput} />Ik ga akkoord met de <div><a href="#">privacy voorwaarden</a></div>
+          <input type="checkbox" onChange={handleChangeCheckBoxInput} />Ik ga akkoord met de <div><a href="http://localhost:3000/privacybeleid">privacy voorwaarden</a></div>
           <div hidden={!state.checkBoxInput.checkBoxInputFOUT} className='ErrorInputCheck'>U moet eerst akkoord gaan met de privacy voorwaarden voordat u een account aan kan maken.</div> 
         </label>
       </div>
