@@ -13,6 +13,7 @@ import Programming from "./Pages/Programming";
 import Register from './Components/LoginComponents/Register.jsx'
 import TweeFaPage from './Components/LoginComponents/TweeFaPage';
 import PrivacyBeleid from './Components/LoginComponents/PrivacyBeleid';
+import Login from './Components/LoginComponents/Login';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -31,6 +32,7 @@ root.render(
         <Route exact path='/Registreer' element={<Register />}></Route>
         <Route exact path='/Validate' element={<TweeFaPage />}></Route>
         <Route exact path='/PrivacyBeleid' element={<PrivacyBeleid />}></Route>
+        <Route exact path='/Login' element={<Login />}></Route>
       </Routes>
       {/* footer */}
     </Router>

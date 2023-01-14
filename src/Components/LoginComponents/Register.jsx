@@ -41,6 +41,7 @@ export default function Register() {
   const navigate = useNavigate();
  
   function handleChangeGebruikerInput(event) {
+    
     if (event.target.value.length < state.gebruikerInput.value.length) {
       setState(prevState => {
         return {

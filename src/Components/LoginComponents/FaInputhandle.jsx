@@ -20,7 +20,6 @@ export default function FaInputhandle() {
   }
 
   async function SendVerificatieCodeToBackEnd(inputToString){
-    console.log(gebruikerID +" " + inputToString)
     const response = await fetch(`https://localhost:7098/api/Registratie/api/validate/${gebruikerID}/${inputToString}`,{
       method: 'Put',
      })
