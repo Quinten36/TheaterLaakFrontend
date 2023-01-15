@@ -145,7 +145,12 @@
 
 }
 
-
+.ErrorVerificatiePage {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+}
 
 .AkkoordCheckBox {
     margin: auto;
