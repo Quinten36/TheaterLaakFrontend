@@ -46,7 +46,6 @@ export default function Login() {
   }
 
   async function handleLoginButton(){
-    console.log(state.Password.PasswordInput +" " + state.Username.usernameInput)
       const response = await fetch(`https://localhost:7098/api/Login/api/Login/${state.Username.usernameInput}/${state.Password.PasswordInput}`,{
         method: 'Get',
        })
@@ -84,7 +83,7 @@ export default function Login() {
             <RememberMeKnop  {...state}/>
             <Button className="ButtonLoginPage" onClick={handleLoginButton} variant="primary">Log in</Button>
             <Button className="ButtonLoginPage Registreren"  onClick={() => Navigate("/Registreer")} variant="success">Registreren</Button>
-            <div className ="linkWachtwoordvergeten"><a href="url">Wachtwoord vergeten?</a></div>
+            <div className ="linkWachtwoordvergeten"><a href="http://localhost:3000/wachtwoordVergeten">Wachtwoord vergeten?</a></div>
             
     </div>
   )
