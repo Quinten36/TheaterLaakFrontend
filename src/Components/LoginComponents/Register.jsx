@@ -41,6 +41,7 @@ export default function Register() {
   const navigate = useNavigate();
  
   function handleChangeGebruikerInput(event) {
+    
     if (event.target.value.length < state.gebruikerInput.value.length) {
       setState(prevState => {
         return {
@@ -143,7 +144,7 @@ const requestOptions = {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   };    
-  const response = await fetch('https://localhost:7098/api/Registratie', requestOptions);
+  const response = await fetch('http://localhost:5086/api/Registratie', requestOptions);
   if (response.ok) {
     const jsonResponse = await response.json();
     localStorage.setItem("id", jsonResponse.id);

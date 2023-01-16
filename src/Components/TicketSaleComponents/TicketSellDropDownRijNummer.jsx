@@ -1,5 +1,5 @@
 import React from 'react';
-import "./TicketSellStyle.css"
+import "./TicketSellStyle.scss"
 const TicketSellDropDownRijNummer = (props) => {
   const options = [];
   
@@ -10,7 +10,7 @@ const TicketSellDropDownRijNummer = (props) => {
   }
 
   return (
-    <select className = "DropdownRijNummer">
+    <select className = "DropdownRijNummer" id='DropdownRijNummer'>
       {options}
     </select>
   );

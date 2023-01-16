@@ -29,6 +29,9 @@
     margin-bottom: .5rem;
     border: 1px solid #000000;
     text-align: center;
+    .ticketSeat {
+      padding: 2px 5px;
+    }
 }
 
 .podium {
@@ -184,4 +187,12 @@
     margin: auto;
     margin-bottom: 2rem;
     border: 2px solid black;
+    .ticketShoppingList {
+      display: flex;
+      justify-content: space-around;
+      .ticketShoppingSpan {
+        width: 32px;
+        text-align: center;
+      }
+    }
 }
