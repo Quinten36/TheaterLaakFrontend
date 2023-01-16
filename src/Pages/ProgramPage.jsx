@@ -27,7 +27,7 @@ export default function ProgramPage() {
   },[parameterProgramId]);
 
   function GetProgramDuration(){
-    if(program.shows === undefined || program.shows.length == 0) return <>Duratie: Onbekend</>
+    if(program.shows === undefined || program.shows.length === 0) return <>Duratie: Onbekend</>
     var show = program.shows[0];
     var diffInMs = new Date(show.end) - new Date(show.start);
     var hours = Math.floor((diffInMs % 86400000) / 3600000);
