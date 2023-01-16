@@ -1,6 +1,5 @@
 import './../Css/reserveringOverview.scss';
 import React, { useState, useEffect } from 'react';
-import Nav from 'react-bootstrap/Nav';
 import ReservationOverviewItem from './../Components/ReservationOverview/reservationOverviewItem';
 import gegevens from './../../package.json';
 

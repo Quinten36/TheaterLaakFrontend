@@ -5,6 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RememberMeKnop from './RememberMeKnop';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import {GetJWTExp} from './../../JWT/JWT';
+import {getCookie, setCookieDate} from './../../Cookie/Cookie';
+import gegevens from './../../../package.json';
+import Nav from 'react-bootstrap/Nav';
+
+
 export default function Login() {
   const Navigate = useNavigate();
   
@@ -46,11 +52,23 @@ export default function Login() {
   }
 
   async function handleLoginButton(){
-      const response = await fetch(`https://localhost:7098/api/Login/${state.Username.usernameInput}/${state.Password.PasswordInput}`,{
-        method: 'Get',
+    console.log(JSON.stringify({"Username": "", "Email": state.Username.usernameInput, "Password":state.Password.PasswordInput}))
+      const response = await fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/Login`,{
+        method: 'POST',
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+          'Content-Type': 'application/json'
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+        body: JSON.stringify({"Username": "", "Email": state.Username.usernameInput, "Password":state.Password.PasswordInput})
        })
        
        if(response.ok){
+        response.json().then((data) => {/*console.log(data)*/; setCookieDate('userJWT', data.token, GetJWTExp(data))});
         console.log("succes")
         navigate("/mijnaccount")
        }
@@ -83,7 +101,7 @@ export default function Login() {
             <RememberMeKnop  {...state}/>
             <Button className="ButtonLoginPage" onClick={handleLoginButton} variant="primary">Log in</Button>
             <Button className="ButtonLoginPage Registreren"  onClick={() => Navigate("/Registreer")} variant="success">Registreren</Button>
-            <div className ="linkWachtwoordvergeten"><a href="http://localhost:3000/wachtwoordVergeten">Wachtwoord vergeten?</a></div>
+            <div className ="linkWachtwoordvergeten"><Nav.Link href="/WachtwoordVergeten">Wachtwoord vergeten?</Nav.Link></div>
             
     </div>
   )
