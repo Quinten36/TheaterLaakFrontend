@@ -26,20 +26,27 @@ export default function ProgramPage() {
     fetchData();
   },[parameterProgramId]);
 
+  function GetProgramDuration(){
+    if(program.shows === undefined || program.shows.length == 0) return <>Duratie: Onbekend</>
+    var show = program.shows[0];
+    var diffInMs = new Date(show.end) - new Date(show.start);
+    var hours = Math.floor((diffInMs % 86400000) / 3600000);
+    var minutes = Math.round(((diffInMs % 86400000) % 3600000) / 60000);
+    return <>Duration: <span>{hours} uur {minutes} min</span></>
+  }
+
   return (
     <main>
       <ProgramBanner image={program.image} alt='Plaatje'/>
       <div>
         <ProgramInfoBanner program={program}/>
-        {/* <section className='programDetails'>
+        <section className='programDetails'>
           <hr className='programDetailsDivider'/>
-            Duration: <span>{hours} uur {minutes} min</span>
+            {GetProgramDuration()}
           <hr className='programDetailsDivider'/>
-          Zaal <span>{data != null && data.hallId}</span> <span>Vlierbloesem</span>
-          <hr className='programDetailsDivider'/>
-        </section> */}
+        </section>
         <article className='programDescriptionArticle'>
-          {program.description == null ? "Er is geen beschrijving beschikbaar" : program.description}
+          {program.description}
         </article>
         <ProgramShowDates shows={program.shows}/>
         {/* <section className='programPriceBanner'>
