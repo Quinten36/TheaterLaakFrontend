@@ -1,18 +1,18 @@
-import ShoppingCart from "../Components/Shopping_cart/ShoppingCart.jsx";
+import ShoppingCart from "../Components/ShoppingCart/ShoppingCart.jsx";
 import "./../Css/shoppingCart.css"
 import Button from 'react-bootstrap/Button';
+import { getCookie } from "../Cookie/Cookie.js";
 
 export default function ShoppingCartPage() {
+    var resp = getCookie("shoppingList");
     return (
-        <body>
-            <main>
-                <ShoppingCart className="shoppingCart" tickets={tickets}/>
-                <div className="bestelButtons">
-                    <Button variant="outline-primary">Verder Winkelen</Button>
-                    <Button variant="primary">Bestellen</Button>
-                </div>
-            </main>
-        </body>
+        <main>
+            <ShoppingCart className="shoppingCart" tickets={tickets}/>
+            <div className="bestelButtons">
+                <Button variant="outline-primary">Verder Winkelen</Button>
+                <Button variant="primary">Bestellen</Button>
+            </div>
+        </main>
     );
 }
 

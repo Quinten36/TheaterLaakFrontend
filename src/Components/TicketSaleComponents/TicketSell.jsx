@@ -55,15 +55,15 @@ export default function TicketSell() {
       if (seats[seat].row == row && seats[seat].seatNumber == number) {
         if (shoppingList.find(car => car.item.row == row && car.item.seatNumber == number) == undefined) {
           if (seats[seat].seatClass == 1) {
-            setShoppingList([...shoppingList, {item: seats[seat], price:show.firstClassPrice.toFixed(2)}])
+            setShoppingList([...shoppingList, {ticket: seats[seat], price:show.firstClassPrice.toFixed(2)}])
             setTotalPrice((show.firstClassPrice+parseInt(totalPrice)).toFixed(2));
           }
           if (seats[seat].seatClass == 2) {
-            setShoppingList([...shoppingList, {item: seats[seat], price:show.secondClassPrice.toFixed(2)}])
+            setShoppingList([...shoppingList, {ticket: seats[seat], price:show.secondClassPrice.toFixed(2)}])
             setTotalPrice((show.secondClassPrice+parseInt(totalPrice)).toFixed(2));
           }
           if (seats[seat].seatClass == 3) {
-            setShoppingList([...shoppingList, {item: seats[seat], price:show.thirdClassPrice.toFixed(2)}])
+            setShoppingList([...shoppingList, {ticket: seats[seat], price:show.thirdClassPrice.toFixed(2)}])
             setTotalPrice((show.thirdClassPrice+parseInt(totalPrice)).toFixed(2));
           }
         }
