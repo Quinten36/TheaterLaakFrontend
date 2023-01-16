@@ -46,7 +46,7 @@ export default function Login() {
   }
 
   async function handleLoginButton(){
-      const response = await fetch(`https://localhost:7098/api/Login/api/Login/${state.Username.usernameInput}/${state.Password.PasswordInput}`,{
+      const response = await fetch(`https://localhost:7098/api/Login/${state.Username.usernameInput}/${state.Password.PasswordInput}`,{
         method: 'Get',
        })
        
