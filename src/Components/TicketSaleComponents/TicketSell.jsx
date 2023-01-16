@@ -25,19 +25,20 @@ export default function TicketSell() {
     fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/show/`+parameter)
       .then(resp => resp.json())
       .then((data2) => {
-        console.log(data2)
+        
         fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/seat/byHall/`+data2.hallId)
           .then(resp => resp.json())
-          .then((data) => {setSeats(data); console.log(data);/*setProgram(data)*/} )
-        setShow(data2);
+          .then((data) => {setSeats(data); console.log(data); /*setProgram(data)*/} )
+          setShow(data2);
         if (getCookie('shoppingList').length > 0) {
           setShoppingList(JSON.parse(getCookie('shoppingList')))          
         }
-        updateWinkelOverviewPrice()
+       
+       
       })
       // .then((data2) => {setShow(data2); console.log(data2);/*setProgram(data)*/} )
   }, []);
-  
+  updateWinkelOverviewPrice();
   if (seats != null) {
     for (var seat in seats) {
       // console.log(seat)
@@ -49,6 +50,7 @@ export default function TicketSell() {
   }
 
   function addToShoppingList() {
+    
     var row = document.getElementById('DropdownRijNummer').value;
     var number = document.getElementById('DropdownStoelNummer').value;
     for (var seat in seats) {
@@ -70,7 +72,6 @@ export default function TicketSell() {
       }
     }
   }
-
   function addToShoppingCard() {
     if (shoppingList.length > 0) {
       setCookie('shoppingList', JSON.stringify(shoppingList), 30)
@@ -78,14 +79,17 @@ export default function TicketSell() {
   }
 
   function updateWinkelOverviewPrice() {
-    console.log(shoppingList.length)
+   if (totalPrice !== 0){
+    return
+   }
+   let price = 0;
     if (shoppingList.length != 0) {
-      for (var item in shoppingList) {
-        console.log(item)
+     for(let i = 0; i < setShoppingList.length; i++){
+      price += parseFloat(shoppingList[i].price)
       }
+      setTotalPrice(price)
     }
   }
-
   return (
     <div className=" TicketSellContainer">
       <h2>Show Naam</h2>
