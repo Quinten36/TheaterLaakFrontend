@@ -1,4 +1,4 @@
-import './../../Css/show.scss';
+import './../../Css/Program.scss';
 import React, { useState, useEffect } from 'react';
 import gegevens from './../../../package.json';
 

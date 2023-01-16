@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import {forEach} from "react-bootstrap/ElementChildren";
 import React, { useState, useEffect } from 'react';
 import gegevens from './../../../package.json';
+import { Nav } from 'react-bootstrap';
 
 export default function ProgrammingCard(props) {
   let [program, setProgram] = useState(null);
@@ -14,9 +15,11 @@ export default function ProgrammingCard(props) {
       .then((data) => {console.log(data); setProgram(data)})
   }, [])
 
+  if(program === undefined || program === null) return;
+
   return (
     <Card style={{ width: '18rem', alignItems:'Center' }}>
-      <Card.Img variant="top" src="/aladdin.jpg" />
+      <Card.Img variant="top" src={program.image} />
       <Card.Body>
         <Card.Title>{program != null && program.title}</Card.Title>
         <Card.Text className='homeCardBold'>Kaarten vanaf €{props.showObject.thirdClassPrice.toFixed(2)} * Rolstoel accesible/language </Card.Text>
@@ -29,7 +32,7 @@ export default function ProgrammingCard(props) {
             return <span key={index}>{item}, </span>;
           }
         })} </Card.Text> */}
-        <Button variant="primary">Info & Kaarten</Button>
+        <Nav.Link href={'/show/'+program.id}><Button variant="primary">Info & Kaarten</Button></Nav.Link>
       </Card.Body>
     </Card>
   )
