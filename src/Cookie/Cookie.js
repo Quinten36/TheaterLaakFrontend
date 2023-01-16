@@ -5,6 +5,11 @@ export function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+export function setCookieDate(cname, cvalue, exdate) {
+  let expires = "expires="+exdate.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
 export function getCookie(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(';');
