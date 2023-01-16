@@ -13,6 +13,9 @@ import Programming from "./Pages/Programming";
 import Register from './Components/LoginComponents/Register.jsx'
 import TweeFaPage from './Components/LoginComponents/TweeFaPage';
 import Ticket from './Components/TicketSaleComponents/TicketSell'
+import PrivacyBeleid from './Components/LoginComponents/PrivacyBeleid';
+import Login from './Components/LoginComponents/Login';
+import WWvergeten from './Components/LoginComponents/WWvergeten'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +34,9 @@ root.render(
         <Route exact path='/winkelwagen' element={<ShoppingCartPage/>}></Route>
         <Route exact path='/Registreer' element={<Register />}></Route>
         <Route exact path='/Validate' element={<TweeFaPage />}></Route>
+        <Route exact path='/PrivacyBeleid' element={<PrivacyBeleid />}></Route>
+        <Route exact path='/Login' element={<Login />}></Route>
+        <Route exact path='/WachtwoordVergeten' element={<WWvergeten />}></Route>
       </Routes>
       {/* footer */}
     </Router>

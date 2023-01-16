@@ -10,7 +10,7 @@ export default function TweeFaPage() {
   return (
     <div className = "FAContainer">
       <h1>Theather Laak </h1>
-      <h2>2 Factor Authentication</h2>
+      <h2>Email verificatie</h2>
       <FaInputhandle  />
       <div className="text2FaPage">Voer de automatisch gegenereerde code in. Deze is  naar uw Email adres is verzonden.</div>
       <div className="lijn2fa"></div>

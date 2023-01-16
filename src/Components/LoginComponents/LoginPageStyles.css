@@ -36,15 +36,16 @@
 }
 
 .RememberMeKnop {
-    margin-left: 2.6rem;
-    margin-bottom: 2.438rem;
+    margin: auto;
     font-size: 14px;
-
+    margin-bottom: 2rem;
 }
 
 
 .linkWachtwoordvergeten {
-    margin-left: 5.125rem;
+    margin: auto;
+    text-align: center;
+
 }
 
 .Registreren {
@@ -73,16 +74,16 @@
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
-    justify-content:center;
-    flex-wrap:wrap;
-    text-align:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .SubmitButton2FA {
-    margin-top:1rem;
+    margin-top: 1rem;
     width: 50%;
     margin-bottom: 2.813rem;
-    margin-left:24%
+    margin-left: 24%
 }
 
 
@@ -93,7 +94,7 @@
     border-radius: 8px;
     margin-bottom: 0.5rem;
     text-align: center;
-    margin-right:1rem;
+    margin-right: 1rem;
 }
 
 
@@ -138,13 +139,18 @@
 
 .FeedbackOpInput {
     font-size: 1rem;
-    margin: 0 auto; 
-    text-align: center; 
+    margin: 0 auto;
+    text-align: center;
     margin-bottom: 2rem;
-    
-  }
-  
 
+}
+
+.ErrorVerificatiePage {
+    color: red;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+}
 
 .AkkoordCheckBox {
     margin: auto;
@@ -152,10 +158,10 @@
     margin-bottom: 5rem;
 }
 
-.ErrorInputCheck{
+.ErrorInputCheck {
 
     font-size: 1rem;
-    color : red;
+    color: red;
 }
 
 .RegistratieCompleetButton {
@@ -181,15 +187,15 @@
     margin-bottom: 2rem;
 }
 
-.privacybeleidTextBox{
+.privacybeleidTextBox {
     width: 75%;
     margin-left: 12.5%;
-    font-size:17px;
+    font-size: 17px;
     margin-bottom: 4rem;
     border: 1px solid #000000;
 }
 
-.GelezenAkkoordButton{
+.GelezenAkkoordButton {
 
     width: 75%;
     margin-left: 12.5%;
@@ -209,26 +215,26 @@
     font-size: 1.25rem;
     text-align: center;
     margin-bottom: 2rem;
-    margin-left:9%
+    margin-left: 9%
 }
 
-.WWopniewInstellenInput{
+.WWopniewInstellenInput {
     width: 75%;
     margin: auto;
     margin-bottom: 3rem;
     border: 1px solid #000000;
 }
 
-.SubmitButtonWW{
+.SubmitButtonWW {
     width: 75%;
     margin: auto;
     margin-bottom: 2rem;
-    margin-left:12.5%;
-    
+    margin-left: 12.5%;
+
 }
 
-.WWvergetenText{
-    width:75%;
-    margin-left:12.5%;
-   
+.WWvergetenText {
+    width: 75%;
+    margin-left: 12.5%;
+
 }
