@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
+import gegevens from './../../../package.json';
 
 export default function WWvergeten() {
     const [state, setState] = useState("");
@@ -17,7 +18,8 @@ export default function WWvergeten() {
     }
 
     async function handleSubmit() {
-        const response = await fetch(`https://localhost:7098/api/Login/api/Login/${state.Username.usernameInput}/${state.Password.PasswordInput}`, {
+      //TODO: werkt deze logica nog
+        const response = await fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/Login/${state.Username.usernameInput}/${state.Password.PasswordInput}`, {
             method: 'Get',
         })
 
