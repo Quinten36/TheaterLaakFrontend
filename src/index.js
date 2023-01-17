@@ -16,7 +16,7 @@ import Ticket from './Components/TicketSaleComponents/TicketSell'
 import PrivacyBeleid from './Components/LoginComponents/PrivacyBeleid';
 import Login from './Components/LoginComponents/Login';
 import WWvergeten from './Components/LoginComponents/WWvergeten'
-
+import DonateursPortaal from './Components/DonateursportaalComponents/DonateursPortaal';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -37,6 +37,7 @@ root.render(
         <Route exact path='/PrivacyBeleid' element={<PrivacyBeleid />}></Route>
         <Route exact path='/Login' element={<Login />}></Route>
         <Route exact path='/WachtwoordVergeten' element={<WWvergeten />}></Route>
+        <Route exact path='/Donateurs-portaal' element={<DonateursPortaal />}></Route>
       </Routes>
       {/* footer */}
     </Router>
