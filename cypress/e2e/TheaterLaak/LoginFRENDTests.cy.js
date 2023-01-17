@@ -14,7 +14,7 @@ describe('Login Account Succes', () => {
       cy.get('.RegistratieCompleetButton').click()
       cy.visit('localhost:3000/Login')
     
-      cy.get('[placeholder="Gebruikersnaam"]').type(username)
+      cy.get('[placeholder="Gebruikersnaam"]').type(email)
       cy.get('[placeholder="Password"]').type("Aeack4df!")
     
       cy.get('.btn-primary').click()
