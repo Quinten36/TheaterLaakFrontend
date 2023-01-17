@@ -1,0 +1,141 @@
+.programBanner {
+    margin: 8px;
+    .showBannerImage {
+        width: 100%;
+    }
+}
+
+.programGenre {
+    color: grey;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.6em;
+}
+
+.programTitle {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.9em;
+}
+
+.programArtistHolder {
+    background-color: #000000;
+    color: azure;
+    width: 70vw;
+    margin: 10px auto 0;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.programDetails {
+    width: 80vw;
+    margin: 15px auto 0;
+    font-weight: 500;
+    .programDetailsDivider {
+        color: black;
+        border: 0;
+        border-top: 1px solid;
+        opacity: 1;
+        width: 80vw;
+        margin: 8px auto;
+    }
+}
+
+.programDescriptionArticle {
+    font-size: 0.9em;
+    padding: 7px 23px;
+    text-align: center;
+}
+
+.programSpeelBanner {
+    padding: 10px 25px;
+    font-size: 1.2em;
+    h3 {
+        margin: 5px 0 2px 0;
+        font-weight: 700;
+    }
+    p {
+        font-size: 1em;
+        margin: 2px 0;
+    }
+    .showDatesAccordion {
+        --bs-accordion-active-color: transparent; 
+        --bs-accordion-border-color: transparent;
+        --bs-accordion-border-width: 0;
+        --bs-accordion-border-radius: 0;
+        --bs-accordion-inner-border-radius: 0;
+        --bs-accordion-btn-padding-x: 0;
+        --bs-accordion-btn-padding-y: 0;
+        --bs-accordion-btn-color: black;
+        --bs-accordion-btn-bg: transparent;
+        --bs-accordion-bg: transparent;
+        --bs-accordion-active-bg: transparent !important;
+        --bs-accordion-active-color: black !important;
+        --bs-accordion-active-bg: transparent !important;
+        .showDatesAccordionHead {
+            margin: 6px 0 0;
+            width: 70vw;
+            opacity: 1;
+        }
+        .showPlayItem {
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+            align-items: center;
+            .showPlayItemDate {
+                font-size: 0.8em;
+                align-self: center;
+            }
+            .showPlayItemNotAvailable {
+                word-break: break-word;
+                width: 25vw;
+                text-align: center;
+                font-style: italic;
+                font-size: 0.7em;
+                color: rgba($color: #000000, $alpha: 0.6);
+            }
+            .showPlayItemAvailable {
+                height: 32px;
+                display: flex;
+                border-radius: 8px;
+                background-color: #2678F3;
+                border: 0;
+                color: azure;
+                padding: 6px 10px;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.programPriceBanner {
+    padding: 10px 25px;
+    .programPriceHolder{
+        .priceItem {
+            width: 50vw;
+            display: flex;
+            justify-content: space-between;
+            .priceRang {
+                font-weight: 700;
+            }
+        }
+    }
+}
+//recommendation
+.programRecommendationBanner {
+    padding: 0 0 1px;
+    .showAllProgramsBtn {
+        padding: 5px 25px;
+        margin: 5px auto 20px;
+        width: 181px;
+        display: block;
+        background-color: #2678F3;
+        border: 0;
+        border-radius: 9px;
+        color: azure;
+    }
+}

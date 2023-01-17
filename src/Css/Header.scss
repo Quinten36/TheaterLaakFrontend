@@ -1,0 +1,53 @@
+* {
+  --header-offset-top: 85.55;
+}
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler .fa-bars {
+  color: #fff;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler .fa-bars {
+  color: #4f4f4f;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scrolled {
+  background-color: #fff;
+}
+
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.navbar-collapse {
+  background-color: rgba(0,0,0,0.6);
+  padding: 8px;
+}
+
+.headerIcon {
+  width: 24px;
+  margin: 5px 10px;
+  fill: azure;
+}
+
+.shoppingCartIcon {
+  width: 31px;
+}
+
+.fa-bars {
+  color: black;
+  /* width: 37px; */
+  font-size: 1.4em;
+  margin: 0 0 0 12px;
+  font-weight: 900;
+}
+
+.headerItemLi {
+  .headerItemLink {
+    font-size: 1.5em;
+  }
+}

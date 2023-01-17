@@ -1,8 +1,8 @@
 import React from 'react'
-import './AccountPageStyles.css'
+import './AccountPagestyles.css'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/Css/bootstrap.min.css';
 
 export default function AccountPage() {
     return (

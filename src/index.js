@@ -1,23 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './Css/index.css';
 import App from './App';
+import ProgramPage from './Pages/ProgramPage';
+import ReserveringOverview from './Pages/ReserveringOverview';
+import Header from './Components/Header/Header';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
-
+import ShoppingCartPage from './Pages/ShoppingCartPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Programming from "./Pages/Programming";
+import Register from './Components/LoginComponents/Register.jsx'
+import TweeFaPage from './Components/LoginComponents/TweeFaPage';
+import Ticket from './Components/TicketSaleComponents/TicketSell'
+import PrivacyBeleid from './Components/LoginComponents/PrivacyBeleid';
+import Login from './Components/LoginComponents/Login';
+import WWvergeten from './Components/LoginComponents/WWvergeten'
+import DonateursPortaal from './Components/DonateursportaalComponents/DonateursPortaal';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      {/* header */}
+      <Header/>
       <Routes>
         <Route exact path='/' element={< App />}></Route>
         <Route exact path='/account' element={{/*link to account us*/}}></Route>
-        <Route exact path='/programmering' element={{/*link to programmering us*/}}></Route>
-        <Route exact path='/show/:showId' element={{/*link to show us*/}}></Route>
-        <Route exact path='/ticket' element={{/*link to ticket us*/}}></Route>
+        <Route exact path='/show/:programId' element={<ProgramPage/>}></Route>
+        <Route exact path='/programmering' element={<Programming />}></Route>
+        <Route exact path='/ticket/:showId' element={<Ticket/>}></Route>
         <Route exact path='/begunstigers' element={{/*link to begunstigers us*/}}></Route>
+        <Route exact path='/reserveringOverview' element={<ReserveringOverview/>}></Route>
         <Route exact path='/admin' element={{/*link to admin us*/}}></Route>
+        <Route exact path='/winkelwagen' element={<ShoppingCartPage/>}></Route>
+        <Route exact path='/Registreer' element={<Register />}></Route>
+        <Route exact path='/Validate' element={<TweeFaPage />}></Route>
+        <Route exact path='/PrivacyBeleid' element={<PrivacyBeleid />}></Route>
+        <Route exact path='/Login' element={<Login />}></Route>
+        <Route exact path='/WachtwoordVergeten' element={<WWvergeten />}></Route>
+        <Route exact path='/Donateurs-portaal' element={<DonateursPortaal />}></Route>
       </Routes>
       {/* footer */}
     </Router>

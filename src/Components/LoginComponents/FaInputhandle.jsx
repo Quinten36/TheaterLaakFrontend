@@ -1,71 +1,92 @@
-import { useRef } from 'react';
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 export default function FaInputhandle() {
-    
-    //useRef wordt gebruikt om een referentie punt te maken voor elk invoer veld . 
-    //Daarna wordt gekeken met de volgendeBox methode of er een character is ingevuld daarna wordt met focus de cursor op het volgende veld gezet
-    //.current wordt gebruikt om de value van de referentie van de invoer velden te gebruiken
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
+  const [input3, setInput3] = useState('');
+  const [input4, setInput4] = useState('');
+  const [input5, setInput5] = useState('');
 
+  const gebruikerID = localStorage.getItem("id")
+  const [fouteInvoer, setFouteInvoer] = useState(false);
 
-  const input1Ref = useRef(null);
-  const input2Ref = useRef(null);
-  const input3Ref = useRef(null);
-  const input4Ref = useRef(null);
-  const input5Ref = useRef(null);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const inputToString = input1.toString() + input2.toString() + input3.toString() + input4.toString() + input5.toString();
+    SendVerificatieCodeToBackEnd(inputToString);
+  }
 
-  const volgendeBox = (event, ref) => {
-    if (event.target.value.length === 1) {
-      ref.current.focus();
+  async function SendVerificatieCodeToBackEnd(inputToString) {
+    const response = await fetch(`https://localhost:7098/api/Registratie/api/validate/${gebruikerID}/${inputToString}`, {
+      method: 'Put',
+    })
+
+    if (response.ok) {
+      console.log("succes")
     }
-  };
+    if (!response.ok) {
+      const error = JSON.parse(await response.text());
+      setFouteInvoer( true)
+      
+    }    
+  }
 
   return (
-    <Form className="FA_collectie">
-      <Form.Control
-        className="FA_box"
-        id="2FA_invoer_1"
-        type="email"
-        placeholder="0"
-        maxLength="1"
-        ref={input1Ref}
-        onKeyUp={(event) => volgendeBox(event, input2Ref)}
-      />
-      <Form.Control
-        className="FA_box"
-        id="2FA_invoer_2"
-        type="email"
-        placeholder="0"
-        maxLength="1"
-        ref={input2Ref}
-        onKeyUp={(event) => volgendeBox(event, input3Ref)}
-      />
-      <Form.Control
-        className="FA_box"
-        id="2FA_invoer_3"
-        type="email"
-        placeholder="0"
-        maxLength="1"
-        ref={input3Ref}
-        onKeyUp={(event) => volgendeBox(event, input4Ref)}
-      />
-      <Form.Control
-        className="FA_box"
-        id="2FA_invoer_4"
-        type="email"
-        placeholder="0"
-        maxLength="1"
-        ref={input4Ref}
-        onKeyUp={(event) => volgendeBox(event, input5Ref)}
-      />
-      <Form.Control
-        className="FA_box"
-        id="2FA_invoer_5"
-        type="email"
-        placeholder="0"
-        maxLength="1"
-        ref={input5Ref}
-      />
-    </Form>
-  );
+    <div>
+      <Form className="FA_collectie">
+      
+        <Form.Control
+
+          className="FA_box"
+          type="text"
+          placeholder="0"
+          maxLength="1"
+          value={input1}
+          onChange={(event) => setInput1(event.target.value)}
+        />
+        <Form.Control
+
+          className="FA_box"
+          type="text"
+          placeholder="0"
+          maxLength="1"
+          value={input2}
+          onChange={(event) => setInput2(event.target.value)}
+        />
+        <Form.Control
+
+          className="FA_box"
+          type="text"
+          placeholder="0"
+          maxLength="1"
+          value={input3}
+          onChange={(event) => setInput3(event.target.value)}
+        />
+        <Form.Control
+
+          className="FA_box"
+          type="text"
+          placeholder="0"
+          maxLength="1"
+          value={input4}
+          onChange={(event) => setInput4(event.target.value)}
+        />
+        <Form.Control
+          
+          className="FA_box"
+          type="text"
+          placeholder="0"
+          maxLength="1"
+          value={input5}
+          onChange={(event) => setInput5(event.target.value)}
+        />
+      
+      
+      </Form >
+      {fouteInvoer ? <div className = "ErrorVerificatiePage" >De verificatie code is incorrect.</div> : null}
+      <Button className="SubmitButton2FA" variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
+    </div>
+  )
 }

@@ -1,23 +1,34 @@
+import {useEffect, useState} from 'react'
 
-import {useState} from 'react'
-import './LoginPageStyles.css';
-export default function RememberMeKnop() {
+export default function RememberMeKnop(props) {
   const [isChecked, setIsChecked] = useState(false);
 
   const handleChange = (event) => {
+    
     setIsChecked(event.target.checked);
-    console.log(!isChecked)
+    if(event.target.checked){
+      localStorage.setItem("username", props.Username.usernameInput);
+      localStorage.setItem("password", props.Password.PasswordInput);
+      localStorage.setItem("Checkbox", true);
+    }
+    else { 
+      localStorage.removeItem("username")
+      localStorage.removeItem("password")
+      localStorage.removeItem("Checkbox")
+    }
   };
 
-  return (
-      
+  useEffect(() => {
+    setIsChecked (localStorage.getItem("Checkbox") === 'true')
+  } ,[])
 
+
+  return (
       <div className = "RememberMeKnop">
         <label>
-        <input type="checkbox"  checked={isChecked} onChange={handleChange} />
+        <input type="checkbox" checked={isChecked} onChange={handleChange} />
           Mijn inloggegevens onthouden
       </label>
     </div>
-
   );
 }
