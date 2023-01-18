@@ -8,7 +8,7 @@ const route = "Program";
 const url = `http://${env.ipadress}:${env.port}/api/`
 const query = "Program"
 export const all = (search) => {
-    return fetch(url + query + '?' + search)
+    return fetch(url + query + search)
         .then(response => response.json())
         .catch(e => console.log(e))
 }
