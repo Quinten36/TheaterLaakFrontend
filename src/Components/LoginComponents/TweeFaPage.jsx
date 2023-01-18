@@ -14,9 +14,6 @@ export default function TweeFaPage() {
       <FaInputhandle  />
       <div className="text2FaPage">Voer de automatisch gegenereerde code in. Deze is  naar uw Email adres is verzonden.</div>
       <div className="lijn2fa"></div>
-      <div className="EmailOpnieuwLink">
-        <a href="#">Email opnieuw verzenden</a>
-      </div>
     </div>
   )
 }

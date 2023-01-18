@@ -118,7 +118,7 @@ export default function TicketSell() {
       {shoppingList == [] && 'Voeg stoelen toe'}
       {shoppingList != [] && 
       // console.log(shoppingList)
-        shoppingList.map((item, index) => (<div key={index} className='ticketShoppingList'><span className='ticketShoppingSpan'>{item.item.seatNumber}</span><span>{item.item.row}</span><span>€{item.price}</span></div>))
+        shoppingList.map((item, index) => (<div key={index} className='ticketShoppingList'><span className='ticketShoppingSpan'>{item.ticket.seatNumber}</span><span>{item.ticket.row}</span><span>€{item.price}</span></div>))
       }
       </div>
       <div className="lijnSeatPicker2"></div>

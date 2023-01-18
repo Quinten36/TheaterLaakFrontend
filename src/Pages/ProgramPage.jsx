@@ -32,7 +32,7 @@ export default function ProgramPage() {
     var diffInMs = new Date(show.end) - new Date(show.start);
     var hours = Math.floor((diffInMs % 86400000) / 3600000);
     var minutes = Math.round(((diffInMs % 86400000) % 3600000) / 60000);
-    return <>Duration: <span>{hours} uur {minutes} min</span></>
+    return <>Duratie: <span>{hours} uur {minutes} min</span></>
   }
 
   return (
