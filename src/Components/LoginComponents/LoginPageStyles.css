@@ -1,9 +1,11 @@
 * {
     font-family: 'Nunito';
     font-style: normal;
+    
 }
 
 .LoginContainer {
+   
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -12,7 +14,8 @@
 .LoginPageInputField {
     margin-bottom: 2.6875rem;
     max-width: 75%;
-    margin-left: 2.375rem;
+    margin: auto;
+    margin-bottom: 2rem;
     border: 2px solid #050505;
     border-radius: 8px;
 }
@@ -26,10 +29,10 @@
 }
 
 .ButtonLoginPage {
-
+    margin: auto;
     min-width: 50%;
     max-width: 75%;
-    margin-left: 2.375rem;
+    
     margin-bottom: 1.188rem;
     border-radius: 8px;
 
