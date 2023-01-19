@@ -19,6 +19,8 @@ import DonateursPortaal from './Components/DonateursportaalComponents/DonateursP
 import TicketSelectPage from './Pages/TicketSelectPage';
 import Doneren from './Pages/Doneer';
 import AccountPage from './Components/AccountComponents/AccountPage.jsx'
+import Admin from './Pages/Admin';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -32,7 +34,7 @@ root.render(
         <Route exact path='/ticket/:showId' element={<TicketSelectPage/>}></Route>
         <Route exact path='/begunstigers' element={{/*link to begunstigers us*/}}></Route>
         <Route exact path='/reserveringOverview' element={<ReserveringOverview/>}></Route>
-        <Route exact path='/admin' element={{/*link to admin us*/}}></Route>
+        <Route exact path='/admin' element={<Admin/>}></Route>
         <Route exact path='/winkelwagen' element={<ShoppingCartPage/>}></Route>
         <Route exact path='/Registreer' element={<Register />}></Route>
         <Route exact path='/Validate' element={<TweeFaPage />}></Route>

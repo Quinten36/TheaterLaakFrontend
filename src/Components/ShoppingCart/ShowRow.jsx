@@ -1,13 +1,15 @@
 import "./../../Css/shoppingCart.css"
 
-export default function ShowRow({ticket}){
+export default function ShowRow({show}){
     return (
         <tr className="showRow">
             <th colSpan="3" className="showInfo">
-                <h4 className="showName">{ticket.show.name}</h4>
-                <p>{ticket.date.toLocaleDateString() + " " + ticket.date.toLocaleTimeString()}</p>
-                {/* wo 21-12-2022 20:00 */}
-                <p>{ticket.show.artist}</p>
+                <div>
+                    <h4 className="showName">{show.program.title}</h4>
+                    <p>{new Date(show.start).toLocaleDateString() + " " + new Date(show.start).toLocaleTimeString()}</p>
+                    {/* wo 21-12-2022 20:00 */}
+                    <p>{show.program.group.artists.name}</p>
+                </div>
             </th>
             <th>
                 <a className="wijzigShow" href="./">Wijzig Plaatsen</a>
@@ -15,3 +17,4 @@ export default function ShowRow({ticket}){
         </tr>
     )
 }
+

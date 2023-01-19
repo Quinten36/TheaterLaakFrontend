@@ -7,7 +7,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import HomeCard from './Components/Home/homeCard';
 import React, { useState, useEffect } from 'react';
-import gegevens from './../package.json';
 
 // todo: fixen dat er shows opgehaald worden. en dan limit tot een x aantal. en dan weergeven
 
@@ -20,14 +19,14 @@ function App() {
   let [program, setProgram] = useState(null);
 
   if (shows == null) {
-    fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/show/limit/3`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/show/limit/3`)
     .then(resp => resp.json())
     .then((data) => {console.log(data[0]); setShows(data)})
   }
 
   useEffect(() => {
     if (shows!=null) {
-      fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/program/${shows[0].programId}`)
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/program/${shows[0].programId}`)
         .then(resp => resp.json())
         .then((data) => {console.log(data); setProgram(data)})
     }

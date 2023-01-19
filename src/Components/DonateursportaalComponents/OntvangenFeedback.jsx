@@ -8,21 +8,21 @@ export default function OntvangenFeedback() {
     const [gebruikerFeedbackInput, setGebruikerFeedbackInput] = useState("");
     const gebruikerID = GetJWTToken().Id;
     const [newComment, setNewComment] = useState(false)
-    
+
     useEffect(() => {
-        
-        fetch('http://localhost:5086/api/DonateurFeedback')
+
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/DonateurFeedback`)
             .then(resp => resp.json())
             .then(data => setFeedback(data))
             .catch(error => console.log(error))
             setGebruikerFeedbackInput("")
             setNewComment(false)
     }, [newComment])
-    
+
     function handleGebruikerFeedbackInput(event) {
         setGebruikerFeedbackInput(event.target.value);
     }
-    
+
     function handleFeedbackSubmit() {
         fetch('http://localhost:5086/api/DonateurFeedback', {
             method: 'POST',
