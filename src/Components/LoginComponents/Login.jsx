@@ -69,7 +69,7 @@ export default function Login() {
        if(response.ok){
         response.json().then((data) => {/*console.log(data)*/; setCookieDate('userJWT', data.token, GetJWTExp(data.token))});
         console.log("succes")
-        navigate("/mijnaccount")
+        navigate("/account")
        }
        if (!response.ok) {
         const error = JSON.parse(await response.text());
