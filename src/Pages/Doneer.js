@@ -77,6 +77,7 @@ export default function Programming() {
 
   function checkOfDonateur() {
     if (apiJWTToken == null) {
+      //TODO: de api ophalen vanaf de url en dat in de cookies zetten. Aparte pagina?
       window.location.href = "https://ikdoneer.azurewebsites.net/Toegang?url=https%3A%2F%2Fwww.stresscentrum.nl%2F";
     } else {
       var totaal = 0;

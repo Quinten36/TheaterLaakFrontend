@@ -45,6 +45,7 @@ export default function DonateursPortaal() {
         <Button className='plaatsFeedbackButton' onClick={handleFeedbackSubmit} variant="primary">Plaats feedback</Button>
       </Form>
       <div className='lijn1'></div>
+      <h3>Feedback van andere donateurs.</h3>
       <OntvangenFeedback />
     </div>
   )
