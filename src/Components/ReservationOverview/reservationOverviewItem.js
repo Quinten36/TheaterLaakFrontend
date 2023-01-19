@@ -1,10 +1,9 @@
 import './../../Css/Program.scss';
 import React, { useState, useEffect } from 'react';
-import gegevens from './../../../package.json';
 
 function Show(props) {
   let [person, setPerson] = useState(null);
-  fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/account/name/`+props.gereserveerdDoor)
+  fetch(`${process.env.REACT_APP_BACKEND_URL}/account/name/`+props.gereserveerdDoor)
       .then(resp => resp.json())
       .then((data) => {console.log(data); setPerson(data.username)})
   // console.log(respons)

@@ -8,7 +8,7 @@ export default function EarlyAccessReservations() {
 
   async function fetchShows() {
     try {
-      const response = await fetch('http://localhost:5086/api/Show', {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Show`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });

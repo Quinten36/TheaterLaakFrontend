@@ -17,7 +17,7 @@ export default function DonateursPortaal() {
   }
 
   function handleFeedbackSubmit() {
-    fetch('http://localhost:5086/api/DonateurFeedback', {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/DonateurFeedback`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

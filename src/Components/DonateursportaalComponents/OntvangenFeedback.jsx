@@ -5,7 +5,7 @@ export default function OntvangenFeedback() {
     const [feedback, setFeedback] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5086/api/DonateurFeedback')
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/DonateurFeedback`)
             .then(resp => resp.json())
             .then(data => setFeedback(data))
             .catch(error => console.log(error))

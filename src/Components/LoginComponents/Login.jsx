@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {GetJWTExp} from './../../JWT/JWT';
 import {getCookie, setCookieDate} from './../../Cookie/Cookie';
-import gegevens from './../../../package.json';
 import Nav from 'react-bootstrap/Nav';
 
 
@@ -53,7 +52,7 @@ export default function Login() {
 
   async function handleLoginButton(){
     console.log(JSON.stringify({"Username": "", "Email": state.Username.usernameInput, "Password":state.Password.PasswordInput}))
-      const response = await fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/Login`,{
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Login`,{
         method: 'POST',
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached

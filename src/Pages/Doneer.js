@@ -1,6 +1,5 @@
 import {useEffect, useMemo, useState} from "react";
 import { Nav } from 'react-bootstrap';
-import gegevens from './../../package.json';
 import './../Css/Doneer.scss'
 import React from 'react'
 import Select from 'react-select'
@@ -91,7 +90,7 @@ export default function Programming() {
       })
       .then(() => {
         console.log(totaal)
-        fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/account/checkDonatie/${totaal}`, requestOptionsAPI)
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/account/checkDonatie/${totaal}`, requestOptionsAPI)
         .then(resp => resp.json())
         .then((data) => {token = data;})
         .then(() =>{updateToken()})
