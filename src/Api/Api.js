@@ -23,7 +23,6 @@ export async function getSingle(query, id) {
 async function post(query, data) {
     return fetch(`${url}${query}`, {
         Headers: {
-            'X-CSRF-TOKEN': 'meta[name="csrf-token"]',
             'Content-Type': 'application/json'
         },
         method: "POST",
@@ -33,7 +32,6 @@ async function post(query, data) {
 async function put(query, id, data) {
     return fetch(`${url}${query}/${id}`, {
         Headers: {
-            'X-CSRF-TOKEN': 'meta[name="csrf-token"]',
             'Content-Type': 'application/json',
             'Accept' : 'application/json'
         },
@@ -44,7 +42,6 @@ async function put(query, id, data) {
 export async function destroy(query, id) {
     return fetch(`${url}${query}/${id}`, {
         Headers: {
-            'X-CSRF-TOKEN': 'meta[name="csrf-token"]',
         },
         method: "DELETE",
     })

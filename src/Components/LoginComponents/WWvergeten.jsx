@@ -4,9 +4,11 @@ import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
 import gegevens from './../../../package.json';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function WWvergeten() {
     const [state, setState] = useState("");
+    const navigate = useNavigate();
     const [error, setError] = useState({
         Error: {
             errorMessage: "",
@@ -18,18 +20,18 @@ export default function WWvergeten() {
     }
 
     async function handleSubmit() {
-      //TODO: werkt deze logica nog
-        const response = await fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/Login/${state.Username.usernameInput}/${state.Password.PasswordInput}`, {
-            method: 'Get',
+      
+        const response = await fetch(`https://localhost:7098/api/Login/wwvergeten/${state}`, {
+            method: 'Put',
         })
 
         if (response.ok) {
-            console.log("succes")
-
+            navigate("/Login")
         }
         if (!response.ok) {
             const error = JSON.parse(await response.text());
-
+            console.log(error)
+            //setError(error);
         }
     }
 

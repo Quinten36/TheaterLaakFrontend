@@ -4,7 +4,10 @@ import Button from 'react-bootstrap/Button';
 import { getCookie } from "../Cookie/Cookie.js";
 
 export default function ShoppingCartPage() {
-    var resp = getCookie("shoppingList");
+    // var resp = getCookie("shoppingList");
+    // console.log(JSON.parse(resp))
+
+
     return (
         <main>
             <ShoppingCart className="shoppingCart" tickets={tickets}/>
