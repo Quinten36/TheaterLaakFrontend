@@ -68,7 +68,7 @@ export default function Login() {
        })
        
        if(response.ok){
-        response.json().then((data) => {/*console.log(data)*/; setCookieDate('userJWT', data.token, GetJWTExp(data))});
+        response.json().then((data) => {/*console.log(data)*/; setCookieDate('userJWT', data.token, GetJWTExp(data.token))});
         console.log("succes")
         navigate("/mijnaccount")
        }
@@ -91,9 +91,9 @@ export default function Login() {
 
   
   return (
-    <div className = "LoginContainer">
+    <div className = "LoginContainer" >
     <h1>Theather Laak</h1> 
-    <Form>
+    <Form >
             <Form.Control className = "LoginPageInputField" isInvalid={state.Username.usernameInputFOUT} onChange={handleUsernameInput} value={state.Username.usernameInput} type="email" placeholder="Gebruikersnaam" />
             <Form.Control className = "LoginPageInputField" isInvalid={state.Password.PasswordInputFOUT} onChange={handlePasswordInput} value={state.Password.PasswordInput}type="password" placeholder="Password" />
             <Form.Control.Feedback className="FeedbackOpInput" type="invalid">{state.Username.userNameError}</Form.Control.Feedback>

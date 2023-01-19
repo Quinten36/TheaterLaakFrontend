@@ -11,13 +11,13 @@ export function GetJWTToken() {
   return token;
 }
 
-export function GetJWTExp(token = null) {
+export function GetJWTExp(token) {
   var offsetForUTC = 60*60*1;
-  var date = token.token.length > 0 ? jwt_decode(token.token).exp : GetJWTToken().exp;
+  var date = jwt_decode(token).exp;
   return new Date((date+offsetForUTC) * 1000);
 }
 
 export function getJWTRole() {
-  var output = checkJWTToken() ? GetJWTToken()['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'] : 'No token available';
+  var output = checkJWTToken() ? GetJWTToken()['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] : 'No token available';
   return output;
 }

@@ -49,8 +49,39 @@
     margin-bottom: 2rem;
     height: 8rem;
     width: 75%;
+    
 }
 
 .plaatsFeedbackButton{
     margin-left: 12.5%;
+    margin-bottom: 4rem;
 }
+
+.programmaKomendeSeizoen {
+    width: 75%;
+    margin-left: 12.5%;
+    margin-bottom: 4rem;
+}
+
+.OntvangenFeedback{
+    width: 75%;
+    margin: auto;
+}
+
+.feedbackCard {
+    margin: auto;
+    width: 75%;
+    border: 2px solid black;
+    margin-bottom: .5rem;
+    max-width:500px;
+    overflow:auto;
+}
+
+.feedbackCard p {
+    font-size: 18px;
+    margin: 0;
+    color: black;
+    word-wrap: break-word;
+}
+
+

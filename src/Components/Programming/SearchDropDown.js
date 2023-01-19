@@ -1,17 +1,11 @@
 import { Form } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-const SearchDropDown = () =>
-    <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-            Dropdown Button
-        </Dropdown.Toggle>
-
-        <Dropdown.Menu>
-            <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-            <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-        </Dropdown.Menu>
-    </Dropdown>
-
+const SearchDropDown = ({setSearchQuery}) =>
+    <Form.Select aria-label="Default select example" onChange={event => setSearchQuery(event.target.value)}>
+        <option>Sorteren Op</option>
+        <option value="datum">Datum</option>
+        <option value="kostenHoogLaag">Kosten (hoog-laag)</option>
+        <option value="kostenLaagHoog">Kosten (laag-hoog)</option>
+    </Form.Select>
 export default SearchDropDown

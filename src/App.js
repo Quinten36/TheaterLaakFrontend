@@ -10,7 +10,7 @@ import React, { useState, useEffect } from 'react';
 import gegevens from './../package.json';
 
 // todo: fixen dat er shows opgehaald worden. en dan limit tot een x aantal. en dan weergeven
-import logo from './logo.svg';
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
