@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import {forEach} from "react-bootstrap/ElementChildren";
 import React, { useState, useEffect } from 'react';
-import gegevens from './../../../package.json';
 import { Nav } from 'react-bootstrap';
 
 export default function ProgrammingCard(props) {
@@ -10,7 +9,7 @@ export default function ProgrammingCard(props) {
   
   useEffect(() => {
     console.log(props)
-    fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/program/${props.showObject.programId}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/program/${props.showObject.programId}`)
       .then(resp => resp.json())
       .then((data) => {console.log(data); setProgram(data)})
   }, [])

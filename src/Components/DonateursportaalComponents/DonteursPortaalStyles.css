@@ -40,19 +40,19 @@
     text-align: center;
 }
 
-.subtitelPreview{
+.subtitelPreview {
     text-align: center;
 }
 
-.InputFeedbackBox{
+.InputFeedbackBox {
     margin: auto;
     margin-bottom: 2rem;
     height: 8rem;
     width: 75%;
-    
+
 }
 
-.plaatsFeedbackButton{
+.plaatsFeedbackButton {
     margin-left: 12.5%;
     margin-bottom: 4rem;
 }
@@ -63,7 +63,7 @@
     margin-bottom: 4rem;
 }
 
-.OntvangenFeedback{
+.OntvangenFeedback {
     width: 75%;
     margin: auto;
 }
@@ -73,8 +73,8 @@
     width: 75%;
     border: 2px solid black;
     margin-bottom: .5rem;
-    max-width:500px;
-    overflow:auto;
+    max-width: 500px;
+    overflow: auto;
 }
 
 .feedbackCard p {
@@ -85,32 +85,33 @@
 }
 
 
-.showsEarlyAccessKaart{
+
+.Kaartcontainer {
     width: 75%;
-    margin:auto;
+    margin: auto;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.kaartearlyaccess {
+    border: 2px black solid;
+    margin-bottom: 1rem;
+}
+
+.showsEarlyAccessKaart p {
+    margin: 0;
     padding: 0;
     margin-bottom: 1rem;
 }
 
-.showsEarlyAccessKaart Card{
-    border-style: solid;
-    
-}
-
-.showsEarlyAccessKaart p{
-   margin: 0;
-   padding:0;
-   margin-bottom: 1rem;
-}
-
-.showsEarlyAccessKaart img{
+.showsEarlyAccessKaart img {
     height: 15rem;
     margin: 0;
-    padding:0;
- }
+    padding: 0;
+}
 
 
- .showsEarlyAccessKaartCard.Title {
-   font-size: 24px;
-   margin: 0;
- } 
+.showsEarlyAccessKaartCard.Title {
+    font-size: 24px;
+    margin: 0;
+}

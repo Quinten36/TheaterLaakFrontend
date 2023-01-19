@@ -56,7 +56,7 @@ export default function FaInputhandle() {
   }
 
   async function SendVerificatieCodeToBackEnd(inputToString) {
-    const response = await fetch(`https://localhost:7098/api/Registratie/api/validate/${gebruikerID}/${inputToString}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Registratie/api/validate/${gebruikerID}/${inputToString}`, {
       method: 'Put',
     })
 
@@ -69,7 +69,7 @@ export default function FaInputhandle() {
   }
 
  async function handleOpnieuwEmail(){
-  const response = await fetch(`http://localhost:5086/OpnieuwVerzendenVerificatieMail/${gebruikerID}`, {
+  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/OpnieuwVerzendenVerificatieMail/${gebruikerID}`, {
       method: 'Get',
     })
 

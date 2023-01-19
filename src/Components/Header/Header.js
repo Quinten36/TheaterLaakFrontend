@@ -6,76 +6,28 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react';
 import {useState} from 'react'
 import './../../Css/Header.scss';
-import Accordion from 'react-bootstrap/Accordion';
-import NavBarPreviewCard from './NavBarPreviewCard';
+import {checkJWTToken, getJWTRole} from './../../JWT/JWT';
 
 function App() {
-  const [open, setOPen] = useState(true);
   const [openOver, setOPenOver] = useState(false);
-  const toggle = () => {
-    setOPen(!open);
-  };
+  var extraSection = null;
+
+  console.log(checkJWTToken())
+
   const toggleOver = () => {
     console.log(openOver)
     document.getElementById('navbarExample01').classList.toggle('show');
     setOPenOver(!openOver);
   };
+
+  if (checkJWTToken()) {
+    var role = getJWTRole();
+    if (role == 'Admin')
+      extraSection = true;
+  }
+
   return (
     <>
-      {/* <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
-        
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        
-        <Navbar.Brand href="#home">Theater Laak</Navbar.Brand>
-      </Container>
-      <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <Accordion defaultActiveKey={['0', '1']} alwaysOpen className='nav-bar-accordion'>
-              <Accordion.Item eventKey="0"> 
-                <Accordion.Header><h2 className='nav-bar-preview-head'>Voorstellingen</h2></Accordion.Header>
-                /* test *
-                  <Accordion.Body>
-                    <NavBarPreviewCard titel='Aladin' imgSrc='/Aladdin.jpg' imgAlt='Plaatje'/>
-                    <NavBarPreviewCard titel='Aladin' imgSrc='/Aladdin.jpg' imgAlt='Plaatje'/>
-                    <NavBarPreviewCard titel='Aladin' imgSrc='/Aladdin.jpg' imgAlt='Plaatje'/>
-                  <a href='/programmering' className='nav-bar-preview-link'>Alle voorstellingen <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">{<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->*<path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg></a>
-                  </Accordion.Body>
-                <hr className='DivideLine'/>
-              </Accordion.Item>
-              <Accordion.Item eventKey="1">
-                <Accordion.Header><h2 className='nav-bar-preview-head'>Over ons</h2></Accordion.Header>
-                  <Accordion.Body>
-                    <ul className='over-ons-list'>
-                        <li><Nav.Link href="/contact">Contact</Nav.Link></li>
-                        <li><Nav.Link href="/about">Over Theater Laak</Nav.Link></li>
-                        <li><Nav.Link href="/">Werken bij</Nav.Link></li>
-                    </ul>
-                  </Accordion.Body>
-                  <hr className='DivideLine'/>
-              </Accordion.Item>
-            </Accordion>
-            {/* tot hier *
-            <section>
-                <ul className='nav-bar-links'>
-                    <li><Nav.Link href="/">Theater Laak</Nav.Link></li>
-                    <li><Nav.Link href="/">Zakelijk</Nav.Link></li>
-                </ul>
-                <hr className='DivideLine'/>
-            </section>
-            <section>
-                <ul className='nav-bar-links'>
-                    <li><Nav.Link href="/">Mijn account</Nav.Link></li>
-                    <li><Nav.Link href="/">Winkelwagen</Nav.Link></li>
-                </ul>
-                <div className='languageSelector'>
-                    <span className='selected'>NL</span>
-                    <span>EN</span>
-                </div>
-            </section>
-          </Nav>
-        </Navbar.Collapse>
-    </Navbar> */}
     <header>
         {/* <!-- Animated navbar--> */}
         <nav className="navbar navbar-expand-lg sticky-top navbar-scroll">
@@ -107,6 +59,9 @@ function App() {
                 <li className="nav-item headerItemLi">
                   <Nav.Link href="/Doneren" className='headerItemLink'>Doneren</Nav.Link>
                 </li>
+                {extraSection != null && <li className="nav-item headerItemLi">
+                  <Nav.Link href="/Admin" className='headerItemLink'>Admin</Nav.Link>
+                </li>}
                 {/* <li className="nav-item">
                   <Nav.Link href="/account">Account</Nav.Link>
                 </li>
@@ -127,7 +82,7 @@ function App() {
                 </li>
                 
                 <li className="nav-item">
-                  <Nav.Link href="/account">
+                  <Nav.Link href="/Login">
                     <svg className='headerIcon' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">{/*<!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->*/}<path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg>
                   </Nav.Link>
                 </li>

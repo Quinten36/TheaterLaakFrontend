@@ -144,7 +144,7 @@ const requestOptions = {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   };    
-  const response = await fetch('http://localhost:5086/api/Registratie', requestOptions);
+  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Registratie`, requestOptions);
   if (response.ok) {
     const jsonResponse = await response.json();
     localStorage.setItem("id", jsonResponse.id);
@@ -227,7 +227,7 @@ const requestOptions = {
       </Form.Group>
       <div className="AkkoordCheckBox">
         <label>
-          <input type="checkbox" onChange={handleChangeCheckBoxInput} />Ik ga akkoord met de <div><a href="http://localhost:3000/privacybeleid">privacy voorwaarden</a></div>
+          <input type="checkbox" onChange={handleChangeCheckBoxInput} />Ik ga akkoord met de <div><a href="/privacybeleid">privacy voorwaarden</a></div>
           <div hidden={!state.checkBoxInput.checkBoxInputFOUT} className='ErrorInputCheck'>U moet eerst akkoord gaan met de privacy voorwaarden voordat u een account aan kan maken.</div> 
         </label>
       </div>
