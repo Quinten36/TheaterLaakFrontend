@@ -38,7 +38,7 @@ function Show(props) {
       var reformatEnd = formatDate[1] +'-'+ formatDate[2] +'-'+formatDate[0];
 
       //do api request
-      fetch(`http://${gegevens.ipadress}:${gegevens.port}/api/reservation/filtered?start=`+reformatStart+'&end='+reformatEnd)
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/reservation/filtered?start=`+reformatStart+'&end='+reformatEnd)
         .then(resp => resp.json())
         .then((data) => {setReservationOverview(data); })
     } else {
@@ -58,7 +58,7 @@ function Show(props) {
   /*** Basic fetch method *************************************/
   //fetch show data
   // useEffect(() => {
-  //   fetch('http://127.0.0.1:5086/api/show/'+showId)
+  //   fetch(`${process.env.REACT_APP_BACKEND_URL}/show/`+showId)
   //    .then(resp => resp.json())
   //    .then((data) => setShow(data))
   //   }, [])

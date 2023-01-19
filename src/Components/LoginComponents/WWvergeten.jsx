@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useEffect } from 'react';
-import gegevens from './../../../package.json';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function WWvergeten() {
@@ -21,7 +20,7 @@ export default function WWvergeten() {
 
     async function handleSubmit() {
       
-        const response = await fetch(`https://localhost:7098/api/Login/wwvergeten/${state}`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Login/wwvergeten/${state}`, {
             method: 'Put',
         })
 

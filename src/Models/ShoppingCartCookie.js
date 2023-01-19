@@ -5,8 +5,16 @@ export default class ShoppingCartCookie {
     }
 
     addSeat(show, seat) {
-        this.showSeats.push({
-            "showId": show.id,
+        var showInCookie = this.showSeats.find(ss => ss.showId === show.id)
+        if(showInCookie === null || showInCookie === undefined) {
+            showInCookie = {
+                "showId": show.id,
+                "seats": []
+            }
+            this.showSeats.push(showInCookie)
+        }
+
+        showInCookie.seats.push({
             "seatId": seat.id
         })
     }

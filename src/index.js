@@ -18,6 +18,7 @@ import WWvergeten from './Components/LoginComponents/WWvergeten'
 import DonateursPortaal from './Components/DonateursportaalComponents/DonateursPortaal';
 import TicketSelectPage from './Pages/TicketSelectPage';
 import Doneren from './Pages/Doneer';
+import AccountPage from './Components/AccountComponents/AccountPage.jsx'
 import Admin from './Pages/Admin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -27,7 +28,7 @@ root.render(
       <Header/>
       <Routes>
         <Route exact path='/' element={< App />}></Route>
-        <Route exact path='/account' element={{/*link to account us*/}}></Route>
+        <Route exact path='/account' element={<AccountPage />}></Route>
         <Route exact path='/show/:programId' element={<ProgramPage/>}></Route>
         <Route exact path='/programmering' element={<Programming />}></Route>
         <Route exact path='/ticket/:showId' element={<TicketSelectPage/>}></Route>
