@@ -1,32 +1,61 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import ShowRow from "./ShowRow";
 import TicketRow from "./TicketRow";
 import TotalsRow from "./TotalsRow";
 
-export default function Table({tickets}) {
-    const rows = [];
-    let lastShow = null;
+export default function Table({shoppingCartItems}) {
+    const [rows, setRows] = useState([]);
+    console.log("SCI in Table")
+    console.log(shoppingCartItems)
+    useEffect(() => {
+        let mounted = true;
+        function createRows() {
+            const tempRows = [];
 
-    tickets.forEach((ticket) => {
-        if (ticket.show.name !== lastShow) {
-            rows.push(
-                <ShowRow
-                    ticket={ticket}
-                    key={ticket.show.name}/>
-            );
+            const lastShowId = null;
+            const showRowIndex = null;
+            
+            console.log("Hoi")
+            shoppingCartItems.seatShowItems.forEach((seatShowItem) => {
+                console.log("In Loop")
+                console.log(seatShowItem)
+                console.log("Foreac")
+                console.log(seatShowItem)
+                seatShowItem.forEach((el) => console.log(el.key))
+                // let show = seatShowItem.key;c
+                // console.log(show)d
+                
+                // if(!lastShowId === show.id){
+                //     lastShowId = show.id;
+                //     if(!tempRows.includes(r => r.key === "SH"+show.id)){
+                //         const showRow = <ShowRow
+                //             key={"SH" + show.id}
+                //             show={show} />;
+                //         tempRows.push(showRow)
+                //         console.log(tempRows.indexOf(showRow))
+                //     }
+                // }
+                
+            })
         }
-        rows.push(
-            <TicketRow
-                ticket={ticket}
-                key={ticket.id}/>
-        );
-        lastShow = ticket.show.name;
-    });
 
-    rows.push(
-        <TotalsRow
-            tickets={tickets}
-            key={"total"}/>
-    );
+        createRows();
+        return () =>  mounted = false;
+    }, [shoppingCartItems])
+
+    // rows.push(
+    //     <TotalsRow
+    //         tickets={tickets}
+    //         key={"total"}/>
+    // );
+    // console.log("Rows")
+    // console.log(rows)
+    // if (rows === []) {
+    //     return;
+        
+    // }
+    if(shoppingCartItems.seatShowItems === null) return;
     return (
         <table>
             <thead>
