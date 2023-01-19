@@ -104,6 +104,9 @@ function App() {
                 <li className="nav-item headerItemLi">
                   <Nav.Link href="/programmering" className='headerItemLink'>Programmering</Nav.Link>
                 </li>
+                <li className="nav-item headerItemLi">
+                  <Nav.Link href="/Doneren" className='headerItemLink'>Doneren</Nav.Link>
+                </li>
                 {/* <li className="nav-item">
                   <Nav.Link href="/account">Account</Nav.Link>
                 </li>
