@@ -32,7 +32,6 @@ root.render(
         <Route exact path='/show/:programId' element={<ProgramPage/>}></Route>
         <Route exact path='/programmering' element={<Programming />}></Route>
         <Route exact path='/ticket/:showId' element={<TicketSelectPage/>}></Route>
-        <Route exact path='/begunstigers' element={{/*link to begunstigers us*/}}></Route>
         <Route exact path='/reserveringOverview' element={<ReserveringOverview/>}></Route>
         <Route exact path='/admin' element={<Admin/>}></Route>
         <Route exact path='/winkelwagen' element={<ShoppingCartPage/>}></Route>
