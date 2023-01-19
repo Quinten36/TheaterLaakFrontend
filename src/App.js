@@ -12,6 +12,7 @@ import React, { useState, useEffect } from 'react';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Nav } from 'react-bootstrap';
 
 function App() {
   let [shows, setShows] = useState(null);
@@ -31,16 +32,15 @@ function App() {
     }
   }, [shows])
 
-  
-
+  if(program === null) return;
   return (
     <main>
       <figure className='homeShowBanner'>
-        <Image src='/pexels.jpg' alt='Plaatje' fluid/>
-        <figcaption className='homeBannerCaption'>
-          {program != null && program.title} <br/>
-          <Button variant="primary" className='callToActionHome'>More info</Button>
-        </figcaption>
+          <Image src='/pexels.jpg' alt='Plaatje' fluid/>
+          <figcaption className='homeBannerCaption'>
+            {program != null && program.title} <br/>
+            <Nav.Link href={'/show/'+program.id}><Button variant="primary" className='callToActionHome'>More info</Button></Nav.Link>
+          </figcaption>
       </figure>
       <Carousel className='homeSlider'>
         {/* map door de 3 eerstvolgende shows en laat ze zien */}
