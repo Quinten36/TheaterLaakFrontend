@@ -85,3 +85,32 @@
 }
 
 
+.showsEarlyAccessKaart{
+    width: 75%;
+    margin:auto;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.showsEarlyAccessKaart Card{
+    border-style: solid;
+    
+}
+
+.showsEarlyAccessKaart p{
+   margin: 0;
+   padding:0;
+   margin-bottom: 1rem;
+}
+
+.showsEarlyAccessKaart img{
+    height: 15rem;
+    margin: 0;
+    padding:0;
+ }
+
+
+ .showsEarlyAccessKaartCard.Title {
+   font-size: 24px;
+   margin: 0;
+ } 
