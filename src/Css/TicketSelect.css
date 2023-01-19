@@ -1,0 +1,199 @@
+/* Ticket Select Global */
+main {
+    padding: 0px 24px 34px;
+}
+
+body{
+    height: fit-content;
+}
+
+/* Show Info */
+.showInfo {
+    margin: auto;
+    text-align: center;
+    max-width: 70vw;
+}
+.showInfo h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+    opacity: 0.6;;
+}
+
+
+
+
+
+
+
+
+
+/* SeatPicker */
+.seatPickerImageContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+:root {
+    --seatColumns: 1
+}
+.seatsImageContainer {
+    display: grid;
+    grid-template-columns: repeat(var(--seatColumns), 1fr);
+    gap: 8px 0px;
+    width: 100%;
+}
+
+.podium {
+    background-color: gray;
+    margin-top: 4px;
+    width: 100%;
+    border: 4px solid black;
+    height: 60px;
+    border-bottom: none;
+    text-align: center;
+    color: white;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+.seatAvailableIcon{
+    min-width: 1.125rem;
+    height: 1.125rem;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 6px;
+    background-color: #D9D9D9;
+}
+  
+.seatOccupiedIcon{
+    min-width: 1.125rem;
+    height: 1.125rem;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 6px;
+    background-color: #FF0000;
+  }
+.seatSelectedIcon{
+    min-width: 1.125rem;
+    height: 1.125rem;
+    box-sizing: border-box;
+    border: 3px solid #000000;
+    border-radius: 6px;
+    background-color: #21DC21;
+}
+.legend {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+.leftLegendRow {
+    display: grid;
+    gap: 4px;
+    grid-auto-columns: 1.125rem;
+}
+.leftLegendRow h6 {
+    grid-column: 2 / 3;
+}
+
+.rightLegendRow {
+    display: grid;
+    gap: 4px;
+    grid-auto-columns: 2 span;
+}
+.rightLegendRow div {
+    grid-column: 2 / 3;
+}
+
+/* Dropdowns */
+.dropDownContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.dropDownItem {
+    width: 40%;
+}
+.dropDownItem select {
+    border: 2px solid #2678F3;
+}
+
+/* Selected Seat Info */
+.selectedSeatInfo {
+    margin: auto;
+    width: -moz-fit-content;
+    margin-top: 16px;
+    width: fit-content;
+    text-align: center;
+    padding: 4px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+}
+
+.addToShoppingListBtn {
+    margin: auto;
+    margin-top: 16px;
+}
+
+.seatPicker {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Shopping List */
+.shoppingListContainer{
+    display: flex;
+    margin-top: 16px;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    gap: 24px;
+    padding-top: 8px;
+    border-top: 2px solid black;
+    /* background-color: antiquewhite; */
+}
+
+.gridCol1 {
+    grid-column: 1/2;
+    /* background-color: rebeccapurple; */
+}
+
+.gridCol2 {
+    grid-column: 2/3;
+    /* background-color: saddlebrown; */
+}
+
+.gridCol3 {
+    grid-column: 3/4;
+    /* background-color: salmon; */
+}
+
+.gridCol4 {
+    grid-column: 4/5;
+    /* background-color: palegreen; */
+}
+.shoppingListInfo {
+    display: grid;
+    grid-auto-columns: 30px 26.5vw 26.5vw 26.5vw;
+}
+
+.shoppingListRow {
+    display: grid;
+    position: relative;
+    grid-column: 4 span;
+    grid-auto-columns: 30px 26.5vw 26.5vw 26.5vw;
+    /* background-color: violet; */
+}
+.shoppingListItem{
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+}
+.shoppingTotals {
+    border-top: 2px solid black;
+    padding-top: 4px;
+}
+
+.red {
+    color: #D81F1F;
+}
+
