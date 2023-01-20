@@ -1,8 +1,10 @@
 import { useState, useRef, } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function FaInputhandle() {
+  const navigate = useNavigate();
   const [input1, setInput1] = useState('');
   const input1Ref = useRef(null);
   const [input2, setInput2] = useState('');
@@ -61,7 +63,7 @@ export default function FaInputhandle() {
     })
 
     if (response.ok) {
-      console.log("succes")
+      navigate('/Login')
     }
     if (!response.ok) {
       setFouteInvoer(true)

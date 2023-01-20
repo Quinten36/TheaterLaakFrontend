@@ -2,8 +2,6 @@ import SeatPrice from "../../../Util/ShowFunctions";
 import ShoppingListItem from "./ShoppingListItem";
 
 export default function ShoppingListInfo({shoppingList, show, removeItem}) {
-    console.log("ShoppingListInfooooo")
-    console.log(shoppingList)
     return <div className="shoppingListInfo">
         <span className="shoppingListRow shoppingListHeader">
             <span className="gridCol1"></span>

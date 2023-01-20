@@ -1,13 +1,9 @@
-export default function TotalsRow({tickets}) {
-    let total = 0.00;
-    tickets.forEach(ticket => {
-        total += parseFloat(ticket.price);
-    });
+export default function TotalsRow({totalPrice}) {
     return (
         <tr>
-            <td colSpan="1"></td>
+            <td colSpan="2"></td>
             <td>Totaal: </td>
-            <td colSpan="2">€ {total.toFixed(2)}</td>
+            <td colSpan="1">€ {totalPrice.toFixed(2)}</td>
         </tr>
     )
 }

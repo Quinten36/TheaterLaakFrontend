@@ -18,6 +18,7 @@ import WWvergeten from './Components/LoginComponents/WWvergeten'
 import DonateursPortaal from './Components/DonateursportaalComponents/DonateursPortaal';
 import TicketSelectPage from './Pages/TicketSelectPage';
 import Doneren from './Pages/Doneer';
+import AccountPage from './Components/AccountComponents/AccountPage.jsx'
 import Admin from './Pages/Admin';
 import HeeftAutherized from './Pages/heeftAutherized';
 
@@ -28,11 +29,10 @@ root.render(
       <Header/>
       <Routes>
         <Route exact path='/' element={< App />}></Route>
-        <Route exact path='/account' element={{/*link to account us*/}}></Route>
+        <Route exact path='/account' element={<AccountPage />}></Route>
         <Route exact path='/show/:programId' element={<ProgramPage/>}></Route>
         <Route exact path='/programmering' element={<Programming />}></Route>
         <Route exact path='/ticket/:showId' element={<TicketSelectPage/>}></Route>
-        <Route exact path='/begunstigers' element={{/*link to begunstigers us*/}}></Route>
         <Route exact path='/reserveringOverview' element={<ReserveringOverview/>}></Route>
         <Route exact path='/admin' element={<Admin/>}></Route>
         <Route exact path='/winkelwagen' element={<ShoppingCartPage/>}></Route>
