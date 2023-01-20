@@ -47,6 +47,7 @@ export default function TicketSelectPage() {
                         const seatFromList = show.seats.find((seat) => seat.id == seatShowItem.seat.id);
                         console.log("Seat From List")
                         console.log(seatFromList)
+                        seatFromList.seatShowStatus[0].status = "Selected"
                         cookieSeats = [...cookieSeats, seatFromList]
                         // addSeat(seatFromList)
                         

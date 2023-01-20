@@ -22,22 +22,30 @@ export default function SeatPicker({show, onAddSeat, shoppingList}) {
     }
 
     function onPickerChange(newSelectedSeat) {
-        console.log("OnPickerChange")
-        console.log(newSelectedSeat)
-        if(selectedSeat !== undefined)
-            selectedSeat.seatShowStatus[0].status = "Available"
-
+        console.log("ShoppingList", shoppingList)
+        console.log("oldSelectedSeat", selectedSeat)
+        console.log("newSelectedSeat", newSelectedSeat)
+        //Set old seat icon to Available if not in shoppingcart
+        if(selectedSeat !==undefined)
+            if(!shoppingList.seats.includes(selectedSeat)){
+                console.log("Selected Seat", selectedSeat)
+                selectedSeat.seatShowStatus[0].status = "Available"
+            }
+        //Return if already in shoppingcart
         if(shoppingList.seats.includes(newSelectedSeat)){
-                setIsButtonDisabled(true)
-                console.log("Seat Zit in list")
-                return;
+            console.log("hoi")
+            setIsButtonDisabled(true)
+            console.log("Seat Zit in list")
+            return;
         }
 
+        //If new seat is occupied disable "+ voeg toe" button
         if(newSelectedSeat.seatShowStatus[0].status == "Occupied") {
             setSelectedSeat(undefined)
             setIsButtonDisabled(true)
         }
         
+        //If new seat available set selected and enable button
         if(newSelectedSeat.seatShowStatus[0].status == "Available"){
             newSelectedSeat.seatShowStatus[0].status = "Selected";
             setSelectedSeat(newSelectedSeat)
