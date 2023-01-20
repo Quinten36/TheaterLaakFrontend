@@ -40,18 +40,14 @@ export default function TicketSelectPage() {
 
     //Return if data not loaded yet
     if(show === null || show === undefined) return;
-    console.log("Show:")
-    console.log(show)
 
     return <main>
         <ShowInfo show={show}/>
-        <SeatPicker show={show} onAddSeat={addSeat}/>
+        <SeatPicker show={show} onAddSeat={addSeat} shoppingList={shoppingList}/>
         <ShoppingList shoppingList={shoppingList} show={show} removeItem={removeSeat}/>
     </main>
 }
 
-//FIXME: Er kan meerdere keren dezelfde stoel toegevoegd worden.
-//FIXME: Een stoel die bezet is kan geselecteerd worden
 //TODO: Verwerk rangen in icons 
 //TODO: Seats in de shopping list als geselecteerd blijven weegeven in PickerImage
 //TODO: De selector items aanpassen op basis van beschikbaarheid.

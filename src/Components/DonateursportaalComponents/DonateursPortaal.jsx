@@ -68,7 +68,7 @@ export default function DonateursPortaal() {
     <div className='DonateursPortaal'>
       <h1>Donateursportaal</h1>
       <p>Als donor kunt u ons helpen onze missie voort te zetten om kunst en cultuur te brengen naar onze gemeenschap. Uw bijdrage helpt ons om artistieke programma's te ondersteunen, onze theaterfaciliteiten te onderhouden en onze deuren open te houden voor toekomstige generaties.</p>
-      <div>{totaal}</div>
+      <div></div>
       <div className='lijn1'></div>
       <EarlyAccessReservations />
       <div className='lijn1'></div>

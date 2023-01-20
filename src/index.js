@@ -20,6 +20,7 @@ import TicketSelectPage from './Pages/TicketSelectPage';
 import Doneren from './Pages/Doneer';
 import AccountPage from './Components/AccountComponents/AccountPage.jsx'
 import Admin from './Pages/Admin';
+import HeeftAutherized from './Pages/heeftAutherized';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -42,6 +43,7 @@ root.render(
         <Route exact path='/WachtwoordVergeten' element={<WWvergeten />}></Route>
         <Route exact path='/Donateurs-portaal' element={<DonateursPortaal />}></Route>
         <Route exact path='/Doneren' element={<Doneren />}></Route>
+        <Route exact path='/heeftAutherized/:token' element={<HeeftAutherized />}></Route>
       </Routes>
       {/* footer */}
     </Router>
