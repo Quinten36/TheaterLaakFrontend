@@ -40,8 +40,6 @@ export default function TicketSelectPage() {
 
     //Return if data not loaded yet
     if(show === null || show === undefined) return;
-    console.log("Show:")
-    console.log(show)
 
     return <main>
         <ShowInfo show={show}/>
