@@ -60,7 +60,7 @@ export default function Table({setTotalPrice, totalPrice}) {
     
     
     return (
-        <table>
+        <table hidden={totalPrice == 0}>
             <tbody>
                 {rows}
                 <TotalsRow totalPrice={totalPrice}/>
