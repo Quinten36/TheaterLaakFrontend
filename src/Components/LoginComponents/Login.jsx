@@ -8,6 +8,7 @@ import { useState } from 'react';
 import {GetJWTExp} from './../../JWT/JWT';
 import {getCookie, setCookieDate} from './../../Cookie/Cookie';
 import Nav from 'react-bootstrap/Nav';
+import Captcha from './Captcha.jsx'
 
 
 export default function Login() {
@@ -98,6 +99,7 @@ export default function Login() {
             <Form.Control.Feedback className="FeedbackOpInput" type="invalid">{state.Username.userNameError}</Form.Control.Feedback>
     </Form>
             <RememberMeKnop  {...state}/>
+            <Captcha></Captcha>
             <Button className="ButtonLoginPage" onClick={handleLoginButton} variant="primary">Log in</Button>
             <Button className="ButtonLoginPage Registreren"  onClick={() => Navigate("/Registreer")} variant="success">Registreren</Button>
             <div className ="linkWachtwoordvergeten"><Nav.Link href="/WachtwoordVergeten">Wachtwoord vergeten?</Nav.Link></div>
