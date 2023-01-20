@@ -8,26 +8,17 @@ import TotalsRow from "./TotalsRow";
 export default function Table({setTotalPrice, totalPrice}) {
     const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(getCookie("ShoppingCart")));
     const [rows, setRows] = useState([]);
-    console.log("SCI in Table")
-    console.log(shoppingCartItems)
     
     useEffect(() => {
         function createRows() {
             var newRows = [...rows]
             let newTotalPrice = 0;
             shoppingCartItems.seatShowItems.forEach(seatShowItem => {
-                console.log("Loop")
-                console.log(seatShowItem)
-                console.log("New Shows")
-                console.log(newRows)
-                var includes = false;
                 let showRow = undefined;
                 newRows.forEach(show => {
                     if(show.key == "SH" + seatShowItem.show.id)
                         showRow = show;
                 })
-                let addSeat
-                console.log("Includes: "+includes)
                 //Create Show Row IF not exists
                 if(showRow === undefined){
                     showRow = <ShowRow 
@@ -62,7 +53,6 @@ export default function Table({setTotalPrice, totalPrice}) {
     },[shoppingCartItems])
     
     
-    console.log(rows)
     return (
         <table>
             <tbody>

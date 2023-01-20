@@ -1,4 +1,6 @@
 export default function Pay(amount) {
+    console.log("Pay Amount")
+    console.log(amount)
     window.location.
     fetch('https://fakepay.azurewebsites.net/', {
         method: 'POST',
