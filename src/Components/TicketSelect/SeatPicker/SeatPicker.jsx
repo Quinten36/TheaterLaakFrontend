@@ -9,6 +9,8 @@ export default function SeatPicker({show, onAddSeat, shoppingList}) {
     var columns = 0;
     const [selectedSeat, setSelectedSeat] = useState(undefined);
     const [isButtonDisabled, setIsButtonDisabled] = useState(true)
+    const [selectedRowNumber, setSelectedRowNumber] = useState(undefined);
+    const [selectedSeatNumber, setSelectedSeatNumber] = useState(undefined);
 
     useEffect(()=> {
         seatPicker()
@@ -53,14 +55,49 @@ export default function SeatPicker({show, onAddSeat, shoppingList}) {
         }
     }
 
+    
+    useEffect(() => {
+        function changed() {
+            // if(selectedRowNumber === undefined || selectedSeatNumber === undefined) return;
+            const newSelectedSeat = show.seats.find(seat => seat.row == selectedRowNumber && seat.seatNumber == selectedSeatNumber)
+            if(newSelectedSeat === undefined || newSelectedSeat === null) return;
+            onPickerChange(newSelectedSeat);
+        }
+        changed()
+    }, [selectedRowNumber, selectedSeatNumber])
+
     GetRowsColumnsCount();
 
     const seatPicker = () => {
         return <div className="seatPicker">
-            <SeatPickerImage seats={show.seats} rows={rows} columns={columns}/>
-            <SeatPickerDropdowns rows={rows} columns={columns} onChange={onPickerChange} seats={show.seats}/>
-            <SelectedSeatInfo seat={selectedSeat} show={show}/>
-            <Button className="addToShoppingListBtn" onClick={() => {setIsButtonDisabled(true);onAddSeat(selectedSeat)}} disabled={isButtonDisabled}>+ Voeg Toe</Button>
+            <SeatPickerImage 
+                seats={show.seats} 
+                rows={rows} columns={columns} 
+                setSelectedSeatNumber={setSelectedSeatNumber} 
+                setSelectedRowNumber={setSelectedRowNumber}
+            />
+            <SeatPickerDropdowns 
+                rows={rows} 
+                columns={columns} 
+                setSelectedSeatNumber={setSelectedSeatNumber} 
+                setSelectedRowNumber={setSelectedRowNumber} 
+                selectedRowNumber={selectedRowNumber} 
+                selectedSeatNumber={selectedSeatNumber}
+            />
+            <SelectedSeatInfo 
+                seat={selectedSeat} 
+                show={show} 
+                setSelectedSeatNumber={setSelectedSeatNumber} 
+                setSelectedRowNumber={setSelectedRowNumber}
+            />
+            <Button 
+                className="addToShoppingListBtn" 
+                disabled={isButtonDisabled}
+                onClick={() => {
+                    setIsButtonDisabled(true);
+                    onAddSeat(selectedSeat)
+                }} 
+            >+ Voeg Toe</Button>
         </div>
     }
 

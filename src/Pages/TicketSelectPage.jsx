@@ -92,9 +92,7 @@ export default function TicketSelectPage() {
 }
 
 
-//TODO: Load from cookies
 //TODO: Verwerk rangen in icons 
-//TODO: Seats in de shopping list als geselecteerd blijven weegeven in PickerImage
 //TODO: De selector items aanpassen op basis van beschikbaarheid.
 //TODO: Maak de icons klikbaar
 //TODO: Zet rij- en stoelnummers bij de Picker image
