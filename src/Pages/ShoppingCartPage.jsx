@@ -11,7 +11,7 @@ export default function ShoppingCartPage() {
             <ShoppingCart className="shoppingCart" setTotalPrice={setTotalPrice} totalPrice={totalPrice}/>
             <form method="post" action="https://fakepay.azurewebsites.net/"  className="bestelButtons">
                 <Nav.Link href="/programmering"><Button variant="outline-primary">Verder Winkelen</Button></Nav.Link>
-                <Button onClick={() => {Pay(parseFloat(totalPrice))}} variant="primary" type="submit">Bestellen</Button>
+                <Button onClick={() => {Pay(parseFloat(totalPrice))}} variant="primary" type="submit" disabled={totalPrice.toFixed(2)<=0.0}>Bestellen</Button>
             </form>
         </main>
 
