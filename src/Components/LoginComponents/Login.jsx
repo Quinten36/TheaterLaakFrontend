@@ -51,7 +51,6 @@ export default function Login() {
   }
 
   async function handleLoginButton(){
-    console.log(JSON.stringify({"Username": "", "Email": state.Username.usernameInput, "Password":state.Password.PasswordInput}))
       const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Login`,{
         method: 'POST',
         mode: 'cors', // no-cors, *cors, same-origin
@@ -68,7 +67,7 @@ export default function Login() {
        
        if(response.ok){
         response.json().then((data) => {/*console.log(data)*/; setCookieDate('userJWT', data.token, GetJWTExp(data.token))});
-        console.log("succes")
+        
         navigate("/account")
        }
        if (!response.ok) {
