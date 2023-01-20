@@ -1,19 +1,37 @@
 export default function Pay(amount) {
-    window.location.
+    // window.location.
     fetch('https://fakepay.azurewebsites.net/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
         },
         body: new URLSearchParams({
-            'amount': amount,
+            'amount': 15,
             'reference': 14524325236,
-            'url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley'
+            'url': 'http://localhost:5086/api/misc/setPayment'
         })
     })
-    .then(response => {console.log(response)
-        // window.location.href = response.url
+    .then((response) => response.text())
+    .then((html) => {
+        document.getElementById("payPopUp").innerHTML = html;
     })
+    .catch((error) => {
+        console.warn(error);
+    });
+    // .then(response => {
+    //   var html = response.text();
+    //   const parser = new DOMParser();
+    //   var html2 = parser.parseFromString(html, "text/html");
+    //   document.getElementById("payPopUp").innerHTML = html2;
+    //   console.log(html2)
+    //   console.log(response.body)
+    //     // window.location.href = response.url
+    // })
+    // .then((body) => {
+    //   const reader = body.getReader();
+    //   console.log(reader)
+    //   // …
+    // });
     // .then(response => response.json())
     // .then(response => console.log(JSON.stringify(response)))
 }

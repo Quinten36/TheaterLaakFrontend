@@ -3,17 +3,23 @@ import { Nav } from 'react-bootstrap';
 import './../Css/Doneer.scss'
 import React from 'react'
 import Select from 'react-select'
-import { setCookieDate } from "../Cookie/Cookie";
+import {getCookie, setCookieDate } from "../Cookie/Cookie";
 import {getJWTRole, GetJWTExp} from './../JWT/JWT'
 
 export default function Programming() {
-  var apiJWTToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4NTI4NDJkZC01MTg0LTRjNjYtOTM4OS1hYWY0ODMxYWM5MDciLCJqdGkiOiIyZTdiMTQzMi1hMmUzLTQ5OWEtYjdiOC1hZWQwOGMxYzRmZDAiLCJpYXQiOiIwMS8xNy8yMDIzIDExOjI0OjAwIiwiVXNlcklkIjoiODUyODQyZGQtNTE4NC00YzY2LTkzODktYWFmNDgzMWFjOTA3IiwiRW1haWwiOiJxa2VtcGVyczM2QGdtYWlsLmNvbSIsImV4cCI6MTk4OTU3Mzg0MCwiaXNzIjoiSWtEb25lZXIiLCJhdWQiOiIqIn0.0-8TXiuDrUpJuOAjJ0a3B8Ta-pyzYZ3YnFBbElEFFDk';
+  // var apiJWTToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4NTI4NDJkZC01MTg0LTRjNjYtOTM4OS1hYWY0ODMxYWM5MDciLCJqdGkiOiIyZTdiMTQzMi1hMmUzLTQ5OWEtYjdiOC1hZWQwOGMxYzRmZDAiLCJpYXQiOiIwMS8xNy8yMDIzIDExOjI0OjAwIiwiVXNlcklkIjoiODUyODQyZGQtNTE4NC00YzY2LTkzODktYWFmNDgzMWFjOTA3IiwiRW1haWwiOiJxa2VtcGVyczM2QGdtYWlsLmNvbSIsImV4cCI6MTk4OTU3Mzg0MCwiaXNzIjoiSWtEb25lZXIiLCJhdWQiOiIqIn0.0-8TXiuDrUpJuOAjJ0a3B8Ta-pyzYZ3YnFBbElEFFDk';
+  let [apiJWTToken, setDonatieJWT] = useState(null);
   var apiDEVToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZjMwNzRlZS01NTY0LTQzNzMtYTNhYy1kMWIyMDg4NzY0YjMiLCJqdGkiOiI0Y2MzY2RiMC0xMDEzLTQ4ZDMtOTNjMS1mZDk2ZTMyYjAxMTciLCJpYXQiOiIwMS8xNy8yMDIzIDIwOjI1OjU0IiwiVXNlcklkIjoiMGYzMDc0ZWUtNTU2NC00MzczLWEzYWMtZDFiMjA4ODc2NGIzIiwiRW1haWwiOiJxLmtlbXBlcnNAb3V0bG9vay5jb20iLCJleHAiOjE5ODk2MDYzNTQsImlzcyI6IklrRG9uZWVyIiwiYXVkIjoiKiJ9.nK6O_V2li380PS3PChIm13zsRHkOymAGpTO1pkreOFg';
   const [amount, setAmount] = useState(0);
   const [reason, setReason] = useState("");
   const [goodGoals, setGoodGoals] = useState([]);
   const [donaties, setDonaties] = useState([]);
-  const [chosenGoal, setChosenGoal] = useState(48)
+  const [chosenGoal, setChosenGoal] = useState(48);
+
+  // TODO: dev things
+  if (getCookie('doneerToken') != "" && apiJWTToken == null) {
+    setDonatieJWT(getCookie('doneerToken'));
+  }
 
   let options = [];
   let token;
@@ -77,7 +83,7 @@ export default function Programming() {
   function checkOfDonateur() {
     if (apiJWTToken == null) {
       //TODO: de api ophalen vanaf de url en dat in de cookies zetten. Aparte pagina?
-      window.location.href = "https://ikdoneer.azurewebsites.net/Toegang?url=https%3A%2F%2Fwww.stresscentrum.nl%2F";
+      window.location.href = "https://ikdoneer.azurewebsites.net/Toegang?url=http%3A%2F%2Flocalhost%3A5086%2Fapi%2Fmisc%2FsetToken";
     } else {
       var totaal = 0;
       fetch(`https://ikdoneer.azurewebsites.net/api/donatie`, requestOptionsAPI)

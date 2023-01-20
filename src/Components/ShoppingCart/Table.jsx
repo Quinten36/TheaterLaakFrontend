@@ -5,10 +5,21 @@ import TicketRow from "./TicketRow";
 import TotalsRow from "./TotalsRow";
 
 export default function Table({shoppingCartItems}) {
+  console.count()
     const [rows, setRows] = useState([]);
+    const [seatItems, setSeatItems] = useState([]);
     console.log("SCI in Table")
     console.log(shoppingCartItems)
+
+    if (seatItems != []) {
+      if (seatItems.length != 0) {
+        console.log(seatItems)
+
+      }
+    }
+
     useEffect(() => {
+      
         let mounted = true;
         function createRows() {
             const tempRows = [];
@@ -16,13 +27,20 @@ export default function Table({shoppingCartItems}) {
             const lastShowId = null;
             const showRowIndex = null;
             
-            console.log("Hoi")
-            shoppingCartItems.seatShowItems.forEach((seatShowItem) => {
-                console.log("In Loop")
-                console.log(seatShowItem)
-                console.log("Foreac")
-                console.log(seatShowItem)
-                seatShowItem.forEach((el) => console.log(el.key))
+            if (shoppingCartItems.seatShowItems.length != 0) {
+              console.log("Hoi")
+              for (var i = 0; i < shoppingCartItems.seatShowItems.length; i++) {
+                console.log(shoppingCartItems.seatShowItems[i])
+                seatItems.push(shoppingCartItems.seatShowItems[i])
+              }
+              setSeatItems(seatItems);
+              // setSeatItems(shoppingCartItems.seatShowItems)
+            // shoppingCartItems.seatShowItems.forEach((seatShowItem) => {
+            //     console.log("In Loop")
+            //     console.log(seatShowItem)
+            //     console.log("Foreac")
+            //     console.log(seatShowItem.length)
+            //     seatShowItem.forEach((el) => console.log(el.key))
                 // let show = seatShowItem.key;c
                 // console.log(show)d
                 
@@ -37,12 +55,13 @@ export default function Table({shoppingCartItems}) {
                 //     }
                 // }
                 
-            })
+            // })
+          }
         }
 
         createRows();
         return () =>  mounted = false;
-    }, [shoppingCartItems])
+    }, [])
 
     // rows.push(
     //     <TotalsRow
@@ -55,6 +74,10 @@ export default function Table({shoppingCartItems}) {
     //     return;
         
     // }
+
+    // useEffect(() => { 
+    //   setSeatItems(seatItems);
+    // }, [])
     if(shoppingCartItems.seatShowItems === null) return;
     return (
         <table>

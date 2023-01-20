@@ -19,15 +19,15 @@ export default function ShoppingCartPage() {
             cookie = JSON.parse(cookie)            
             if(!mounted) return;
             
-            console.log("Cookie")
-            console.log(cookie)
+            // console.log("Cookie")
+            // console.log(cookie)
             const seatShowItems = [];
             
             for (let i = 0; i < cookie.showSeats.length; i++) {
                 const showSeat = cookie.showSeats[i];
                 
                 getSingle("Show", showSeat.showId)
-                .then(showResponse => {
+                .then((showResponse) => {
                     getSingle("Program", showResponse.programId)
                     .then(programResponse => {
                         showResponse.program = programResponse;
@@ -61,8 +61,8 @@ export default function ShoppingCartPage() {
         setShoppingCartItems(shoppingCartItems.addSeat(seat, show))
     }
 
-    console.log("ShoppingCartItems")
-    console.log(shoppingCartItems)
+    // console.log("ShoppingCartItems")
+    // console.log(shoppingCartItems)
 
     
     return <main>
@@ -70,6 +70,7 @@ export default function ShoppingCartPage() {
         <div className="bestelButtons">
             <Button variant="outline-primary">Verder Winkelen</Button>
             <Button onClick={() => {Pay(1000)}} variant="primary">Bestellen</Button>
+            <div id="payPopUp"></div>
         </div>
     </main>
 }
