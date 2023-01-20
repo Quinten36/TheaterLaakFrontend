@@ -1,13 +1,12 @@
-import SeatPrice from "../../Util/ShowFunctions"
 import "./../../Css/shoppingCart.css"
 
-export default function TicketRow({seat, show}) {
+export default function TicketRow({price, seat}) {
+    console.log("Seat in Ticket")
+    console.log(seat)
     return (
         <tr className='ticketRow'>
-            <td>Standaard</td>
-            <td>Rang {seat.seatClass} - rij:{seat.row} - stoel:{seat.seatNumber}</td>
-            <td className="ticketPrice">€ {SeatPrice(seat, show)}</td>
-            <td><a className='verwijderTicket'>Verwijder</a></td>
+            <td colSpan={3}>Rang {seat.seatClass} - rij:{seat.row} - stoel:{seat.seatNumber}</td>
+            <td className="ticketPrice">€ {price.toFixed(2)}</td>
         </tr>
     )
 }

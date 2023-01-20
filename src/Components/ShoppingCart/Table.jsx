@@ -1,71 +1,73 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import { getCookie } from "../../Cookie/Cookie";
 import ShowRow from "./ShowRow";
 import TicketRow from "./TicketRow";
 import TotalsRow from "./TotalsRow";
 
-export default function Table({shoppingCartItems}) {
+export default function Table({setTotalPrice, totalPrice}) {
+    const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(getCookie("ShoppingCart")));
     const [rows, setRows] = useState([]);
     console.log("SCI in Table")
     console.log(shoppingCartItems)
+    
     useEffect(() => {
-        let mounted = true;
         function createRows() {
-            const tempRows = [];
+            var newRows = [...rows]
+            let newTotalPrice = 0;
+            shoppingCartItems.seatShowItems.forEach(seatShowItem => {
+                console.log("Loop")
+                console.log(seatShowItem)
+                console.log("New Shows")
+                console.log(newRows)
+                var includes = false;
+                let showRow = undefined;
+                newRows.forEach(show => {
+                    if(show.key == "SH" + seatShowItem.show.id)
+                        showRow = show;
+                })
+                let addSeat
+                console.log("Includes: "+includes)
+                //Create Show Row IF not exists
+                if(showRow === undefined){
+                    showRow = <ShowRow 
+                        key={"SH" + seatShowItem.show.id} 
+                        show={seatShowItem.show}
+                    />;
+                    newRows = [...newRows, showRow]
+                }
 
-            const lastShowId = null;
-            const showRowIndex = null;
+                //Create TicketRow
+                let ticketRow = <TicketRow 
+                    key={"SH" + seatShowItem.show.id+"SE"+seatShowItem.seat.id} 
+                    price={seatShowItem.price}
+                    seat={seatShowItem.seat} 
+                />
+                let insertAt = newRows.indexOf(showRow) + 1
+                newRows=[
+                    ...newRows.slice(0, insertAt), 
+                    ticketRow,
+                    ...newRows.slice(insertAt)
+                ]
+                newTotalPrice += seatShowItem.price
+            });
             
-            console.log("Hoi")
-            shoppingCartItems.seatShowItems.forEach((seatShowItem) => {
-                console.log("In Loop")
-                console.log(seatShowItem)
-                console.log("Foreac")
-                console.log(seatShowItem)
-                seatShowItem.forEach((el) => console.log(el.key))
-                // let show = seatShowItem.key;c
-                // console.log(show)d
-                
-                // if(!lastShowId === show.id){
-                //     lastShowId = show.id;
-                //     if(!tempRows.includes(r => r.key === "SH"+show.id)){
-                //         const showRow = <ShowRow
-                //             key={"SH" + show.id}
-                //             show={show} />;
-                //         tempRows.push(showRow)
-                //         console.log(tempRows.indexOf(showRow))
-                //     }
-                // }
-                
-            })
+            newRows=[...newRows]
+
+            setRows(rows.concat(newRows))
+            setTotalPrice(newTotalPrice)
         }
 
-        createRows();
-        return () =>  mounted = false;
-    }, [shoppingCartItems])
-
-    // rows.push(
-    //     <TotalsRow
-    //         tickets={tickets}
-    //         key={"total"}/>
-    // );
-    // console.log("Rows")
-    // console.log(rows)
-    // if (rows === []) {
-    //     return;
-        
-    // }
-    if(shoppingCartItems.seatShowItems === null) return;
+        createRows()
+    },[shoppingCartItems])
+    
+    
+    console.log(rows)
     return (
         <table>
-            <thead>
-                <tr>
-                    <th colSpan="2"></th>
-                    <th>Prijs</th>
-                </tr>
-            </thead>
             <tbody>
                 {rows}
+                <TotalsRow totalPrice={totalPrice}/>
             </tbody>
         </table>
     )

@@ -7,12 +7,11 @@ export default function ShowRow({show}){
                 <div>
                     <h4 className="showName">{show.program.title}</h4>
                     <p>{new Date(show.start).toLocaleDateString() + " " + new Date(show.start).toLocaleTimeString()}</p>
-                    {/* wo 21-12-2022 20:00 */}
-                    <p>{show.program.group.artists.name}</p>
+                    {/* <p>{show.program.group.artists.name}</p> */}
                 </div>
             </th>
             <th>
-                <a className="wijzigShow" href="./">Wijzig Plaatsen</a>
+                <a className="wijzigShow" href={"/ticket/"+show.id}>Wijzig Plaatsen</a>
             </th>
         </tr>
     )
