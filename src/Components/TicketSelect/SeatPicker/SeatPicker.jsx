@@ -4,10 +4,11 @@ import SeatPickerDropdowns from "./SeatPickerDropdowns";
 import SeatPickerImage from "./SeatPickerImage";
 import SelectedSeatInfo from "./SelectedSeatInfo";
 
-export default function SeatPicker({show, onAddSeat}) {
+export default function SeatPicker({show, onAddSeat, shoppingList}) {
     var rows = 0;
     var columns = 0;
     const [selectedSeat, setSelectedSeat] = useState(undefined);
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true)
 
     useEffect(()=> {
         seatPicker()
@@ -21,10 +22,27 @@ export default function SeatPicker({show, onAddSeat}) {
     }
 
     function onPickerChange(newSelectedSeat) {
+        console.log("OnPickerChange")
+        console.log(newSelectedSeat)
         if(selectedSeat !== undefined)
             selectedSeat.seatShowStatus[0].status = "Available"
-        newSelectedSeat.seatShowStatus[0].status = "Selected";
-        setSelectedSeat(newSelectedSeat)
+
+        if(shoppingList.seats.includes(newSelectedSeat)){
+                setIsButtonDisabled(true)
+                console.log("Seat Zit in list")
+                return;
+        }
+
+        if(newSelectedSeat.seatShowStatus[0].status == "Occupied") {
+            setSelectedSeat(undefined)
+            setIsButtonDisabled(true)
+        }
+        
+        if(newSelectedSeat.seatShowStatus[0].status == "Available"){
+            newSelectedSeat.seatShowStatus[0].status = "Selected";
+            setSelectedSeat(newSelectedSeat)
+            setIsButtonDisabled(false)
+        }
     }
 
     GetRowsColumnsCount();
@@ -34,7 +52,7 @@ export default function SeatPicker({show, onAddSeat}) {
             <SeatPickerImage seats={show.seats} rows={rows} columns={columns}/>
             <SeatPickerDropdowns rows={rows} columns={columns} onChange={onPickerChange} seats={show.seats}/>
             <SelectedSeatInfo seat={selectedSeat} show={show}/>
-            <Button className="addToShoppingListBtn" onClick={() => onAddSeat(selectedSeat)}>+ Voeg Toe</Button>
+            <Button className="addToShoppingListBtn" onClick={() => {setIsButtonDisabled(true);onAddSeat(selectedSeat)}} disabled={isButtonDisabled}>+ Voeg Toe</Button>
         </div>
     }
 
