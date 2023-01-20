@@ -14,10 +14,9 @@ export default function ShoppingCartPage() {
               <input name="reference" value={1212121212} hidden readOnly></input>
               <input name="url" value={"http://localhost:5086/api/misc/setPayment"} hidden readOnly></input>
                 <Nav.Link href="/programmering"><Button variant="outline-primary">Verder Winkelen</Button></Nav.Link>
-                <Button onClick={() => {Pay(totalPrice.toFixed(2))}} variant="primary" type="submit">Bestellen</Button>
+                <Button onClick={() => {Pay(parseFloat(totalPrice))}} variant="primary" type="submit" disabled={totalPrice.toFixed(2)<=0.0}>Bestellen</Button>
                 <div id="payPopUp"></div>
             </form>
         </main>
-
 }
 

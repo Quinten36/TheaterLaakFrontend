@@ -52,7 +52,7 @@ export default function AccountPage() {
             <Button className="ButtonUpdate" onClick={handleUpdate} variant="primary">Update</Button>
             <div className="lijn"></div>
             <div className='titleMijnReserveringen'><img className="IconAP" src=".\images\ticket 1.svg" alt="Knop voor tickets te bekijken of door te sturen of downloaden" /> Mijn Reserveringen</div>
-            <MijnReserveringen userId={user} />
+            <MijnReserveringen className='MijnReserveringenContainer' userId={user} />
         </div> 
     )
 }

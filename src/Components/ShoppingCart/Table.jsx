@@ -1,14 +1,20 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { getCookie } from "../../Cookie/Cookie";
+import ShoppingCartItems from "../../Models/ShoppingCartItems";
 import ShowRow from "./ShowRow";
 import TicketRow from "./TicketRow";
 import TotalsRow from "./TotalsRow";
 
 export default function Table({setTotalPrice, totalPrice}) {
-    const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(getCookie("ShoppingCart")));
+    const [shoppingCartItems, setShoppingCartItems] = useState(getShoppingCartCookie());
     const [rows, setRows] = useState([]);
-    
+    function getShoppingCartCookie() {
+        const cookie = getCookie("ShoppingCart");
+        if(cookie !== "")
+            return JSON.parse(cookie)
+        return new ShoppingCartItems();
+    }
     useEffect(() => {
         function createRows() {
             var newRows = [...rows]
@@ -54,7 +60,7 @@ export default function Table({setTotalPrice, totalPrice}) {
     
     
     return (
-        <table>
+        <table hidden={totalPrice == 0}>
             <tbody>
                 {rows}
                 <TotalsRow totalPrice={totalPrice}/>

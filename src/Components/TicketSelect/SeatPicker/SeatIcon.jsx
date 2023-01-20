@@ -1,6 +1,6 @@
 export default function SeatIcon({status, onclick, isLegend}) {
     function createSeatIcon(classNames) {
-        return <div className={classNames}></div>;
+        return <div onClick={onclick} className={"seatIcon "+classNames}></div>;
     }
     if(status === undefined) return;
 

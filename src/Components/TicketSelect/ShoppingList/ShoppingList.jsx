@@ -12,6 +12,7 @@ export default function ShoppingList({shoppingList, show, removeItem}) {
         }
         else {
             cookie = JSON.parse(cookie)
+            cookie.seatShowItems = cookie.seatShowItems.filter(seatShowItem => seatShowItem.show.id != show.id)
         }
         const list = shoppingList.seats.map(seat => new SeatShowItem(seat, show))
 

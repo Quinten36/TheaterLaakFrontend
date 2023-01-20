@@ -4,6 +4,8 @@ import { getSingle } from "../Api/Api";
 import SeatPicker from "../Components/TicketSelect/SeatPicker/SeatPicker";
 import ShoppingList from "../Components/TicketSelect/ShoppingList/ShoppingList";
 import ShowInfo from "../Components/TicketSelect/ShowInfo";
+import { useEffect } from "react";
+import { getCookie } from "../Cookie/Cookie";
 import "./../Css/TicketSelect.css"
 
 export default function TicketSelectPage() {
@@ -14,7 +16,7 @@ export default function TicketSelectPage() {
     const location = useLocation();
     var parameter = location.pathname.split('/')[2];
     
-    useState(() => {
+    useEffect(() => {
         async function fetchData() {
             //Fetch Show
             const showResponse = await getSingle("Show/SeatStatus", parameter);
@@ -26,9 +28,34 @@ export default function TicketSelectPage() {
             setShow(showResponse)
         }
         fetchData();
-    })
+    },[])
+
+    useEffect(()=> {
+        var mounted = true
+        function fetchCookie(){
+            if(show === null) return
+            var cookie = getCookie("ShoppingCart")
+            if(cookie != "") {
+                cookie = JSON.parse(cookie)
+                var cookieSeats = []
+                cookie.seatShowItems.forEach((seatShowItem) => {
+                    if(seatShowItem.show.id == parameter){
+                        const seatFromList = show.seats.find((seat) => seat.id == seatShowItem.seat.id);
+                        seatFromList.seatShowStatus[0].status = "Selected"
+                        cookieSeats = [...cookieSeats, seatFromList]
+                    }
+                })
+                setShoppingList({seats: [...cookieSeats]})
+            }
+        }
+
+        fetchCookie()
+
+        return () => mounted = false
+    },[show])
 
     function addSeat(seat) {
+        if(shoppingList.seats.includes(seatFromList => seat.id == seatFromList.id))return
         setShoppingList({seats: [...shoppingList.seats, seat]})
     }
     function removeSeat(seat) {
@@ -48,8 +75,7 @@ export default function TicketSelectPage() {
     </main>
 }
 
+
 //TODO: Verwerk rangen in icons 
-//TODO: Seats in de shopping list als geselecteerd blijven weegeven in PickerImage
 //TODO: De selector items aanpassen op basis van beschikbaarheid.
-//TODO: Maak de icons klikbaar
 //TODO: Zet rij- en stoelnummers bij de Picker image
