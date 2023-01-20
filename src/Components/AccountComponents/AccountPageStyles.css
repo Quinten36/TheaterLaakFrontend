@@ -37,7 +37,6 @@
 .extraSettings {
     margin: auto;
     display: flex;
-
     width: 75%;
     gap: 3.25rem;
     margin-bottom: 0.5rem;
@@ -53,7 +52,6 @@
 .bannerIconExtraInstellingen {
     width: 50%;
     height: 10rem;
-
     margin-left: 25%;
 }
 
@@ -93,13 +91,13 @@
     margin-left: 58%;
 }
 
-.ReserveringenContainer{
+.ReserveringenContainer {
     margin-left: 12.5%;
     width: 75%;
     height: 25.188rem;
 }
 
-.LineMijnReserveringen{
+.LineMijnReserveringen {
     width: 80%;
     height: 2px;
     margin: auto;
@@ -107,38 +105,59 @@
     margin-bottom: 2rem;
 }
 
-.buttonContainer{
+.buttonContainer {
     margin-left: 25%;
     font-size: 12px;
-    
+
 }
 
 
-.ExtraInstellingenContainer{
-    
+.ExtraInstellingenContainer {
+
     width: 75%;
     margin-left: 12.5%;
 }
 
-.ExtraInstellingenContainer div{
+.ExtraInstellingenContainer div {
     width: 75%;
     margin-bottom: 2rem;
 }
 
-.ExtraInstellingenContainer Button{
+.ExtraInstellingenContainer Button {
     margin-bottom: 2rem;
     width: 75%;
 }
 
-.AccVerwijderenKop{
-    color:red;
+.AccVerwijderenKop {
+    color: red;
     font-size: 1.25rem;
 }
 
-.NieuwsbriefUitschrijvenKop{
-    color : blue;
+.NieuwsbriefUitschrijvenKop {
+    color: blue;
 }
 
-.titleMijnReserveringen{
-   margin-left: 35%;
+.titleMijnReserveringen {
+    margin-left: 35%;
+    margin-bottom: 4rem;
+}
+
+.MijnReserveringenContainer {
+    width: 75%;
+    margin-top: 2rem;
+}
+
+.MijnReserveringKaart p {
+    text-align: center;
+    color: black;
+    font-size: 14px;
+}
+
+.MijnReserveringKaart {
+    border-radius: 18px;
+    border-style: solid;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    width: 50%;
+    margin: 0 auto;
 }
