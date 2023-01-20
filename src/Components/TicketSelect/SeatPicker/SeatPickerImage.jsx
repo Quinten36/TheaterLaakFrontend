@@ -3,15 +3,6 @@ import SeatIcon from "./SeatIcon";
 import SeatsLegend from "./SeatsLegend";
 
 export default function SeatPickerImage({seats, rows, columns, setSelectedSeatNumber, setSelectedRowNumber}) {
-
-    
-    // var r = document.querySelector(":root")
-    // console.log(r)
-    // var rs = getComputedStyle(r)
-    // console.log(rs)
-    // rs.CSSStyleDeclaration
-    
-
     function Init() {
         SetContainerStyle();
     }

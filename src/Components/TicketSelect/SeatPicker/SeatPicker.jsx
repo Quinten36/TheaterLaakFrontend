@@ -24,20 +24,18 @@ export default function SeatPicker({show, onAddSeat, shoppingList}) {
     }
 
     function onPickerChange(newSelectedSeat) {
-        console.log("ShoppingList", shoppingList)
-        console.log("oldSelectedSeat", selectedSeat)
-        console.log("newSelectedSeat", newSelectedSeat)
+        if(shoppingList.seats.length >= 25) {
+            window.alert("Je hebt het limiet van 25 stoelen bereikt")
+            return
+        }
         //Set old seat icon to Available if not in shoppingcart
         if(selectedSeat !==undefined)
             if(!shoppingList.seats.includes(selectedSeat)){
-                console.log("Selected Seat", selectedSeat)
                 selectedSeat.seatShowStatus[0].status = "Available"
             }
         //Return if already in shoppingcart
         if(shoppingList.seats.includes(newSelectedSeat)){
-            console.log("hoi")
             setIsButtonDisabled(true)
-            console.log("Seat Zit in list")
             return;
         }
 

@@ -34,27 +34,17 @@ export default function TicketSelectPage() {
         var mounted = true
         function fetchCookie(){
             if(show === null) return
-            console.log("Cookie Called")
-            console.log(show)
             var cookie = getCookie("ShoppingCart")
             if(cookie != "") {
                 cookie = JSON.parse(cookie)
-                console.log("Cookie:")
-                console.log(cookie)
                 var cookieSeats = []
                 cookie.seatShowItems.forEach((seatShowItem) => {
                     if(seatShowItem.show.id == parameter){
                         const seatFromList = show.seats.find((seat) => seat.id == seatShowItem.seat.id);
-                        console.log("Seat From List")
-                        console.log(seatFromList)
                         seatFromList.seatShowStatus[0].status = "Selected"
                         cookieSeats = [...cookieSeats, seatFromList]
-                        // addSeat(seatFromList)
-                        
                     }
                 })
-                console.log("cookieSeats")
-                console.log(cookieSeats)
                 setShoppingList({seats: [...cookieSeats]})
             }
         }
@@ -65,9 +55,6 @@ export default function TicketSelectPage() {
     },[show])
 
     function addSeat(seat) {
-        console.log("Add Seat")
-        console.log(seat)
-        console.log(shoppingList)
         if(shoppingList.seats.includes(seatFromList => seat.id == seatFromList.id))return
         setShoppingList({seats: [...shoppingList.seats, seat]})
     }
@@ -81,9 +68,6 @@ export default function TicketSelectPage() {
     //Return if data not loaded yet
     if(show === null || show === undefined) return;
 
-    console.log("ShoppingLi")
-    console.log(shoppingList)
-
     return <main>
         <ShowInfo show={show}/>
         <SeatPicker show={show} onAddSeat={addSeat} shoppingList={shoppingList}/>
@@ -94,5 +78,4 @@ export default function TicketSelectPage() {
 
 //TODO: Verwerk rangen in icons 
 //TODO: De selector items aanpassen op basis van beschikbaarheid.
-//TODO: Maak de icons klikbaar
 //TODO: Zet rij- en stoelnummers bij de Picker image

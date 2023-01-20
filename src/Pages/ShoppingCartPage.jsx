@@ -14,6 +14,5 @@ export default function ShoppingCartPage() {
                 <Button onClick={() => {Pay(parseFloat(totalPrice))}} variant="primary" type="submit" disabled={totalPrice.toFixed(2)<=0.0}>Bestellen</Button>
             </form>
         </main>
-
 }
 
