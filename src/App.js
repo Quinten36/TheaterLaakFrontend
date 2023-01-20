@@ -46,7 +46,7 @@ function App() {
         {/* map door de 3 eerstvolgende shows en laat ze zien */}
         {shows != null &&
           shows.map((item, index) => (
-            <Carousel.Item key={index}>
+            <Carousel.Item key={index} className='homeCardLink'>
               {/* geeft het show object mee en haal de program data in de card op */}
               <HomeCard showObject={item}/>
             </Carousel.Item>
