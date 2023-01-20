@@ -12,7 +12,7 @@ export default function Programming() {
 
   if (checkJWTToken()) {
     var role = getJWTRole();
-    if (role != 'Admin')
+    if (!role.includes('Admin'))
       window.location.href = 'http://localhost:3000/';
   }
 
