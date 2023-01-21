@@ -28,8 +28,10 @@ export default function AccountPage() {
     }, [user])
 
     function handleUpdate() {
-
+        
     }
+
+
     function fetchUserData() {
         fetch(`${process.env.REACT_APP_BACKEND_URL}/Account/${user}`, {
             method: "GET",
