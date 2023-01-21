@@ -22,6 +22,7 @@ import AccountPage from './Components/AccountComponents/AccountPage.jsx'
 import Admin from './Pages/Admin';
 import HeeftAutherized from './Pages/heeftAutherized';
 import AddArtist from './Components/AdminComponents/addArtist';
+import AddGroup from './Components/AdminComponents/addGroup';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -46,6 +47,7 @@ root.render(
         <Route exact path='/Doneren' element={<Doneren />}></Route>
         <Route exact path='/heeftAutherized/:token' element={<HeeftAutherized />}></Route>
         <Route exact path='/addArtist' element={<AddArtist />}></Route>
+        <Route exact path='/addGroup' element={<AddGroup />}></Route>
       </Routes>
       {/* footer */}
     </Router>
