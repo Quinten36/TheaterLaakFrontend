@@ -21,7 +21,7 @@ export default function ShowRow({show}){
                     X
                 </Button>
             </th>
-            <th colSpan="3" className="showInfo">
+            <th colSpan="2" className="showInfo">
                 <div>
                     <h4 className="showName">{show.program.title}</h4>
                     <p>{new Date(show.start).toLocaleDateString() + " " + new Date(show.start).toLocaleTimeString()}</p>
