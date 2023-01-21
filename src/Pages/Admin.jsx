@@ -20,6 +20,9 @@ export default function Programming() {
     <>
       <div>
         <h1>Admin page pagina</h1>
+        <Nav.Link variant="primary" href="http://localhost:3000/addArtist" style={{"textDecoration":"underline"}}>Add artist</Nav.Link>
+        <Nav.Link variant="primary" href="http://localhost:3000/addGroup" style={{"textDecoration":"underline"}}>Add group</Nav.Link>
+        <br/>
         <h3>Shows toevoegen</h3>
         <AddShow />
       </div>
