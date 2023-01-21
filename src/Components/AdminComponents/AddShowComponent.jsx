@@ -16,6 +16,7 @@ export default function AddShowComponent() {
     const [tweedeKlassePrijs, setTweedeKlassePrijs] = useState(0)
     const [derdeKlassePrijs, setDerdeKlassePrijs] = useState(0)
 
+
     const [halls, setHalls] = useState([]);
     const [inputhalls, setInputHalls] = useState("")
 
@@ -86,42 +87,49 @@ export default function AddShowComponent() {
     function handleStartTimeInput(value) {
         setStartTime(value);
     }
-    
-    function handleEndTimeInput(value){
+
+    function handleEndTimeInput(value) {
         setEndTime(value);
     }
 
 
 
     function handleUploadShow() {
-       /*fetch(`${process.env.REACT_APP_BACKEND_URL}/Show`, {
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/Show`, {
             method: "POST",
             headers: { "content-type": "application/json" },
-            body: 
+            body: JSON.stringify({
+                Start: changeDate(startDate) + " " + startTime,
+                End: changeDate(endDate) + " " + endTime,
+                FirstClassPrice: eersteKlassePrijs,
+                SecondClassPrice: tweedeKlassePrijs,
+                ThirdClassPrice: derdeKlassePrijs,
+                HallId: inputhalls,
+                ProgramId: inputPrograms,
+                GroupId: inputGroups
             })
         }).then((response) => {
             return response.json();
-        }).then((data) => {
-            setGroups(data)
-        })  */
-        
-        console.log(JSON.stringify({
-            startDate: startDate + " " + startTime,
-            endDate: endDate + " " + endTime,
-            eersteKlassePrijs: eersteKlassePrijs,
-            tweedeKlassePrijs: tweedeKlassePrijs,
-            derdeKlassePrijs: derdeKlassePrijs,
-            hallId: inputhalls,
-            programId: inputPrograms,
-            groupId: inputGroups
-            }));}
+        })
+    }
+
+    function changeDate(date) {
+        return date.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            separator: "-",
+
+        })
+    }
 
     return (
+
+
         <div className='addshowcontainer'>
             <Form>
                 <div>Start datum</div>
-                <DatePicker showTimeSelect
- selected={startDate} onChange={(date) => setStartDate(date)} />
+                <DatePicker dateFormat="yyyy/MM/dd" selected={startDate} onChange={(date) => setStartDate(date)} />
                 <div>Start tijd</div>
                 <Form.Control onChange={(e) => handleStartTimeInput(e.target.value)} placeholder='start tijd' type="email"></Form.Control>
 
