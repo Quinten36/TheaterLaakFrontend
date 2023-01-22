@@ -6,7 +6,7 @@ import React from 'react'
 import Select from 'react-select'
 import { setCookieDate } from "../Cookie/Cookie";
 import {checkJWTToken, getJWTRole, GetJWTExp} from '../JWT/JWT'
-import AddShow from "../Components/AdminComponents/AddShowComponent";
+
 export default function Programming() {
   const [amount, setAmount] = useState(null);
 
@@ -22,9 +22,9 @@ export default function Programming() {
         <h1>Admin page pagina</h1>
         <Nav.Link variant="primary" href="http://localhost:3000/addArtist" style={{"textDecoration":"underline"}}>Add artist</Nav.Link>
         <Nav.Link variant="primary" href="http://localhost:3000/addGroup" style={{"textDecoration":"underline"}}>Add group</Nav.Link>
-        <br/>
-        <h3>Shows toevoegen</h3>
-        <AddShow />
+        <Nav.Link variant="primary" href="http://localhost:3000/addShows" style={{"textDecoration":"underline"}}>Add Show</Nav.Link>
+        <Nav.Link variant="primary" href="http://localhost:3000/addProgramma" style={{"textDecoration":"underline"}}>Add Programma</Nav.Link>
+        <br/>        
       </div>
     </>
   )

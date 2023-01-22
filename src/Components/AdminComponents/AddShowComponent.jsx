@@ -119,10 +119,12 @@ export default function AddShowComponent() {
             month: "2-digit",
             day: "2-digit",
             separator: "-",
-
         })
     }
 
+    function handleUploadProgramma(){
+
+    }
     return (
 
 
@@ -158,7 +160,8 @@ export default function AddShowComponent() {
                 <select onChange={(e) => handleChangeGroup(e.target.value)}>
                     {groups.map((group) => <option key={group.id} value={group.id}>{group.name}</option>)}
                 </select>
-                <Button variant="success" onClick={handleUploadShow}>Upload show</Button>
+                <Button variant="success" onClick={handleUploadShow}>Upload Programma</Button>
+                
             </Form>
         </div>
     );

@@ -2,13 +2,13 @@
     margin: 0 auto;
     width: 75%;
 
-    }
-    
-    .addshowcontainer div {
+}
+
+.addshowcontainer div {
     margin: 10px 0;
-    }
-    
-    .addshowcontainer select {
+}
+
+.addshowcontainer select {
     width: 75%;
 
     margin: 8px 0;
@@ -16,23 +16,141 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    }
-    
-    .addshowcontainer .btn-success {
+}
+
+.addshowcontainer .btn-success {
 
     margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 75%;
-    }
-    
+}
 
-    .addshowcontainer .form-control {
+
+.addshowcontainer .form-control {
     width: 75%;
- 
+
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    }
+}
+
+.addshowcontainer {
+    margin: 0 auto;
+    width: 75%;
+
+}
+
+.addshowcontainer div {
+    margin: 10px 0;
+}
+
+.addshowcontainer select {
+    width: 75%;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.addshowcontainer .btn-success {
+
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 75%;
+}
+
+
+.addshowcontainer .form-control {
+    width: 75%;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.addProgrammaContainer {
+    margin: 0 auto;
+    width: 75%;
+
+}
+
+.addProgrammaContainer div {
+    margin: 10px 0;
+}
+
+.addProgrammaContainer select {
+    width: 75%;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.addProgrammaContainer .btn-success {
+
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 75%;
+}
+
+
+.addProgrammaContainer .form-control {
+    width: 75%;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.addProgrammaContainer {
+    margin: 0 auto;
+    width: 75%;
+
+}
+
+.addProgrammaContainer div {
+    margin: 10px 0;
+}
+
+.addshowaddProgrammaContainercontainer select {
+    width: 75%;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.addProgrammaContainer .btn-success {
+
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 75%;
+}
+
+
+.addProgrammaContainer .form-control {
+    width: 75%;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
