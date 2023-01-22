@@ -67,7 +67,7 @@ export default function Login() {
        })
        
        if(response.ok){
-        response.json().then((data) => {/*console.log(data)*/; setCookieDate('userJWT', data.token, GetJWTExp(data.token))});
+        response.json().then((data) => {setCookieDate('userJWT', data.token, GetJWTExp(data.token))});
         
         navigate("/account")
        }

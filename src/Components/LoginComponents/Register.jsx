@@ -128,38 +128,29 @@ export default function Register() {
 }
 
   async function sendGebruikerDetailsToBackend() {
-
-    console.log(JSON.stringify({
-      username: state.gebruikerInput.value,
-      password: state.passwordInput.value,
-      email: state.emailInput.value,
-    }))
-    const data = {
-      username: state.gebruikerInput.value,
-      password: state.passwordInput.value,
-      email: state.emailInput.value,
-    };
-const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  };    
-  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Registratie`, requestOptions);
-  if (response.ok) {
-    const jsonResponse = await response.json();
-    localStorage.setItem("id", jsonResponse.id);
-    navigate('/Validate');
-  }
-  else {
-    console.log(response);
-    const error = await response.json();
-    setErrorMessageOnScreen(error.message)
-  }
-
+  const data = {
+    username: state.gebruikerInput.value,
+    password: state.passwordInput.value,
+    email: state.emailInput.value,
+  };
+  const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    };    
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/Registratie`, requestOptions);
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      localStorage.setItem("id", jsonResponse.id);
+      navigate('/Validate');
+    }
+    else {
+      const error = await response.json();
+      setErrorMessageOnScreen(error.message)
+    }
   }
 
   function setErrorMessageOnScreen(error) {
-    console.log(error);
     if (error === "De gebruikersnaam bestaat al verandere deze naar een nieuwe.") {
       setState(prevState => {
         return {
@@ -170,7 +161,6 @@ const requestOptions = {
     }
 
     if (error === "Het wachtwoord komt te vaak voor verander uw wachtwoord en gebruik geen bestaande woorden." || error === "Het wachtwoord heeft een herhalend patroon verander dit naar een veiliger wachtwoord" || error === "Het wachtwoord heeft een herhalend patroon verander dit naar een veiliger wachtwoord") {
-
       setState(prevState => ({
         ...prevState,
         passwordInput: { ...prevState.passwordInput, error: error, passwordInputFOUT: true }
@@ -190,9 +180,7 @@ const requestOptions = {
     return !state.gebruikerInput.gebruikerInputFOUT && !state.passwordInput.passwordInputFOUT && !state.emailInput.emailInputFOUT
   }
 
-
   function handleSubmitForm() {
-    console.log(state.checkBoxInput.checkBoxInputFOUT);
     if (!state.checkBoxInput.checked) {
       setState(prevState => ({
         ...prevState,

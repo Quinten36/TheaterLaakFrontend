@@ -29,7 +29,6 @@ export default function AddArtist() {
             body: JSON.stringify(artiesten)
             })
         .then((response) => {
-            console.log(response.ok);
             if (response.ok) {
               document.getElementById("outputLabel").innerHTML = "Het toevoegen is gelukt";
             } else {
@@ -37,8 +36,6 @@ export default function AddArtist() {
             }
         })
     }
-
-    console.log(artiesten.length != 0)
 
     return (
         <div className='addartistcontainer'>
@@ -52,7 +49,6 @@ export default function AddArtist() {
                   <>
                   <h4>Artiesten toe te voegen</h4>
                   {artiesten.map((item, index) => 
-                    // console.log(item)
                     <p key={index} style={{"margin":"1px 0 1px 5px"}}>{item}</p>
                   )}
                   <Button variant="success" onClick={SendToDatabase} style={{"margin": "5px"}}>Add to database</Button>

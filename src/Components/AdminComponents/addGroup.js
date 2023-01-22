@@ -40,7 +40,6 @@ export default function AddArtist() {
             body: JSON.stringify(group)
             })
         .then((response) => {
-            console.log(response.ok);
             if (response.ok) {
               document.getElementById("outputLabel").innerHTML = "Het toevoegen is gelukt";
             } else {
