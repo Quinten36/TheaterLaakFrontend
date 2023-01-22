@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { post } from "../Api/Api"
 import createTickets from "../Api/Ticket"
 import { getCookie, setCookie } from "../Cookie/Cookie"
+import { checkJWTToken, GetJWTToken } from "../JWT/JWT"
 
 export default function CompleteOrder(){
     const [orderCompleted, setOrderCompleted] = useState(false)
@@ -13,12 +14,15 @@ export default function CompleteOrder(){
             var shoppingCart = getCookie("ShoppingCart")
             if(shoppingCart !== "") {
                 shoppingCart = JSON.parse(shoppingCart)
-                console.log("shopcart", shoppingCart)
 
-                post("Order", {
+                const OrderBody = {
                     "hasPaid": true,
-                })
-                .then(order => createTickets(shoppingCart.seatShowItems, null, order.id))
+                }
+                if(checkJWTToken()) {
+                    OrderBody.AccountId = GetJWTToken().Id
+                }
+                post("Order", OrderBody)
+                .then(order => createTickets(shoppingCart.seatShowItems, checkJWTToken() ?  GetJWTToken().Id : null, order.id))
 
                 setCookie("ShoppingCart", "")
                 setOrderCompleted(true)

@@ -7,8 +7,9 @@ export default function createTickets(seatShowItems, accountId, orderId) {
             "orderId": orderId,
             "seatId": seatShowItem.seat.id,
             "showId": seatShowItem.show.id,
-            "accountId": accountId
         };
+        if(accountId != null)
+            ticket.accountId = accountId;
         post("Ticket", ticket)
         .then(response => console.log(`Response ${index}:`, response))
     });

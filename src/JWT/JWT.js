@@ -7,7 +7,7 @@ export function checkJWTToken() {
 }
 
 export function GetJWTToken() {
-  var token = checkJWTToken ? jwt_decode(getCookie('userJWT')) : 'No token found';
+  var token = checkJWTToken() ? jwt_decode(getCookie('userJWT')) : 'No token found';
   return token;
 }
 

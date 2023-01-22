@@ -5,11 +5,11 @@ import ShoppingCart from "../Components/ShoppingCart/ShoppingCart.jsx";
 import "./../Css/shoppingCart.css";
 import ShoppingCartItems from "../Models/ShoppingCartItems.js";
 import { getCookie } from "../Cookie/Cookie.js";
+import { GetJWTToken } from "../JWT/JWT.js";
 
 export default function ShoppingCartPage() {
   const [shoppingCartItems, setShoppingCartItems] = useState(getShoppingCartCookie());
   const [totalPrice, setTotalPrice] = useState(0)
-
   function getShoppingCartCookie() {
       const cookie = getCookie("ShoppingCart");
       if(cookie !== "")
