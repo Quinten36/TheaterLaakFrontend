@@ -6,15 +6,9 @@ import ShowRow from "./ShowRow";
 import TicketRow from "./TicketRow";
 import TotalsRow from "./TotalsRow";
 
-export default function Table({setTotalPrice, totalPrice}) {
-    const [shoppingCartItems, setShoppingCartItems] = useState(getShoppingCartCookie());
+export default function Table({setTotalPrice, totalPrice, shoppingCartItems}) {
     const [rows, setRows] = useState([]);
-    function getShoppingCartCookie() {
-        const cookie = getCookie("ShoppingCart");
-        if(cookie !== "")
-            return JSON.parse(cookie)
-        return new ShoppingCartItems();
-    }
+
     useEffect(() => {
         function createRows() {
             var newRows = [...rows]

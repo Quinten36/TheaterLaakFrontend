@@ -53,7 +53,6 @@ export default function FaInputhandle() {
     
     e.preventDefault();
     const inputToString = input1.toString() + input2.toString() + input3.toString() + input4.toString() + input5.toString();
-    console.log(inputToString)
     SendVerificatieCodeToBackEnd(inputToString);
   }
 
@@ -74,13 +73,8 @@ export default function FaInputhandle() {
   const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/OpnieuwVerzendenVerificatieMail/${gebruikerID}`, {
       method: 'Get',
     })
-
-    if (response.ok) {
-      console.log("succes")
-    }
-    if (!response.ok) {
+    if (!response.ok) 
       setFouteInvoer(true)
-    }
   }
  
 

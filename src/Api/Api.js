@@ -4,32 +4,26 @@ export async function get(query) {
     return fetch(`${url}/${query}`)
         .then(response => response.json())
         .then(data => data)
-        .catch(e => {
-            console.log(e);
-        })
 }
 
 export async function getSingle(query, id) {
     return fetch(`${url}/${query}/${id}`)
         .then(response => response.json())
         .then(data => data)
-        .catch(e => {
-            console.log(e);
-        })
 }
 
-async function post(query, data) {
+export async function post(query, data) {
     return fetch(`${url}/${query}`, {
-        Headers: {
+        headers: {
             'Content-Type': 'application/json'
         },
         method: "POST",
         body: JSON.stringify(data)
     }).then(response => response.json())
 }
-async function put(query, id, data) {
+export async function put(query, id, data) {
     return fetch(`${url}/${query}/${id}`, {
-        Headers: {
+        headers: {
             'Content-Type': 'application/json',
             'Accept' : 'application/json'
         },
@@ -39,7 +33,7 @@ async function put(query, id, data) {
 }
 export async function destroy(query, id) {
     return fetch(`${url}/${query}/${id}`, {
-        Headers: {
+        headers: {
         },
         method: "DELETE",
     })

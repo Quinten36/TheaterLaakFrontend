@@ -5,8 +5,7 @@ function Show(props) {
   let [person, setPerson] = useState(null);
   fetch(`${process.env.REACT_APP_BACKEND_URL}/account/name/`+props.gereserveerdDoor)
       .then(resp => resp.json())
-      .then((data) => {console.log(data); setPerson(data.username)})
-  // console.log(respons)
+      .then((data) => {setPerson(data.username)})
 
   return (
     <div className='ROReserveringItem' key={props.keyId}>

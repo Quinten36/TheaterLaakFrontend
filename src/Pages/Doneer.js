@@ -17,13 +17,11 @@ export default function Programming() {
   const [chosenGoal, setChosenGoal] = useState(48);
 
   // TODO: dev things
-  if (getCookie('doneerToken') != "" && apiJWTToken == null) {
+  if (getCookie('doneerToken') != "" && apiJWTToken == null)
     setDonatieJWT(getCookie('doneerToken'));
-  }
 
   let options = [];
   let token;
-  // console.log(chosenGoal)
 
   const requestOptionsDev = {
     method: 'GET',
@@ -38,14 +36,13 @@ export default function Programming() {
   useEffect(() => {
     fetch(`https://ikdoneer.azurewebsites.net/api/goededoelen`, requestOptionsDev)
       .then(resp => resp.json())
-      .then((data) => {console.log(data); setGoodGoals(data)})
+      .then((data) => {setGoodGoals(data)})
   }, []);
 
   if (goodGoals.length > 0)
     fillOptions()
 
   function fillOptions() {
-    // console.log(goodGoals)
     goodGoals.map((goal, index) => {
       if (goal.naam.length < 150)
         options.push({value: goal.id, label: goal.naam});
@@ -53,7 +50,6 @@ export default function Programming() {
   }
 
   function displayFeedback(response) {
-    console.log(response);
     document.getElementById('DoneerFeedbackLabel').classList.remove('green');
     var output = response.message == 'Succes!' ? 'Donatie is gelukt' : 'Er is even wat fout gegaan';
     if (response.message == 'Succes!')
@@ -62,7 +58,6 @@ export default function Programming() {
   }
 
   async function Doneer() {
-    console.log(chosenGoal)
     await fetch(`https://ikdoneer.azurewebsites.net/api/donatie`,{
       method: 'POST',
       mode: 'cors', // no-cors, *cors, same-origin
@@ -77,7 +72,7 @@ export default function Programming() {
       body: JSON.stringify({"Doel": chosenGoal, "Hoeveelheid": amount, "Tekst":reason})
       })
       .then((data) => data.json())
-      .then((response) => {displayFeedback(response); console.log(response)})
+      .then((response) => {displayFeedback(response)})
   }
 
   function checkOfDonateur() {
@@ -95,7 +90,6 @@ export default function Programming() {
         setDonaties(data)
       })
       .then(() => {
-        console.log(totaal)
         fetch(`${process.env.REACT_APP_BACKEND_URL}/account/checkDonatie/${totaal}`, requestOptionsAPI)
         .then(resp => resp.json())
         .then((data) => {token = data;})

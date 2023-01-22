@@ -13,17 +13,14 @@ function App() {
   var adminSection = null;
   var donoSection = null;
 
-  console.log(checkJWTToken())
 
   const toggleOver = () => {
-    console.log(openOver)
     document.getElementById('navbarExample01').classList.toggle('show');
     setOPenOver(!openOver);
   };
 
   if (checkJWTToken()) {
     var role = getJWTRole();
-    console.log(role)
     if (role == 'Admin' || role.includes('Admin'))
       adminSection = true;
     if (role == 'Donateur' || role.includes('Donateur'))
