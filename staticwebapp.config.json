@@ -1,0 +1,60 @@
+{
+  "trailingSlash": "auto",
+  "routes": [
+    {
+      "route": "/account "
+    },
+    {
+      "route": "/show/* "
+    },
+    {
+      "route": "/programmering "
+    },
+    {
+      "route": "/ticket/* "
+    },
+    {
+      "route": "/reserveringOverview "
+    },
+    {
+      "route": "/admin "
+    },
+    {
+      "route": "/winkelwagen "
+    },
+    {
+      "route": "/Registreer "
+    },
+    {
+      "route": "/Validate "
+    },
+    {
+      "route": "/PrivacyBeleid "
+    },
+    {
+      "route": "/Login "
+    },
+    {
+      "route": "/WachtwoordVergeten "
+    },
+    {
+      "route": "/Donateurs-portaal "
+    },
+    {
+      "route": "/Doneren "
+    },
+    {
+      "route": "/heeftAutherized/*"
+    },
+    {
+      "route": "/BandToevoegen"
+    },
+    {
+      "route": "/addProgramma"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "index.html",
+    "exclude": ["/images/*.{png,jpg,gif}", "/css/*"]
+  }
+}
