@@ -12,7 +12,7 @@ function ShowPlayItem({show, available}) {
   const dateString = weekString + " " + timeString // di 7 jan. 09:50
 
   function GetButton() {
-    return available ? 
+    return true ? 
             <Nav.Link href={'/ticket/'+show.id}>
               <button className='showPlayItemAvailable'>Bestel</button>
             </Nav.Link>:
