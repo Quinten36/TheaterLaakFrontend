@@ -23,6 +23,7 @@ import Admin from './Pages/Admin';
 import HeeftAutherized from './Pages/heeftAutherized';
 import AddArtist from './Components/AdminComponents/addArtist';
 import AddGroup from './Components/AdminComponents/addGroup';
+import CompleteOrder from './Pages/CompleteOrder';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -48,6 +49,7 @@ root.render(
         <Route exact path='/heeftAutherized/:token' element={<HeeftAutherized />}></Route>
         <Route exact path='/addArtist' element={<AddArtist />}></Route>
         <Route exact path='/addGroup' element={<AddGroup />}></Route>
+        <Route exact path='/bestellingAfronden' element={<CompleteOrder />}></Route>
       </Routes>
       {/* footer */}
     </Router>
