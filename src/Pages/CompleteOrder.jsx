@@ -13,7 +13,6 @@ export default function CompleteOrder(){
             var shoppingCart = getCookie("ShoppingCart")
             if(shoppingCart !== "") {
                 shoppingCart = JSON.parse(shoppingCart)
-                console.log("shopcart", shoppingCart)
 
                 post("Order", {
                     "hasPaid": true,

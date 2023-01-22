@@ -10,6 +10,5 @@ export default function createTickets(seatShowItems, accountId, orderId) {
             "accountId": accountId
         };
         post("Ticket", ticket)
-        .then(response => console.log(`Response ${index}:`, response))
     });
 }

@@ -53,7 +53,6 @@ export default function DonateursPortaal() {
           setDonaties(data)
         })
         .then(() => {
-          console.log(totaal)
           fetch(`${process.env.REACT_APP_BACKEND_URL}/account/checkDonatie/${totaal}`, requestOptionsAPI)
             .then(resp => resp.json())
             .then((data) => { token = data; })

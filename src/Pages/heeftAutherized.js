@@ -11,8 +11,6 @@ export default function Programming() {
   const location = useLocation();
   var DoneerToken = location.pathname.split('/')[2];
 
-  console.log(DoneerToken)
-
   if (DoneerToken.length > 0) 
     if (getCookie('doneerToken') == "") 
       setCookie('doneerToken', DoneerToken, 15);

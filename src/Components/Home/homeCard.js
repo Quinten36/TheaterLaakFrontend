@@ -8,10 +8,9 @@ export default function ProgrammingCard(props) {
   let [program, setProgram] = useState(null);
   
   useEffect(() => {
-    console.log(props)
     fetch(`${process.env.REACT_APP_BACKEND_URL}/program/${props.showObject.programId}`)
       .then(resp => resp.json())
-      .then((data) => {console.log(data); setProgram(data)})
+      .then((data) => {setProgram(data)})
   }, [])
 
   if(program === undefined || program === null) return;

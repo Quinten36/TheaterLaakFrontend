@@ -21,14 +21,14 @@ function App() {
   if (shows == null) {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/show/limit/3`)
     .then(resp => resp.json())
-    .then((data) => {console.log(data[0]); setShows(data)})
+    .then((data) => {setShows(data)})
   }
 
   useEffect(() => {
     if (shows!=null) {
       fetch(`${process.env.REACT_APP_BACKEND_URL}/program/${shows[0].programId}`)
         .then(resp => resp.json())
-        .then((data) => {console.log(data); setProgram(data)})
+        .then((data) => {setProgram(data)})
     }
   }, [shows])
 
