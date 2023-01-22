@@ -14,7 +14,6 @@ export default function OntvangenFeedback() {
         fetch(`${process.env.REACT_APP_BACKEND_URL}/DonateurFeedback`)
             .then(resp => resp.json())
             .then(data => setFeedback(data))
-            .catch(error => console.log(error))
             setGebruikerFeedbackInput("")
             setNewComment(false)
     }, [newComment])

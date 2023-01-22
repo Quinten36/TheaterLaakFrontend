@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import jsPDF from 'jspdf';
 import QRCode from 'qrcode';
-export default function MijnReserveringen(props) {
+export default function MijnReserveringen({userId}) {
     const [reserveringen, setReserveringen] = useState([])
 
     useEffect(() => {
@@ -10,12 +10,11 @@ export default function MijnReserveringen(props) {
     }, [])
 
     function getReservervationsById() {
-        fetch('${process.env.REACT_APP_BACKEND_URL}/getReservationsByID/${props.userId}')
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/Ticket/getReservationsByID/${userId}`)
             .then(response => response.json())
             .then(data => {
                 setReserveringen(data)
             })
-            .catch(error => console.log(error));
     }
 
     function downloadPDF() {

@@ -29,7 +29,6 @@ export default function WWvergeten() {
         }
         if (!response.ok) {
             const error = JSON.parse(await response.text());
-            console.log(error)
         }
     }
 
