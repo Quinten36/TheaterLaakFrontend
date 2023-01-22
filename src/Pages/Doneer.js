@@ -111,7 +111,7 @@ export default function Programming() {
       <div>
         <h1>Doneer pagina</h1>
         <p>Geeft hier toestemming:</p>
-        <Nav.Link href="https://ikdoneer.azurewebsites.net/Toegang?url=https%3A%2F%2Fwww.stresscentrum.nl%2F" style={{"textDecoration":"underline"}}>Geef toestemming</Nav.Link>
+        <Nav.Link href="https://ikdoneer.azurewebsites.net/Toegang?url=http%3A%2F%2Flocalhost%3A5086%2Fapi%2Fmisc%2FsetToken" style={{"textDecoration":"underline"}}>Geef toestemming</Nav.Link>
         <button onClick={checkOfDonateur}>Check of ik donateur ben</button>
       </div>
       <div>
