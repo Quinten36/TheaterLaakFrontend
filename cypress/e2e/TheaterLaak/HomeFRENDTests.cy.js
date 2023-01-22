@@ -1,6 +1,6 @@
 describe('Div test', () => {
   it('checks if there are 3 elements in the div', () => {
-    cy.visit('localhost:3000')
+    cy.visit(Cypress.env('url'))
     cy.get('.carousel-inner').then(($div) => {
       expect($div.find('*').length).to.equal(3)
     })
@@ -9,7 +9,7 @@ describe('Div test', () => {
 
 describe('card link', () => {
   it('check Links in header1', () => {
-    cy.visit('localhost:3000')
+    cy.visit(Cypress.env('url'))
 
     // blog page
     cy.contains('Programmering').click()
@@ -20,7 +20,7 @@ describe('card link', () => {
 
 describe('card link', () => {
   it('check Links in header2', () => {
-    cy.visit('localhost:3000')
+    cy.visit(Cypress.env('url'))
 
     // about page
     cy.contains('Doneren').click()
@@ -32,7 +32,7 @@ describe('card link', () => {
 
 describe('card link', () => {
   it('check Links in header3', () => {
-    cy.visit('localhost:3000')
+    cy.visit(Cypress.env('url'))
 
     // contact page
     cy.get('.LoginIcon').click()

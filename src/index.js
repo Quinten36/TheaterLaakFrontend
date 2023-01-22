@@ -22,6 +22,9 @@ import AccountPage from './Components/AccountComponents/AccountPage.jsx'
 import Admin from './Pages/Admin';
 import HeeftAutherized from './Pages/heeftAutherized';
 import AddArtist from './Components/AdminComponents/addArtist';
+import CompleteOrder from './Pages/CompleteOrder';
+import AddShows from './Components/AdminComponents/AddShowComponent';
+import AddProgramma from './Components/AdminComponents/AddProgrammaComponent';
 import AddGroup from './Components/AdminComponents/addGroup';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -48,6 +51,9 @@ root.render(
         <Route exact path='/heeftAutherized/:token' element={<HeeftAutherized />}></Route>
         <Route exact path='/addArtist' element={<AddArtist />}></Route>
         <Route exact path='/addGroup' element={<AddGroup />}></Route>
+        <Route exact path='/addShows' element={<AddShows />}></Route>
+        <Route exact path='/addProgramma' element={<AddProgramma />}></Route>
+        <Route exact path='/bestellingAfronden' element={<CompleteOrder />}></Route>
       </Routes>
       {/* footer */}
     </Router>
