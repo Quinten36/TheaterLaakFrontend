@@ -4,7 +4,7 @@
 
 describe('Visit ShoppingCart and Press \'Verder Winkelen\'', () => { 
   beforeEach(() => {
-    cy.visit('http://localhost:3000/winkelwagen');
+    cy.visit(Cypress.env('url') +'/winkelwagen');
   });
   
   

@@ -1,8 +1,9 @@
+
 describe('Login Account Succes', () => {
     it('Gebruiker moet een account aan kunnen maken en in kunnen loggen', () => {
   
   
-    cy.visit('localhost:3000/Registreer')
+    cy.visit(Cypress.env('url') + '/Registreer')
     const id = Cypress._.random(0, 1e6)
     const username = 'TestGebruiker' + id
     const email = 'testEmail' + id + '@yahoo.com'
@@ -12,7 +13,7 @@ describe('Login Account Succes', () => {
       
       cy.get('label > input').click();
       cy.get('.RegistratieCompleetButton').click()
-      cy.visit('localhost:3000/Login')
+      cy.visit(Cypress.env('url') + '/Login')
     
       cy.get('[placeholder="Gebruikersnaam"]').type(email)
       cy.get('[placeholder="Password"]').type("Aeack4df!")

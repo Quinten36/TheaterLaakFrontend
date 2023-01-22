@@ -24,6 +24,8 @@ import HeeftAutherized from './Pages/heeftAutherized';
 import AddArtist from './Components/AdminComponents/addArtist';
 import AddGroup from './Components/AdminComponents/addGroup';
 import AddShows from './Components/AdminComponents/AddShowComponent';
+import AddProgramma from './Components/AdminComponents/AddProgrammaComponent';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -49,6 +51,7 @@ root.render(
         <Route exact path='/addArtist' element={<AddArtist />}></Route>
         <Route exact path='/addGroup' element={<AddGroup />}></Route>
         <Route exact path='/addShows' element={<AddShows />}></Route>
+        <Route exact path='/addProgramma' element={<AddProgramma />}></Route>
       </Routes>
       {/* footer */}
     </Router>
