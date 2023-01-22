@@ -51,6 +51,15 @@
     },
     {
       "route": "/addProgramma"
+    },
+    {
+      "route": "/addArtist"
+    },
+    {
+      "route": "/addGroup"
+    },
+    {
+      "route": "/addShows"
     }
   ],
   "navigationFallback": {
