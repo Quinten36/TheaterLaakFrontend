@@ -111,9 +111,10 @@ export default function Programming() {
       <div>
         <h1>Doneer pagina</h1>
         <p>Geeft hier toestemming:</p>
-        <Nav.Link href="https://ikdoneer.azurewebsites.net/Toegang?url=https%3A%2F%2Fwww.stresscentrum.nl%2F" style={{"textDecoration":"underline"}}>Geef toestemming</Nav.Link>
+        <Nav.Link href="https://ikdoneer.azurewebsites.net/Toegang?url=http%3A%2F%2Flocalhost%3A5086%2Fapi%2Fmisc%2FsetToken" style={{"textDecoration":"underline"}}>Geef toestemming</Nav.Link>
         <button onClick={checkOfDonateur}>Check of ik donateur ben</button>
       </div>
+      {apiJWTToken != null && 
       <div>
         <h2>Doneer hier</h2>
         <span id="DoneerFeedbackLabel"></span><br/><br/>
@@ -121,7 +122,7 @@ export default function Programming() {
         Hoeveelheid: <input type="number" name="hoeveelheid" id="AmountDonate" value={amount} onChange={e => setAmount(e.target.value)}/><br/>
         Reden: <input type="text" name="reden" id="ReasonDonate" value={reason} onChange={e => setReason(e.target.value)}/><br/>
         <button onClick={Doneer}>Doneer</button>
-      </div>
+      </div>}
     </>
   )
 
