@@ -2,14 +2,10 @@ import './../Css/reserveringOverview.scss';
 import React, { useState, useEffect } from 'react';
 import ReservationOverviewItem from './../Components/ReservationOverview/reservationOverviewItem';
 import gegevens from './../../package.json';
-import {checkJWTToken, getJWTRole, GetJWTExp} from './../JWT/JWT'
+import CheckAdmin from '../Util/CheckRole';
 
 function Show(props) {
-  if (checkJWTToken()) {
-    var role = getJWTRole();
-    if (role != 'Admin')
-      window.location.href = 'http://localhost:3000/';
-  }
+  CheckAdmin()
 
   // do state stuff
   let [startDate, setStartDate] = useState(null);

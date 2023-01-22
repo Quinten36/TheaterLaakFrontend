@@ -1,0 +1,38 @@
+.addshowcontainer {
+    margin: 0 auto;
+    width: 75%;
+
+    }
+    
+    .addshowcontainer div {
+    margin: 10px 0;
+    }
+    
+    .addshowcontainer select {
+    width: 75%;
+
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+    
+    .addshowcontainer .btn-success {
+
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 75%;
+    }
+    
+
+    .addshowcontainer .form-control {
+    width: 75%;
+ 
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }

@@ -10,7 +10,7 @@ export default function MijnReserveringen(props) {
     }, [])
 
     function getReservervationsById() {
-        fetch(`http://localhost:5086/getReservationsByID/${props.userId}`)
+        fetch('${process.env.REACT_APP_BACKEND_URL}/getReservationsByID/${props.userId}')
             .then(response => response.json())
             .then(data => {
                 setReserveringen(data)

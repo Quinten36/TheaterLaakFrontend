@@ -18,7 +18,7 @@ describe('Registreer_Account_Succes', () => {
   })
 })
 
-describe('Registreer_Account_Flase', () => {
+describe('Registreer_Account_False', () => {
   it('Gebruiker krijgt een error als hij een account probeert aan te maken met dezelfde naam', () => {
 
 
@@ -36,7 +36,7 @@ describe('Registreer_Account_Flase', () => {
   })
 })
 
-describe('Registreer_Account_Flase2', () => {
+describe('Registreer_Account_False2', () => {
   it('Gebruiker krijgt een error als hij een account probeert aan te maken met dezelfde emailadres', () => {
 
 

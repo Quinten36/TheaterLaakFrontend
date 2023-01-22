@@ -5,6 +5,7 @@ export default function Captcha() {
    
 
   return (
+    // <></>
    <ReCAPTCHA className ="Captcha" sitekey ='6LdvdhEkAAAAABKO5406_s3ienfA-Ji3XyNJKFas' />
   )
 }
