@@ -9,7 +9,6 @@ const query = "Program"
 export const all = (search) => {
     return fetch(`${url}/${query}${search}`)
         .then(response => response.json())
-        .catch(e => console.log(e))
 }
 
 export const getProgram = (id) => getSingle(route, id)

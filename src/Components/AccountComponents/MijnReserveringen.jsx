@@ -15,7 +15,6 @@ export default function MijnReserveringen({userId}) {
             .then(data => {
                 setReserveringen(data)
             })
-            .catch(error => console.log(error));
     }
 
     function downloadPDF() {
