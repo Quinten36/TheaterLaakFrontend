@@ -2,16 +2,7 @@ import { useEffect } from "react";
 import SeatIcon from "./SeatIcon";
 import SeatsLegend from "./SeatsLegend";
 
-export default function SeatPickerImage({seats, rows, columns}) {
-
-    
-    // var r = document.querySelector(":root")
-    // console.log(r)
-    // var rs = getComputedStyle(r)
-    // console.log(rs)
-    // rs.CSSStyleDeclaration
-    
-
+export default function SeatPickerImage({seats, rows, columns, setSelectedSeatNumber, setSelectedRowNumber}) {
     function Init() {
         SetContainerStyle();
     }
@@ -25,7 +16,7 @@ export default function SeatPickerImage({seats, rows, columns}) {
     function GenerateSeatIcons() {
         return seats.map((seat, index) => <SeatIcon
             key={seat.id}
-            onclick={() => {console.log("Hoi")}}
+            onclick={() => {setSelectedRowNumber(seat.row); setSelectedSeatNumber(seat.seatNumber)}}
             status={seat.seatShowStatus[0].status}
             />
         );

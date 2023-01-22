@@ -9,7 +9,7 @@ export default function Pay(amount) {
         },
         body: new URLSearchParams({
             'amount': 15,
-            'reference': 14524325236,
+            'reference': 54545454123545,
             'url': 'http://localhost:5086/api/misc/setPayment'
         })
     })
@@ -17,9 +17,12 @@ export default function Pay(amount) {
     .then((html) => {
         document.getElementById("payPopUp").innerHTML = html;
     })
+    .then(() => {document.getElementById('succes').value = true;})
     .catch((error) => {
         console.warn(error);
     });
+
+
     // .then(response => {
     //   var html = response.text();
     //   const parser = new DOMParser();

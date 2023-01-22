@@ -1,19 +1,9 @@
 import { useEffect, useState } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
 
-export default function SeatPickerDropdowns({rows, columns, onChange, seats}) {
-    const [selectedRowNumber, setSelectedRowNumber] = useState(undefined);
-    const [selectedSeatNumber, setSelectedSeatNumber] = useState(undefined);
+export default function SeatPickerDropdowns({rows, columns, setSelectedSeatNumber, setSelectedRowNumber, selectedRowNumber, selectedSeatNumber}) {
 
-    useEffect(() => {
-        function changed() {
-            // if(selectedRowNumber === undefined || selectedSeatNumber === undefined) return;
-            const newSelectedSeat = seats.find(seat => seat.row == selectedRowNumber && seat.seatNumber == selectedSeatNumber)
-            if(newSelectedSeat === undefined || newSelectedSeat === null) return;
-            onChange(newSelectedSeat);
-        }
-        changed()
-    }, [selectedRowNumber, selectedSeatNumber])
+
 
     function GenerateOptions(num) {
         const array = Array.from({ length: num }, (_, index) => {
@@ -24,13 +14,13 @@ export default function SeatPickerDropdowns({rows, columns, onChange, seats}) {
     
     return <span className="dropDownContainer">
         <FloatingLabel className="dropDownItem" controlId="rowNumberSelect" label="Rij Nummer">
-            <Form.Select onChange={(event) => {setSelectedRowNumber(event.target.value);}} >
+            <Form.Select value={selectedRowNumber} onChange={(event) => {setSelectedRowNumber(event.target.value);}} >
                 <option >Selecteer</option>
                 {GenerateOptions(rows)}
             </Form.Select>
         </FloatingLabel>
         <FloatingLabel className="dropDownItem" controlId="seatNumberSelect" label="Stoel Nummer">
-            <Form.Select onChange={(event) => {setSelectedSeatNumber(event.target.value);}}>
+            <Form.Select value={selectedSeatNumber} onChange={(event) => {setSelectedSeatNumber(event.target.value);}}>
                 <option >Selecteer</option>
                 {GenerateOptions(columns)}
             </Form.Select>
