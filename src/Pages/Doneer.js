@@ -78,7 +78,7 @@ export default function Programming() {
   function checkOfDonateur() {
     if (apiJWTToken == null) {
       //TODO: de api ophalen vanaf de url en dat in de cookies zetten. Aparte pagina?
-      window.location.href = "https://ikdoneer.azurewebsites.net/Toegang?url=http%3A%2F%2Flocalhost%3A5086%2Fapi%2Fmisc%2FsetToken";
+      window.location.href = "https://ikdoneer.azurewebsites.net/Toegang?url=https://theater-laak-backend-prod.azurewebsites.net/%2Fapi%2Fmisc%2FsetToken";
     } else {
       var totaal = 0;
       fetch(`https://ikdoneer.azurewebsites.net/api/donatie`, requestOptionsAPI)
@@ -111,7 +111,7 @@ export default function Programming() {
       <div>
         <h1>Doneer pagina</h1>
         <p>Geeft hier toestemming:</p>
-        <Nav.Link href="https://ikdoneer.azurewebsites.net/Toegang?url=http%3A%2F%2Flocalhost%3A5086%2Fapi%2Fmisc%2FsetToken" style={{"textDecoration":"underline"}}>Geef toestemming</Nav.Link>
+        <Nav.Link href="https://ikdoneer.azurewebsites.net/Toegang?url=https%3A%2F%2Fblack-moss-0a8543303.2.azurestaticapps.net%2Fapi%2Fmisc%2FsetToken" style={{"textDecoration":"underline"}}>Geef toestemming</Nav.Link>
         <button onClick={checkOfDonateur}>Check of ik donateur ben</button>
       </div>
       {apiJWTToken != null && 

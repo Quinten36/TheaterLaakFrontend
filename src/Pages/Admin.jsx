@@ -20,10 +20,10 @@ export default function Programming() {
     <>
       <div>
         <h1>Admin page pagina</h1>
-        <Nav.Link variant="primary" href="http://localhost:3000/addArtist" style={{"textDecoration":"underline"}}>Add artist</Nav.Link>
-        <Nav.Link variant="primary" href="http://localhost:3000/addGroup" style={{"textDecoration":"underline"}}>Add group</Nav.Link>
-        <Nav.Link variant="primary" href="http://localhost:3000/addShows" style={{"textDecoration":"underline"}}>Add Show</Nav.Link>
-        <Nav.Link variant="primary" href="http://localhost:3000/addProgramma" style={{"textDecoration":"underline"}}>Add Programma</Nav.Link>
+        <Nav.Link variant="primary" href="https://black-moss-0a8543303.2.azurestaticapps.net/addArtist" style={{"textDecoration":"underline"}}>Add artist</Nav.Link>
+        <Nav.Link variant="primary" href="https://black-moss-0a8543303.2.azurestaticapps.net/addGroup" style={{"textDecoration":"underline"}}>Add group</Nav.Link>
+        <Nav.Link variant="primary" href="https://black-moss-0a8543303.2.azurestaticapps.net/addShows" style={{"textDecoration":"underline"}}>Add Show</Nav.Link>
+        <Nav.Link variant="primary" href="https://black-moss-0a8543303.2.azurestaticapps.net/addProgramma" style={{"textDecoration":"underline"}}>Add Programma</Nav.Link>
         <br/>        
       </div>
     </>

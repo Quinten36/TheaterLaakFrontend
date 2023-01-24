@@ -39,7 +39,7 @@ export default function AddArtist() {
 
     return (
         <div className='addartistcontainer'>
-          <Nav.Link variant="primary" href="http://localhost:3000/Admin" style={{"textDecoration":"underline"}}>Go back</Nav.Link>
+          <Nav.Link variant="primary" href="https://black-moss-0a8543303.2.azurestaticapps.net/Admin" style={{"textDecoration":"underline"}}>Go back</Nav.Link>
             <Form>
               <div id='outputLabel'></div>
                 <div>Naam:</div>
