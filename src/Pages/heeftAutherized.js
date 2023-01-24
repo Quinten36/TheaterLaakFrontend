@@ -15,7 +15,7 @@ export default function Programming() {
     if (getCookie('doneerToken') == "") 
       setCookie('doneerToken', DoneerToken, 15);
 
-  window.location.href = 'http://localhost:3000/Doneren';
+  window.location.href = 'https://black-moss-0a8543303.2.azurestaticapps.net/Doneren';
 
   return (
     <>
